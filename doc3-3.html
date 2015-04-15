@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LTFrame-API-I_LTFRAME_IWebView</title>
+  <link href="stylesheets/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="margin:0">
+<div class="nav">
+	<img class="logo1" src="images/logo1.jpg" style="">
+	<div>
+    <a href="index.html">HOME</a>
+    <a href="download.html">DOWNLOAD</a>
+    <a href="doc.html">DOCS</a>
+    <a href="about.html">ABOUT</a>
+	</div>
+</div>
+<div class="middledoc3-3">
+    <div style="height:100%;margin: 0 auto;width: 800px;">
+    	<div style="height:100%;float: left;width: 200px;background-color: rgb(241, 241, 241)">
+            <ul>
+                <li><a href="doc1.html" class="aactive">开发准备</a></li>
+                <li><a href="doc2.html">开发指引</a></li>
+                <li>API列表
+                    <ul>
+                        <li><a href="doc3-4.html">CreateLTFrameInstance</a></li>
+                        <li><a href="doc3-1.html">I_LTFRAME_IWebView</a></li> 
+                        <li><a href="doc3-2.html">WebView</a></li> 
+                        <li><a href="doc3-3.html">JS Funtion</a></li>                     
+                    </ul>
+                </li>
+                <li><a href="doc4.html">FAQ</a></li>
+            </ul>
+    	</div>
+        <div style="position: relative;margin: 0 auto;width: 600px;float:left;">
+                <h5>1.LTFRAME_API LTEncodedJSValue Int2JsValue(int n);</h5>
+                <p>将C++的int类型转换JS类型</p>
+                <h5>2.LTFRAME_API LTEncodedJSValue Float2JsValue(float f);</h5>
+                <p>将C++的float类型转换JS类型</p>
+                <h5>3.LTFRAME_API LTEncodedJSValue Double2JsValue(double d);</h5>
+                <p>将C++的double类型转换JS类型</p>
+                <h5>4.LTFRAME_API LTEncodedJSValue Boolean2JsValue(bool b);</h5>
+                <p>将C++的bool类型转换JS类型</p>
+                <h5>5.LTFRAME_API LTEncodedJSValue JsUndefined();</h5>
+                <p>返回JS的Undefined</p>
+                <h5>6.LTFRAME_API LTEncodedJSValue JsNull();</h5>
+                <p>返回JS的NULL</p>
+                <h5>7.LTFRAME_API LTEncodedJSValue JsTrue();</h5></h5>
+                <p>返回JS的true</p>
+                <h5>8.LTFRAME_API LTEncodedJSValue JsFalse();</h5>
+                <p>返回JS的Unfalse</p>
+                <h5>9.LTFRAME_API LTEncodedJSValue String2JsValue(LTExecState es, const wchar_t* str);</h5>
+                <p>将C++的wchar_t类型转换JS类型</p>
+                <h5>10.LTFRAME_API int JsValue2Int(LTExecState es, LTEncodedJSValue v);</h5>
+                <p>将JS类型转换为C++的int类型</p>
+                <h5>11.LTFRAME_API float JsValue2Float(LTExecState es, LTEncodedJSValue v);</h5>
+                <p>将JS类型转换为C++的Float类型</p>
+                <h5>12.LTFRAME_API double JsValue2Double(LTExecState es, LTEncodedJSValue v);</h5>
+                <p>将JS类型转换为C++的Float类型</p>
+                <h5>13.LTFRAME_API bool JsValue2Boolean(LTExecState es, LTEncodedJSValue v);</h5>
+                <p>将JS类型转换为C++的Float类型</p>
+                <h5>14.LTFRAME_API int JsValue2StringW(LTExecState es, LTEncodedJSValue v,wchar_t* result);</h5>
+                <p>将JS类型转换为C++的Float类型</p>
+                <h5>15.LTFRAME_API int JsValue2String(LTExecState es, LTEncodedJSValue v,char* result);</h5>
+                <p>将JS类型转换为C++的Float类型</p>
+                <h5>16.LTFRAME_API LTEncodedJSValue GetJsParameter(LTExecState es, int argIdx);</h5>
+                <p>将JS类型转换为C++的Float类型</p>
+                <h5>17.LTFRAME_API LTEncodedJSValue GetJsObjectParameter(LTExecState es,int argIdx,char* key);</h5>
+                <h5>18.LTFRAME_API LTEncodedJSValue JsCall(LTExecState es,LTEncodedJSValue func,LTEncodedJSValue* args, int argCount);</h5>
+                <h5>19.LTFRAME_API LTEncodedJSValue CreateJsObject(LTExecState es,LTEncodedJSValue o,char* key,LTEncodedJSValue value);</h5>
+                <h5>20.LTFRAME_API LTEncodedJSValue CreateObject(LTExecState es);</h5>
+                <h5>21.LTFRAME_API LTEncodedJSValue GetJsObjectAttribute(LTExecState es,LTEncodedJSValue v,char* key);</h5>
+                <h5>22.LTFRAME_API bool IsJsNumber(LTEncodedJSValue v);</h5>
+                <h5>23.LTFRAME_API bool IsJsString(LTEncodedJSValue v);</h5>
+                <h5>24.LTFRAME_API bool IsJsBoolean(LTEncodedJSValue v);</h5>
+                <h5>25.LTFRAME_API bool IsJsObject(LTEncodedJSValue v);</h5>
+                <h5>26.LTFRAME_API bool IsJsFunction(LTEncodedJSValue v);</h5>
+                <h5>27.LTFRAME_API bool IsJsUndefined(LTEncodedJSValue v);</h5>
+                <h5>28.LTFRAME_API bool IsJsNull(LTEncodedJSValue v);</h5>
+                <h5>29.LTFRAME_API bool IsJsArray(LTEncodedJSValue v);</h5></h5>
+                <h5>30.LTFRAME_API bool IsJsTrue(LTEncodedJSValue v);</h5></h5></h5>
+                <h5>31.LTFRAME_API bool IsJsFalse(LTEncodedJSValue v);</h5>
+
+                
+                
+        </div>
+    </div>
+</div>
+
+<div class="navbuttom">
+	<div class="navbuttom_1">
+    <a href="index.html">HOME</a>
+    <a href="download.html">DOWNLOAD</a>
+    <a href="doc.html">DOCS</a>
+    <a href="about.html">ABOUT</a>
+	</div>
+	<div class="copyright">
+	     ©2015  LTFrame 
+	</div>
+</div>
+</body>
+</html>

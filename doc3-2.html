@@ -15,7 +15,7 @@
     <a href="about.html">ABOUT</a>
 	</div>
 </div>
-<div class="middledoc3-1">
+<div class="middledoc3-2">
     <div style="height:100%;margin: 0 auto;width: 800px;">
     	<div style="height:100%;float: left;width: 200px;background-color: rgb(241, 241, 241)">
             <ul>
@@ -68,10 +68,19 @@
                 <h5>17.void ReleaseWindow();</h5>
                 <p>关闭当前窗口，但并不是退出进程，通常用在子窗口上</p>
                 <h5>18.void BindUserFunction(const char* name, LTNativeFunction fn, unsigned int argCount);</h5>
-                <p>绑定JS函数，name：js函数名称，fn，函数指针</p>
+                <p>绑定JS函数，name：js函数名称，fn，函数指针，参数个数.eg:
+                        DEFINEFUNCTION DragonWindow(LTExecState* fun)
+                        {
+
+                        }<br>
+                        webview->BindUserFunction("dragwindow",DragonWindow,0);
+                </p>
                 <h5>19.void GaussianBlurImage(HBITMAP hBitmap,int radius);</h5>
+                <p>高斯模糊图片，radius模糊半径</p>
                 <h5>20.void SetAllowKeyDownAutoScroll(bool);</h5>
+                <p>是否允许用户通过鼠标拖拽实现页面滚动</p>
                 <h5>21.void EnableDragFrameChangeSize(bool);</h5>
+                <p>是否允许用户通过鼠标拉大缩小窗口</p>
 
         </div>
     </div>
