@@ -36,7 +36,10 @@
                 <h5>CreateLTFrameInstance(I_LTFRAME_IWebView * iwebview,LPCTSTR lpWindowName,HWND hWndParent,DWORD dwStyle,int x,int y,int nWidth,int nHeight,HICON icon);
                                                </h5>
                 <p>创建一个窗口，返回WebView类型。<BR>iwebview:继承了I_LTFRAME_IWebView的类<BR>lpWindowName：窗口名称。<BR>hWndParent：父窗口HWND，可为null<BR>dwStyle:窗口样式<BR>x:窗口初始位置的x轴值<BR>y:窗口初始位置的Y轴值<BR>nwidth:窗口宽度<BR>nheight:窗口高度<BR>icon:窗口图标<BR>eg:<br>
-                ltskinview= CreateLTFrameInstance(this,L"LTFrame-Canvas",NULL,WS_POPUP | WS_VISIBLE,0,0,ww,wh,0);</p>                
+                ltskinview= CreateLTFrameInstance(this,L"LTFrame-Canvas",NULL,WS_POPUP | WS_VISIBLE,0,0,ww,wh,0);</p>
+
+                <h5>funciton garbageCollect()</h5> 
+                <p>回收JS垃圾(此方法只能在页面中作为JS函数调用)</p>               
         </div>
     </div>
 </div>
