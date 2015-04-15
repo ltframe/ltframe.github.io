@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LTFrame-开发指引</title>
+  <link href="stylesheets/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="margin:0">
+<div class="nav">
+	<img class="logo1" src="images/logo1.jpg" style="">
+	<div>
+    <a href="index.html">HOME</a>
+    <a href="download.html">DOWNLOAD</a>
+    <a href="doc.html">DOCS</a>
+    <a href="about.html">ABOUT</a>
+	</div>
+</div>
+<div class="middledoc2">
+    <div style="height:100%;margin: 0 auto;width: 800px;">
+    	<div style="height:100%;float: left;width: 200px;background-color: rgb(241, 241, 241)">
+            <ul>
+                <li><a href="doc1.html" class="aactive">开发准备</a></li>
+                <li><a href="doc2.html">开发指引</a></li>
+                <li>API列表
+                    <ul>
+                        <li><a href="doc3-4.html">全局函数</a></li>
+                 
+                        <li><a href="doc3-1.html">I_LTFRAME_IWebView</a></li> 
+                        <li><a href="doc3-2.html">WebView</a></li> 
+                        <li><a href="doc3-3.html">JS Funtion</a></li> 
+                    </ul>
+                </li>
+                <li><a href="doc4.html">FAQ</a></li>
+            </ul>
+    	</div>
+        <div style="position: relative;margin: 0 auto;width: 600px;float:left;">
+            <p>本教程采用VS2008作为开发工具，请读者自行准备开发环境</p>
+            <h3>1.下载LTFrame所使用的环境</h3>
+            <p><img src="images/doc2-1.png"></p>
+            <h3>2.用VS2008创建一个标准的win32应用程序</h3>
+            <p><img src="images/doc2-2.png"></p>
+            <h3>3.将刚才下载好的LTFfrmae开发库的include文件夹复制到您的项目当中</h3>
+            <h3>4.创建一个C++类，将include中的interface.h包含在内，并且把ltframe.lib包含在解决方案内。
+            <p><img src="images/doc2-3.png"></p>
+            <p><img src="images/doc2-4.png"></p>
+            <h3>5.让刚才创建的类继承I_LTFRAME_IWebView,按照需求实现其中的抽象方法。把_tWinMain,函数中的内容删除，然后声明刚才创建的类</h3>
+            <p><img src="images/doc2-5.png"></p>
+            <p><img src="images/doc2-6.png"></p>
+
+            <h3>6.在创建的类构造函数中实现以下代码，并且重写HandleUserMessage,GetWindowClassName两个方法</h3>
+            <p> ltskinview= CreateLTFrameInstance(this,L"LTFrame",NULL,WS_POPUP | WS_VISIBLE,rect.left,rect.top,ww,wh,0);<br>
+            wstring path = L"index.html";<br>
+            ltskinview->loadFile(path.c_str());<br>
+            ltskinview->MessageLoop();
+            </p>
+            <p>LRESULT UIClass::HandleUserMessage(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
+                <br>{
+
+                <br>    return ltskinview->HandleMessage(hwnd,uMsg,wParam,lParam);
+
+               <br> }
+               <br> LPCWSTR UIClass::GetWindowClassName()
+               <br> {
+               <br>     return L"LTFrameClass";
+               <br> }</p>
+        </div>
+    </div>
+</div>
+
+<div class="navbuttom">
+	<div class="navbuttom_1">
+    <a href="index.html">HOME</a>
+    <a href="download.html">DOWNLOAD</a>
+    <a href="doc.html">DOCS</a>
+    <a href="about.html">ABOUT</a>
+	</div>
+	<div class="copyright">
+	     ©2015  LTFrame 
+	</div>
+</div>
+</body>
+</html>
