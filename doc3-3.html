@@ -50,7 +50,10 @@
                 <h5>8.LTFRAME_API LTEncodedJSValue JsFalse();</h5>
                 <p>返回JS的Unfalse</p>
                 <h5>9.LTFRAME_API LTEncodedJSValue String2JsValue(LTExecState es, const wchar_t* str);</h5>
-                <p>将C++的wchar_t类型转换JS类型</p>
+                <p>将C++的wchar_t类型转换JS类型.eg:<br>
+                        wchar_t* str = L"LTFRAME";<BR>
+                        LTEncodedJSValue arg =String2JsValue(es,str);
+                </p>
                 <h5>10.LTFRAME_API int JsValue2Int(LTExecState es, LTEncodedJSValue v);</h5>
                 <p>将JS类型转换为C++的int类型</p>
                 <h5>11.LTFRAME_API float JsValue2Float(LTExecState es, LTEncodedJSValue v);</h5>
@@ -71,15 +74,25 @@
                 <h5>20.LTFRAME_API LTEncodedJSValue CreateObject(LTExecState es);</h5>
                 <h5>21.LTFRAME_API LTEncodedJSValue GetJsObjectAttribute(LTExecState es,LTEncodedJSValue v,char* key);</h5>
                 <h5>22.LTFRAME_API bool IsJsNumber(LTEncodedJSValue v);</h5>
+                <p>判断JS类型是否为数字类型</p>
                 <h5>23.LTFRAME_API bool IsJsString(LTEncodedJSValue v);</h5>
+                 <p>判断JS类型是否为字符串类型</p>
                 <h5>24.LTFRAME_API bool IsJsBoolean(LTEncodedJSValue v);</h5>
+                <p>判断JS类型是否为Boolean类型</p>
                 <h5>25.LTFRAME_API bool IsJsObject(LTEncodedJSValue v);</h5>
-                <h5>26.LTFRAME_API bool IsJsFunction(LTEncodedJSValue v);</h5>
+                <p>判断JS类型是否为Object</p>
+                <h5>26.LTFRAME_API bool IsJsFunction(LTEncodedJSValue v);</h5>.
+                <p>判断JS类型是否为Function</p>
                 <h5>27.LTFRAME_API bool IsJsUndefined(LTEncodedJSValue v);</h5>
+                <p>判断JS类型是否为Undefined</p>
                 <h5>28.LTFRAME_API bool IsJsNull(LTEncodedJSValue v);</h5>
+                <p>判断JS类型是否为Null</p>
                 <h5>29.LTFRAME_API bool IsJsArray(LTEncodedJSValue v);</h5></h5>
+                <p>判断JS类型是否为array</p>
                 <h5>30.LTFRAME_API bool IsJsTrue(LTEncodedJSValue v);</h5></h5></h5>
+                <p>判断JS类型是否为true</p>
                 <h5>31.LTFRAME_API bool IsJsFalse(LTEncodedJSValue v);</h5>
+                <p>判断JS类型是否为false</p>
 
                 
                 
