@@ -23,7 +23,7 @@
                 <li><a href="doc2.html">开发指引</a></li>
                 <li>API列表
                     <ul>
-                        <li><a href="doc3-4.html">CreateLTFrameInstance</a></li>
+                        <li><a href="doc3-4.html">全局函数</a></li>
                         <li><a href="doc3-1.html">I_LTFRAME_IWebView</a></li> 
                         <li><a href="doc3-2.html">WebView</a></li> 
                         <li><a href="doc3-3.html">JS Funtion</a></li>                     
@@ -61,18 +61,49 @@
                 <h5>12.LTFRAME_API double JsValue2Double(LTExecState es, LTEncodedJSValue v);</h5>
                 <p>将JS类型转换为C++的Float类型</p>
                 <h5>13.LTFRAME_API bool JsValue2Boolean(LTExecState es, LTEncodedJSValue v);</h5>
-                <p>将JS类型转换为C++的Float类型</p>
+                <p>将JS类型转换为C++的Boolean类型</p>
                 <h5>14.LTFRAME_API int JsValue2StringW(LTExecState es, LTEncodedJSValue v,wchar_t* result);</h5>
-                <p>将JS类型转换为C++的Float类型</p>
+                <p>将JS类型转换为C++的wchar_t*类型.eg:<br>
+                    wchar_t * f=(wchar_t*)malloc(100);<br>
+                    ZeroMemory(f,100);<br>
+                    JsValue2String(es,GetJsParameter(es,0),f);
+                </p>
                 <h5>15.LTFRAME_API int JsValue2String(LTExecState es, LTEncodedJSValue v,char* result);</h5>
-                <p>将JS类型转换为C++的Float类型</p>
+                  <p>将JS类型转换为C++的wchar_t*类型.eg:<br>
+                    char * f=(char*)malloc(100);<br>
+                    ZeroMemory(f,100);<br>
+                    JsValue2String(es,GetJsParameter(es,0),f);
+                </p>
                 <h5>16.LTFRAME_API LTEncodedJSValue GetJsParameter(LTExecState es, int argIdx);</h5>
-                <p>将JS类型转换为C++的Float类型</p>
+                <p>获取js参数</p>
                 <h5>17.LTFRAME_API LTEncodedJSValue GetJsObjectParameter(LTExecState es,int argIdx,char* key);</h5>
+                <p>argIdx：参数索引，key:参数名.eg:<br>
+                int f= JsValue2String(es,GetJsObjectParameter(es,0,"f"),0);
+                </p>
                 <h5>18.LTFRAME_API LTEncodedJSValue JsCall(LTExecState es,LTEncodedJSValue func,LTEncodedJSValue* args, int argCount);</h5>
+                <p>执行回掉函数eg:<BR>
+                LTEncodedJSValue fun = GetJsParameter(es,0);<BR>
+                LTEncodedJSValue arg1 =String2JsValue(L"A");<BR>
+                LTEncodedJSValue  ptarg[1] = {arg1};<BR>
+                JsCall(es,fun,ptarg,1); 
+                </p>
                 <h5>19.LTFRAME_API LTEncodedJSValue CreateJsObject(LTExecState es,LTEncodedJSValue o,char* key,LTEncodedJSValue value);</h5>
+                <p>创建一个JS的OBJECT类型.eg:<br>
+                int width=1;<br>
+                int height=2;<br>
+                LTEncodedJSValue value = CreateObject(es);<br>
+                CreateJsObject(es,value,"width",Int2JsValue(width));<br>
+                CreateJsObject(es,value,"height",Int2JsValue(height));
+                </p>
                 <h5>20.LTFRAME_API LTEncodedJSValue CreateObject(LTExecState es);</h5>
+                <p>配合CreateJsObject使用</p>
                 <h5>21.LTFRAME_API LTEncodedJSValue GetJsObjectAttribute(LTExecState es,LTEncodedJSValue v,char* key);</h5>
+                <P>获取js Object中的属性.eg<br>
+                    LTEncodedJSValue jsv =  webview->RunJavaScript("getobject()");<br>
+                    LTExecState exec = webview->GetGlobalExecState();<br>
+                    LTEncodedJSValue v = GetJsObjectAttribute(exec,jsv,"a");<br>
+                    LTEncodedJSValue xc = GetJsObjectAttribute(exec,v,"b");
+                </P>
                 <h5>22.LTFRAME_API bool IsJsNumber(LTEncodedJSValue v);</h5>
                 <p>判断JS类型是否为数字类型</p>
                 <h5>23.LTFRAME_API bool IsJsString(LTEncodedJSValue v);</h5>
@@ -81,7 +112,7 @@
                 <p>判断JS类型是否为Boolean类型</p>
                 <h5>25.LTFRAME_API bool IsJsObject(LTEncodedJSValue v);</h5>
                 <p>判断JS类型是否为Object</p>
-                <h5>26.LTFRAME_API bool IsJsFunction(LTEncodedJSValue v);</h5>.
+                <h5>26.LTFRAME_API bool IsJsFunction(LTEncodedJSValue v);</h5>
                 <p>判断JS类型是否为Function</p>
                 <h5>27.LTFRAME_API bool IsJsUndefined(LTEncodedJSValue v);</h5>
                 <p>判断JS类型是否为Undefined</p>
