@@ -21,11 +21,11 @@
             <ul>
                 <li><a href="doc1.html" class="aactive">开发准备</a></li>
                 <li><a href="doc2.html">开发指引</a></li>
-                <li>API列表
+                <li>API列表(version 0.2.1)
                     <ul>
                         <li><a href="doc3-4.html">全局函数</a></li>
                         <li><a href="doc3-1.html">I_LTFRAME_IWebView</a></li> 
-                        <li><a href="doc3-2.html">WebView</a></li> 
+                        <li><a href="doc3-2.html">LTFrameView</a></li> 
                         <li><a href="doc3-3.html">JS Funtion</a></li>                     
                     </ul>
                 </li>
@@ -64,12 +64,10 @@
                 <h5>14.HWND windowHandle() const;</h5>
                 <p>返回当前窗口的HWDN</p>
                 <h5>15.void CloseWindow();</h5>
-                <p>关闭窗口，但不退出程序</p>
+                <p>关闭窗口，但不退出程序。如果关闭的是主窗口的话,应用程序则会终止</p>
                 <h5>16.void QuitApp();</h5>
                  <p>退出程序</p>
-                <h5>17.void ReleaseWindow();</h5>
-                <p>关闭当前窗口，但并不是退出进程，通常用在子窗口上</p>
-                <h5>18.void BindUserFunction(const char* name, LTNativeFunction fn, unsigned int argCount);</h5>
+                <h5>17.void BindUserFunction(const char* name, LTNativeFunction fn, unsigned int argCount);</h5>
                 <p>绑定JS函数，name：js函数名称，fn，函数指针，参数个数.eg:
                         DEFINEFUNCTION DragonWindow(LTExecState* fun)
                         {
@@ -77,11 +75,11 @@
                         }<br>
                         webview->BindUserFunction("dragwindow",DragonWindow,0);
                 </p>
-                <h5>19.void GaussianBlurImage(HBITMAP hBitmap,int radius);</h5>
+                <h5>18.void GaussianBlurImage(HBITMAP hBitmap,int radius);</h5>
                 <p>高斯模糊图片，radius模糊半径</p>
-                <h5>20.void SetAllowKeyDownAutoScroll(bool);</h5>
+                <h5>19.void SetAllowKeyDownAutoScroll(bool);</h5>
                 <p>是否允许用户通过鼠标拖拽实现页面滚动</p>
-                <h5>21.void EnableDragFrameChangeSize(bool);</h5>
+                <h5>20.void EnableDragFrameChangeSize(bool);</h5>
                 <p>是否允许用户通过鼠标拉大缩小窗口</p>
 
         </div>

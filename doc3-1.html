@@ -21,11 +21,11 @@
             <ul>
                 <li><a href="doc1.html" class="aactive">开发准备</a></li>
                 <li><a href="doc2.html">开发指引</a></li>
-                <li>API列表
+                <li>API列表(version 0.2.1)
                     <ul>
                         <li><a href="doc3-4.html">全局函数</a></li>
                         <li><a href="doc3-1.html">I_LTFRAME_IWebView</a></li> 
-                        <li><a href="doc3-2.html">WebView</a></li> 
+                        <li><a href="doc3-2.html">LTFrameView</a></li> 
                         <li><a href="doc3-3.html">JS Funtion</a></li>                     
                     </ul>
                 </li>
@@ -37,16 +37,16 @@
             <p>必须要被重写的函数，可以实现windows消息中自己方法.但在最后,必须要返回WebView中的HandleMessage</p>
             <h5>2.virtual LPCWSTR GetWindowClassName()=0;</h5>
             <p>必须要被重写的函数，可以返回当前窗口的类名</p>
-            <h5>3.virtual bool  OnDrop(IDataObject* pDataObject, DWORD grfKeyState, POINTL pt, DWORD* pdwEffect){return true;};</h5>
-            <p>当拖动放文件放开鼠标后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数</p>
-            <h5>4.virtual bool  OnDragLeave(){return true;};</h5>
-            <p>当拖动放文件离开窗口后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数</p>
-            <h5>5.virtual bool  OnDragOver(DWORD grfKeyState, POINTL pt, DWORD* pdwEffect){return true;};</h5>
-            <p>当拖动放文件在窗口后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数</p>
-            <h5>6.virtual bool  OnDragEnter(IDataObject* pDataObject, DWORD grfKeyState, POINTL pt, DWORD* pdwEffect){return true;};</h5>
-            <p>当拖动放文件进入窗口后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数</p>
-            <h5>7.virtual void OnFinalMessage(){};</h5>
-            <p>当你的程序有多个窗口，需要关闭其中一个子窗口时，可以重写次函数，表示在窗口销毁后做一个处理工作,如果要退出应用程序，则不需重写次方法</p>
+            <h5>3.virtual bool  OnDrop(IDataObject* pDataObject, DWORD grfKeyState, POINTL pt, DWORD* pdwEffect)</h5>
+            <p>当拖动放文件放开鼠标后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数,默认返回true</p>
+            <h5>4.virtual bool  OnDragLeave()</h5>
+            <p>当拖动放文件离开窗口后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数,默认返回true</p>
+            <h5>5.virtual bool  OnDragOver(DWORD grfKeyState, POINTL pt, DWORD* pdwEffect)</h5>
+            <p>当拖动放文件在窗口后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数,默认返回true</p>
+            <h5>6.virtual bool  OnDragEnter(IDataObject* pDataObject, DWORD grfKeyState, POINTL pt, DWORD* pdwEffect)</h5>
+            <p>当拖动放文件进入窗口后触发。当你的窗口需要产生拖动文件消息处理时可以重写此函数，默认返回true</p>
+            <h5>7.virtual void OnFinalMessage()</h5>
+            <p>窗口被销毁后返送的命令，你可以重写这个方法，来执行一些清除工作,如果没有,也可以不重写，当让默认它什么也不会做</p>
 
         </div>
     </div>
