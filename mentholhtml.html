@@ -1021,7 +1021,7 @@
 <p>如果要开发自定义的扩展类库，目前menthol的扩展开发仅可使用C/C++进行开发，你需要了解的几个开发前提是：</p>
 <p>1.所有被扩展的函数必须要是静态的函数或者是全局的函数</p>
 <p>2.所有被扩展的函数都必须要返回StackState</p>
-<p>3.所有的扩展函数库必须有个函数MentholPackMethod void 扩展库的名称（dll的名称）MP_Init()，这个函数内会调用RegisterPackAgeFunciton将你的函数增加至运行环境内</p>
+<p>3.所有的扩展函数库必须有个函数MentholPackMethod void MP_Init()，这个函数内会调用RegisterPackAgeFunciton将你的函数增加至运行环境内</p>
 <p>4.会写或者会改C/C++源码，并且能生成DLL库</p>
 
 <p>menthol扩展开发非常简单，你需要在你的C/C++页面内引入menthol.lib静态库，并且将头文件menthol.h加入到你的源代码中。我下面将以VS中开发为范例开发一个最简单的扩展库</p>
