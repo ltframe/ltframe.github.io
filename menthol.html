@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Menthol-a very flexible scripting language</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!--nav-->
+<script src="/js/jquery.min.js"></script>
+<script>
+		$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+</script>
+</head>
+<body>
+<div class="body">
+	<div class="wrap">
+		<div class="wrapper">
+			<!-- start header-->
+			<div class="header">
+				<div class="logo">
+					<a href="index.html"><img src="/images/logo.png" alt=""></a>
+				</div>
+				<div class="cssmenu">
+					<ul>
+					  	<li class="active"><a href="/index.html">Home</a></li>
+					  	<li><a href="/doc/menthol/mentholhtml.html">Document</a></li>
+						<li><a href="/blog/index.html">Blog</a></li>
+						<li ><a href="/blog/about/">About</a></li>
+						<div class="clear"></div>
+					 </ul>
+				</div>
+				<div class="clear"></div>
+				<div class="top-nav">
+					<nav class="clearfix">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+					  		<li><a href="/doc/menthol/mentholhtml.html">Document</a></li>
+							<li><a href="/blog/index.html">Blog</a></li>
+							<li ><a href="/blog/about/">About</a></li>
+						</ul>
+						<a href="#" id="pull">Menu</a>
+					</nav>
+				</div>
+			</div>
+			<!-- start banner -->
+		    <!-- start content -->
+			<div class="main">
+			 	<div class="content">
+			 	 	<h2>menthol</h2>
+			 	</div>
+			 	 <div class="about">
+			 	 	<p class="para1 textpara">Menthol is a very flexible scripting language designed to allow applications to extend their functionality through external scripting. It has been designed from the start as an easy-to-use component for application programmers and script writers.</p>
+			 	 	<div class="blog_para" style="background: #303030;"">
+			 	 	
+				 					<div style="top:126px; position: relative;float: right;;">
+							 	 			<img src="/images/logo2.jpg" alt=""/>
+							 	 	</div>
+									 		<pre class="para1" style=" color: #f3f3f3;width: 40%;">
+
+			1.基于栈的VM<br>
+			2.函数式开发流程<br>
+			3.无类型数据<br>
+			4.方便的函数封装<br>
+			5.简便的扩展开发<br>
+									
+			import "console";
+			use Console;
+			_mmain:$a,$c
+			{               
+				Console.Out("hello Menthol");
+				return;
+			}
+									           </pre>	
+					          
+					</div>
+					<div class="read_more">
+								<a class="btn" href="https://github.com/ltframe/menthol">Read More</a>
+					</div>
+				</div>
+				<div class="content">
+			 	 	<h2></h2>
+			 	</div>
+			 	<div class="wrap">
+				<div class="wrapper">
+					<div class="copy">	
+							<p class="w3-link" style="text-align: center;">Copyright &copy; 2018.LTPLAYER All rights reserved  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5364768'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D5364768%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
