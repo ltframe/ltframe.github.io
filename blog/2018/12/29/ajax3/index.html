@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="上一节把javascript执行流程接介绍完，本章将再介绍一个问题，就是在浏览器端,javascript是如何实现异步的？ 要想讲明这个问题，首先就要弄明白一个问题，异步是什么东西. 事实上,异步只不过是在本程序内部，启动另外一个线程执行你要执行的代码，你的程序启动在主线程中，而异步是启动在另外一个线程内。线程事实上只是你将程序执行的顺序，交给操作系统，操作系统，在你需要时候改变CS,IP.语言并">
+<meta name="description" content="最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的 第一篇（http://www.ltplayer.com/blog/2018/12/24/ajax1/)文章说过 webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onr">
 <meta name="keywords" content="webkit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax在浏览器上具体是如何执行的（2）">
-<meta property="og:url" content="http://www.ltplayer.com/blog/2018/12/28/ajax2/index.html">
+<meta property="og:title" content="Ajax在浏览器上具体是如何执行的（3）">
+<meta property="og:url" content="http://www.ltplayer.com/blog/2018/12/29/ajax3/index.html">
 <meta property="og:site_name" content="薄荷醇">
-<meta property="og:description" content="上一节把javascript执行流程接介绍完，本章将再介绍一个问题，就是在浏览器端,javascript是如何实现异步的？ 要想讲明这个问题，首先就要弄明白一个问题，异步是什么东西. 事实上,异步只不过是在本程序内部，启动另外一个线程执行你要执行的代码，你的程序启动在主线程中，而异步是启动在另外一个线程内。线程事实上只是你将程序执行的顺序，交给操作系统，操作系统，在你需要时候改变CS,IP.语言并">
+<meta property="og:description" content="最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的 第一篇（http://www.ltplayer.com/blog/2018/12/24/ajax1/)文章说过 webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.ltplayer.com/blog/images/img/20181228135834.jpg">
-<meta property="og:updated_time" content="2018-12-28T06:07:57.150Z">
+<meta property="og:updated_time" content="2018-12-29T04:21:12.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax在浏览器上具体是如何执行的（2）">
-<meta name="twitter:description" content="上一节把javascript执行流程接介绍完，本章将再介绍一个问题，就是在浏览器端,javascript是如何实现异步的？ 要想讲明这个问题，首先就要弄明白一个问题，异步是什么东西. 事实上,异步只不过是在本程序内部，启动另外一个线程执行你要执行的代码，你的程序启动在主线程中，而异步是启动在另外一个线程内。线程事实上只是你将程序执行的顺序，交给操作系统，操作系统，在你需要时候改变CS,IP.语言并">
-<meta name="twitter:image" content="http://www.ltplayer.com/blog/images/img/20181228135834.jpg">
+<meta name="twitter:title" content="Ajax在浏览器上具体是如何执行的（3）">
+<meta name="twitter:description" content="最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的 第一篇（http://www.ltplayer.com/blog/2018/12/24/ajax1/)文章说过 webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onr">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ltplayer.com/blog/2018/12/28/ajax2/">
+  <link rel="canonical" href="http://www.ltplayer.com/blog/2018/12/29/ajax3/">
 
 
 
 
 
-  <title>Ajax在浏览器上具体是如何执行的（2） | 薄荷醇</title>
+  <title>Ajax在浏览器上具体是如何执行的（3） | 薄荷醇</title>
   
 
 
@@ -265,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ltplayer.com/blog/blog/2018/12/28/ajax2/">
+    <link itemprop="mainEntityOfPage" href="http://www.ltplayer.com/blog/blog/2018/12/29/ajax3/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Will Lee">
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ajax在浏览器上具体是如何执行的（2）</h1>
+          <h1 class="post-title" itemprop="name headline">Ajax在浏览器上具体是如何执行的（3）</h1>
         
 
         <div class="post-meta">
@@ -294,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T10:58:58+08:00">
-                2018-12-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-29T11:35:25+08:00">
+                2018-12-29
               </time>
             
 
@@ -354,148 +352,84 @@
       
 
       
-        <p>上一节把javascript执行流程接介绍完，本章将再介绍一个问题，就是在浏览器端,javascript是如何实现异步的？</p>
-<p>要想讲明这个问题，首先就要弄明白一个问题，异步是什么东西.</p>
-<p>事实上,异步只不过是在本程序内部，启动另外一个线程执行你要执行的代码，你的程序启动在主线程中，而异步是启动在另外一个线程内。线程事实上只是你将程序执行的顺序，交给操作系统，操作系统，在你需要时候改变CS,IP.语言并不好形容，请看下图</p>
-<p><img src="/blog/images/img/20181228135834.jpg"></p>
-<p>在Source\WebCore\xml\XMLHttpRequest.cpp中，定义了你的请求是同步还是异步的，我们的默认JS代码是异步的，所以会已多线程方式去执行回调函数</p>
-<p>在webkit中，启动同时，会执行以下代码，实际上就是创建了一个你看不到的窗口来接受系统的消息TimerWindowWndProc，便是回调函数，函数定义在Source\WebCore\platform\win\SharedTimerWin.cpp</p>
-<pre><code>static void initializeOffScreenTimerWindow()
+        <p>最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的</p>
+<p>第一篇（<a href="http://www.ltplayer.com/blog/2018/12/24/ajax1/">http://www.ltplayer.com/blog/2018/12/24/ajax1/</a>)文章说过</p>
+<p>webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onreadystatechange设置，那么再请求完成后，它就会去调用它，就是使用下面的函数完成</p>
+<pre><code>void XMLHttpRequest::callReadyStateChangeListener()
 {
-    if (timerWindowHandle)
+    if (!scriptExecutionContext())
         return;
 
-    WNDCLASSEX wcex;
-    memset(&amp;wcex, 0, sizeof(WNDCLASSEX));
-    wcex.cbSize = sizeof(WNDCLASSEX);
-    wcex.lpfnWndProc    = TimerWindowWndProc;
-    wcex.hInstance      = WebCore::instanceHandle();
-    wcex.lpszClassName  = kTimerWindowClassName;
-    RegisterClassEx(&amp;wcex);
+    InspectorInstrumentationCookie cookie = InspectorInstrumentation::willChangeXHRReadyState(scriptExecutionContext(), this);
 
-    timerWindowHandle = CreateWindow(kTimerWindowClassName, 0, 0,
-       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, HWND_MESSAGE, 0, WebCore::instanceHandle(), 0);
-    timerFiredMessage = RegisterWindowMessage(L&quot;com.apple.WebKit.TimerFired&quot;);
+    if (m_async || (m_state &lt;= OPENED || m_state == DONE))
+        m_progressEventThrottle.dispatchEvent(XMLHttpRequestProgressEvent::create(eventNames().readystatechangeEvent), m_state == DONE ? FlushProgressEvent : DoNotFlushProgressEvent);
+
+    InspectorInstrumentation::didChangeXHRReadyState(cookie);
+
+    if (m_state == DONE &amp;&amp; !m_error) {
+        InspectorInstrumentationCookie cookie = InspectorInstrumentation::willLoadXHR(scriptExecutionContext(), this);
+        m_progressEventThrottle.dispatchEvent(XMLHttpRequestProgressEvent::create(eventNames().loadEvent));
+        InspectorInstrumentation::didLoadXHR(cookie);
+        m_progressEventThrottle.dispatchEvent(XMLHttpRequestProgressEvent::create(eventNames().loadendEvent));
+    }
 }
-</code></pre><p>这样就多启动了一个线程，用来下载资源或者是其他的操作</p>
-<p>在Source\WebCore\platform\network\curl\ResourceHandleManager.cpp中，使用了curl请求资源，就是ajax要发送的的请求</p>
-<pre><code>ResourceHandleManager::ResourceHandleManager()
-    : m_downloadTimer(this, &amp;ResourceHandleManager::downloadTimerCallback)
-</code></pre><p>m_downloadTimer是一个Timer类，这个类可以将要回调的函数加入</p>
-<p>timer 定义在D:\WebKit\Source\WebCore\platform\Timer.cpp</p>
-<pre><code>template &lt;typename TimerFiredClass&gt; class Timer : public TimerBase {
-public:
-    typedef void (TimerFiredClass::*TimerFiredFunction)(Timer*);
-
-    Timer(TimerFiredClass* o, TimerFiredFunction f)
-        : m_object(o), m_function(f) { }
-
-private:
-    virtual void fired() { (m_object-&gt;*m_function)(this); }
-</code></pre><p>然后利用面提到的线程，将要执行的函数加入</p>
-<pre><code>inline void TimerBase::heapInsert()
+</code></pre><p>callReadyStateChangeListener的函数会执行回调函数，然后通过你要调用的属性，执行不同的方法和获取属性</p>
+<p>xmlhttp.readyState会调用jsXMLHttpRequestReadyState</p>
+<pre><code>JSValue jsXMLHttpRequestReadyState(ExecState* exec, JSValue slotBase, const Identifier&amp;)
 {
-    ASSERT(!inHeap());
-    timerHeap().append(this);
-    m_heapIndex = timerHeap().size() - 1;
-    heapDecreaseKey();
+    JSXMLHttpRequest* castedThis = static_cast&lt;JSXMLHttpRequest*&gt;(asObject(slotBase));
+    UNUSED_PARAM(exec);
+    XMLHttpRequest* impl = static_cast&lt;XMLHttpRequest*&gt;(castedThis-&gt;impl());
+    JSValue result = jsNumber(impl-&gt;readyState());
+    return result;
 }
-</code></pre><p>最终就是执行下面的函数完成请求，downloadTimerCallback<br>就是加入的函数，它实现了发送参数，接受返回的工作，然后利用上面提到的线程进行操作</p>
-<pre><code>void ResourceHandleManager::downloadTimerCallback(Timer&lt;ResourceHandleManager&gt;* timer)
+</code></pre><p>xmlhttp.status会调用jsXMLHttpRequestStatus</p>
+<pre><code>JSValue jsXMLHttpRequestStatus(ExecState* exec, JSValue slotBase, const Identifier&amp;)
 {
-    startScheduledJobs();
-
-    fd_set fdread;
-    fd_set fdwrite;
-    fd_set fdexcep;
-    int maxfd = 0;
-
-    struct timeval timeout;
-    timeout.tv_sec = 0;
-    timeout.tv_usec = selectTimeoutMS * 1000;       // select waits microseconds
-
-    // Retry &apos;select&apos; if it was interrupted by a process signal.
-    int rc = 0;
-    do {
-        FD_ZERO(&amp;fdread);
-        FD_ZERO(&amp;fdwrite);
-        FD_ZERO(&amp;fdexcep);
-        curl_multi_fdset(m_curlMultiHandle, &amp;fdread, &amp;fdwrite, &amp;fdexcep, &amp;maxfd);
-        // When the 3 file descriptors are empty, winsock will return -1
-        // and bail out, stopping the file download. So make sure we
-        // have valid file descriptors before calling select.
-        if (maxfd &gt;= 0)
-            rc = ::select(maxfd + 1, &amp;fdread, &amp;fdwrite, &amp;fdexcep, &amp;timeout);
-    } while (rc == -1 &amp;&amp; errno == EINTR);
-
-    if (-1 == rc) {
-#ifndef NDEBUG
-        perror(&quot;bad: select() returned -1: &quot;);
-#endif
+    JSXMLHttpRequest* castedThis = static_cast&lt;JSXMLHttpRequest*&gt;(asObject(slotBase));
+    ExceptionCode ec = 0;
+    XMLHttpRequest* impl = static_cast&lt;XMLHttpRequest*&gt;(castedThis-&gt;impl());
+    JSC::JSValue result = jsNumber(impl-&gt;status(ec));
+    setDOMException(exec, ec);
+    return result;
+}
+</code></pre><p>xmlhttp.responseText会调用responseText，因为有可能发生错误而获取不到数据，所以有判断，如果失败则返回jsUndefined()，也就是javascript里的undefined</p>
+<pre><code>JSValue JSXMLHttpRequest::responseText(ExecState* exec) const
+{
+    ExceptionCode ec = 0;
+    String text = impl()-&gt;responseText(ec);
+    if (ec) {
+        setDOMException(exec, ec);
+        return jsUndefined();
+    }
+    return jsOwnedStringOrNull(exec, text);
+}
+</code></pre><p>执行每个函数或是获取某个属性都有发生错误，所以，每个函数都定义了一个ExceptionCode类型的变量，执行后返回值</p>
+<pre><code>typedef int ExceptionCode;
+</code></pre><p>在每次返回后检查ec的值，如果错误就执行throwError(exec, errorObject);</p>
+<pre><code>void setDOMException(ExecState* exec, ExceptionCode ec)
+{
+    if (!ec || exec-&gt;hadException())
         return;
+
+    // FIXME: All callers to setDOMException need to pass in the right global object
+    // for now, we&apos;re going to assume the lexicalGlobalObject.  Which is wrong in cases like this:
+    // frames[0].document.createElement(null, null); // throws an exception which should have the subframes prototypes.
+    JSDOMGlobalObject* globalObject = deprecatedGlobalObjectForPrototype(exec);
+
+    ExceptionCodeDescription description(ec);
+
+    JSValue errorObject;
+    switch (description.type) {
+        DOM_EXCEPTION_INTERFACES_FOR_EACH(TRY_TO_CREATE_EXCEPTION)
     }
 
-    int runningHandles = 0;
-    while (curl_multi_perform(m_curlMultiHandle, &amp;runningHandles) == CURLM_CALL_MULTI_PERFORM) { }
-
-    // check the curl messages indicating completed transfers
-    // and free their resources
-    while (true) {
-        int messagesInQueue;
-        CURLMsg* msg = curl_multi_info_read(m_curlMultiHandle, &amp;messagesInQueue);
-        if (!msg)
-            break;
-
-        // find the node which has same d-&gt;m_handle as completed transfer
-        CURL* handle = msg-&gt;easy_handle;
-        ASSERT(handle);
-        ResourceHandle* job = 0;
-        CURLcode err = curl_easy_getinfo(handle, CURLINFO_PRIVATE, &amp;job);
-        ASSERT_UNUSED(err, CURLE_OK == err);
-        ASSERT(job);
-        if (!job)
-            continue;
-        ResourceHandleInternal* d = job-&gt;getInternal();
-        ASSERT(d-&gt;m_handle == handle);
-
-        if (d-&gt;m_cancelled) {
-            removeFromCurl(job);
-            continue;
-        }
-
-        if (CURLMSG_DONE != msg-&gt;msg)
-            continue;
-
-        if (CURLE_OK == msg-&gt;data.result) {
-            if (!d-&gt;m_response.responseFired()) {
-                handleLocalReceiveResponse(d-&gt;m_handle, job, d);
-                if (d-&gt;m_cancelled) {
-                    removeFromCurl(job);
-                    continue;
-                }
-            }
-
-            if (d-&gt;client())
-                d-&gt;client()-&gt;didFinishLoading(job, 0);
-        } else {
-            char* url = 0;
-            curl_easy_getinfo(d-&gt;m_handle, CURLINFO_EFFECTIVE_URL, &amp;url);
-#ifndef NDEBUG
-            fprintf(stderr, &quot;Curl ERROR for url=&apos;%s&apos;, error: &apos;%s&apos;\n&quot;, url, curl_easy_strerror(msg-&gt;data.result));
-#endif
-            if (d-&gt;client())
-                d-&gt;client()-&gt;didFail(job, ResourceError(String(), msg-&gt;data.result, String(url), String(curl_easy_strerror(msg-&gt;data.result))));
-        }
-
-        removeFromCurl(job);
-    }
-
-    bool started = startScheduledJobs(); // new jobs might have been added in the meantime
-
-    if (!m_downloadTimer.isActive() &amp;&amp; (started || (runningHandles &gt; 0)))
-        m_downloadTimer.startOneShot(pollTimeSeconds);
+    ASSERT(errorObject);
+    throwError(exec, errorObject);
 }
-</code></pre>
+</code></pre><p>以上就是回调函数的执行。</p>
+
       
     </div>
     
@@ -525,8 +459,8 @@ private:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/12/24/ajax1/" rel="next" title="Ajax在浏览器上具体是如何执行的（1）">
-                <i class="fa fa-chevron-left"></i> Ajax在浏览器上具体是如何执行的（1）
+              <a href="/blog/2018/12/28/ajax2/" rel="next" title="Ajax在浏览器上具体是如何执行的（2）">
+                <i class="fa fa-chevron-left"></i> Ajax在浏览器上具体是如何执行的（2）
               </a>
             
           </div>
@@ -534,10 +468,6 @@ private:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2018/12/29/ajax3/" rel="prev" title="Ajax在浏览器上具体是如何执行的（3）">
-                Ajax在浏览器上具体是如何执行的（3） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
