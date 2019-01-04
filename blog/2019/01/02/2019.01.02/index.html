@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的 第一篇（http://www.ltplayer.com/blog/2018/12/24/ajax1/)文章说过 webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onr">
+<meta name="description" content="好像安卓和IOS程序员最常说的关于他们专业的名词就是webview，但是这个webview到底是个啥玩意？  先从安卓程序员用的webview入手，就几个webview的函数 WebView.loadUrl(&amp;quot;http://www.ltplayer.com&amp;quot;);// 加载url，也可以执行js函数   WebView.setWebViewClient(new SafeWebVi">
 <meta name="keywords" content="webkit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax在浏览器上具体是如何执行的（3）">
-<meta property="og:url" content="http://www.ltplayer.com/blog/2018/12/29/ajax3/index.html">
+<meta property="og:title" content="手机程序员常说的webview到底是个啥东西">
+<meta property="og:url" content="http://www.ltplayer.com/blog/2019/01/02/2019.01.02/index.html">
 <meta property="og:site_name" content="薄荷醇">
-<meta property="og:description" content="最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的 第一篇（http://www.ltplayer.com/blog/2018/12/24/ajax1/)文章说过 webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onr">
+<meta property="og:description" content="好像安卓和IOS程序员最常说的关于他们专业的名词就是webview，但是这个webview到底是个啥玩意？  先从安卓程序员用的webview入手，就几个webview的函数 WebView.loadUrl(&amp;quot;http://www.ltplayer.com&amp;quot;);// 加载url，也可以执行js函数   WebView.setWebViewClient(new SafeWebVi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T04:21:12.809Z">
+<meta property="og:updated_time" content="2019-01-04T10:29:06.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax在浏览器上具体是如何执行的（3）">
-<meta name="twitter:description" content="最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的 第一篇（http://www.ltplayer.com/blog/2018/12/24/ajax1/)文章说过 webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onr">
+<meta name="twitter:title" content="手机程序员常说的webview到底是个啥东西">
+<meta name="twitter:description" content="好像安卓和IOS程序员最常说的关于他们专业的名词就是webview，但是这个webview到底是个啥玩意？  先从安卓程序员用的webview入手，就几个webview的函数 WebView.loadUrl(&amp;quot;http://www.ltplayer.com&amp;quot;);// 加载url，也可以执行js函数   WebView.setWebViewClient(new SafeWebVi">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ltplayer.com/blog/2018/12/29/ajax3/">
+  <link rel="canonical" href="http://www.ltplayer.com/blog/2019/01/02/2019.01.02/">
 
 
 
 
 
-  <title>Ajax在浏览器上具体是如何执行的（3） | 薄荷醇</title>
+  <title>手机程序员常说的webview到底是个啥东西 | 薄荷醇</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ltplayer.com/blog/blog/2018/12/29/ajax3/">
+    <link itemprop="mainEntityOfPage" href="http://www.ltplayer.com/blog/blog/2019/01/02/2019.01.02/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Will Lee">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ajax在浏览器上具体是如何执行的（3）</h1>
+          <h1 class="post-title" itemprop="name headline">手机程序员常说的webview到底是个啥东西</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-29T11:35:25+08:00">
-                2018-12-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T12:58:58+08:00">
+                2019-01-02
               </time>
             
 
@@ -352,83 +352,83 @@
       
 
       
-        <p>最后一讲，说说readystatechange，前一篇文章说过webkit的请求方式，以及如何返回数据，如何实现的异步等，今天讲整个ajax请求的最后一步，请求回来的数据是如何使用的</p>
-<p>第一篇（<a href="http://www.ltplayer.com/blog/2018/12/24/ajax1/">http://www.ltplayer.com/blog/2018/12/24/ajax1/</a>)文章说过</p>
-<p>webkit会使用setJSXMLHttpRequestOnreadystatechange将你的onreadystatechange设置，那么再请求完成后，它就会去调用它，就是使用下面的函数完成</p>
-<pre><code>void XMLHttpRequest::callReadyStateChangeListener()
+        <p>好像安卓和IOS程序员最常说的关于他们专业的名词就是webview，但是这个webview到底是个啥玩意？</p>
+<p> 先从安卓程序员用的webview入手，就几个webview的函数</p>
+<pre><code>WebView.loadUrl(&quot;http://www.ltplayer.com&quot;);// 加载url，也可以执行js函数
+  WebView.setWebViewClient(new SafeWebViewClient());// 设置 WebViewClient 
+  WebView.setWebChromeClient(new SafeWebChromeClient());// 设置 WebChromeClient
+  WebView.onResume();
+  WebView.resumeTimers();
+  WebView.onPause();
+  WebView.pauseTimers();
+  WebView.stopLoading();// 停止当前加载
+  WebView.clearMatches();
+  WebView.canGoBack();
+  WebView.clearSslPreferences();
+  WebView.clearCache(true);方也会使用到。该方法接受一个参数，从命名即可看出作用。若设为false，则只清空内存里的资源缓存，而不清空磁盘里的。
+  WebView.loadUrl(&quot;about:blank&quot;);
+  WebView.removeAllViews();//
+  WebView.destroy();// 生命周期销毁
+</code></pre><p>java程序员不陌生，这个就是安卓上的一些webview的操作。</p>
+<p>不过，webview作为webkit的一种调用，它一定是使用了webkit,但它具体在webkit中是如何调用的呢？</p>
+<p>其实要弄明白这事情，就需要看webkit源码了。</p>
+<p>打开webkit源代码D:\WebKit\Source\WebKit\文件夹，你会看到里面有很多，不同平台的名字,win、wince、qt、gtk、blackberry…很多,随便打开个看看，从文件结构上去看，基本上差不了多少，从名字也上也能分析出来，这个是不同平台下使用的东西，选择一个文件夹进入，win代表windows，平常多用windows，所以看这个，比较好理解。</p>
+<p>进入win以后，你会看到有很多的文件，非常多，但仔细看，你就会发现一个叫WebView.cpp,WebView.h,这个就是传统意义上的webview，打开文件看看,会发现有一些方法在C++的定义中是存在的,比如stopLoading</p>
+<pre><code>RESULT STDMETHODCALLTYPE WebView::stopLoading( 
+        /* [in] */ IUnknown* /*sender*/)
 {
-    if (!scriptExecutionContext())
-        return;
+    if (!m_mainFrame)
+        return E_FAIL;
 
-    InspectorInstrumentationCookie cookie = InspectorInstrumentation::willChangeXHRReadyState(scriptExecutionContext(), this);
-
-    if (m_async || (m_state &lt;= OPENED || m_state == DONE))
-        m_progressEventThrottle.dispatchEvent(XMLHttpRequestProgressEvent::create(eventNames().readystatechangeEvent), m_state == DONE ? FlushProgressEvent : DoNotFlushProgressEvent);
-
-    InspectorInstrumentation::didChangeXHRReadyState(cookie);
-
-    if (m_state == DONE &amp;&amp; !m_error) {
-        InspectorInstrumentationCookie cookie = InspectorInstrumentation::willLoadXHR(scriptExecutionContext(), this);
-        m_progressEventThrottle.dispatchEvent(XMLHttpRequestProgressEvent::create(eventNames().loadEvent));
-        InspectorInstrumentation::didLoadXHR(cookie);
-        m_progressEventThrottle.dispatchEvent(XMLHttpRequestProgressEvent::create(eventNames().loadendEvent));
-    }
+    return m_mainFrame-&gt;stopLoading();
 }
-</code></pre><p>callReadyStateChangeListener的函数会执行回调函数，然后通过你要调用的属性，执行不同的方法和获取属性</p>
-<p>xmlhttp.readyState会调用jsXMLHttpRequestReadyState</p>
-<pre><code>JSValue jsXMLHttpRequestReadyState(ExecState* exec, JSValue slotBase, const Identifier&amp;)
+</code></pre><p>比如和destroy对应的close</p>
+<pre><code>HRESULT STDMETHODCALLTYPE WebView::close()
 {
-    JSXMLHttpRequest* castedThis = static_cast&lt;JSXMLHttpRequest*&gt;(asObject(slotBase));
-    UNUSED_PARAM(exec);
-    XMLHttpRequest* impl = static_cast&lt;XMLHttpRequest*&gt;(castedThis-&gt;impl());
-    JSValue result = jsNumber(impl-&gt;readyState());
-    return result;
-}
-</code></pre><p>xmlhttp.status会调用jsXMLHttpRequestStatus</p>
-<pre><code>JSValue jsXMLHttpRequestStatus(ExecState* exec, JSValue slotBase, const Identifier&amp;)
-{
-    JSXMLHttpRequest* castedThis = static_cast&lt;JSXMLHttpRequest*&gt;(asObject(slotBase));
-    ExceptionCode ec = 0;
-    XMLHttpRequest* impl = static_cast&lt;XMLHttpRequest*&gt;(castedThis-&gt;impl());
-    JSC::JSValue result = jsNumber(impl-&gt;status(ec));
-    setDOMException(exec, ec);
-    return result;
-}
-</code></pre><p>xmlhttp.responseText会调用responseText，因为有可能发生错误而获取不到数据，所以有判断，如果失败则返回jsUndefined()，也就是javascript里的undefined</p>
-<pre><code>JSValue JSXMLHttpRequest::responseText(ExecState* exec) const
-{
-    ExceptionCode ec = 0;
-    String text = impl()-&gt;responseText(ec);
-    if (ec) {
-        setDOMException(exec, ec);
-        return jsUndefined();
-    }
-    return jsOwnedStringOrNull(exec, text);
-}
-</code></pre><p>执行每个函数或是获取某个属性都有发生错误，所以，每个函数都定义了一个ExceptionCode类型的变量，执行后返回值</p>
-<pre><code>typedef int ExceptionCode;
-</code></pre><p>在每次返回后检查ec的值，如果错误就执行throwError(exec, errorObject);</p>
-<pre><code>void setDOMException(ExecState* exec, ExceptionCode ec)
-{
-    if (!ec || exec-&gt;hadException())
-        return;
+    if (m_didClose)
+        return S_OK;
 
-    // FIXME: All callers to setDOMException need to pass in the right global object
-    // for now, we&apos;re going to assume the lexicalGlobalObject.  Which is wrong in cases like this:
-    // frames[0].document.createElement(null, null); // throws an exception which should have the subframes prototypes.
-    JSDOMGlobalObject* globalObject = deprecatedGlobalObjectForPrototype(exec);
+    m_didClose = true;
 
-    ExceptionCodeDescription description(ec);
+#if USE(ACCELERATED_COMPOSITING)
+    setAcceleratedCompositing(false);
+#endif
 
-    JSValue errorObject;
-    switch (description.type) {
-        DOM_EXCEPTION_INTERFACES_FOR_EACH(TRY_TO_CREATE_EXCEPTION)
+    WebNotificationCenter::defaultCenterInternal()-&gt;postNotificationName(_bstr_t(WebViewWillCloseNotification).GetBSTR(), static_cast&lt;IWebView*&gt;(this), 0);
+
+    if (m_uiDelegatePrivate)
+        m_uiDelegatePrivate-&gt;webViewClosing(this);
+
+    removeFromAllWebViewsSet();
+
+    if (m_page) {
+        if (Frame* frame = m_page-&gt;mainFrame())
+            frame-&gt;loader()-&gt;detachFromParent();
     }
 
-    ASSERT(errorObject);
-    throwError(exec, errorObject);
+    if (m_mouseOutTracker) {
+        m_mouseOutTracker-&gt;dwFlags = TME_CANCEL;
+        ::TrackMouseEvent(m_mouseOutTracker.get());
+        m_mouseOutTracker.clear();
+    }
+</code></pre><p>不过你会发现，即使叫webview但实际上在webview.cpp中也有很多方法是找不到的，比如setWebChromeClient，在webview中没有关于他的C++函数存在，这个时候就有两种可能，一，名字不同java二次封装时改变了原有名称。二，它并不再webview里定义。</p>
+<p>所以，在继续找找。。。</p>
+<p>你会发现在WebCoreSupport文件夹下有个叫WebChromeClient.cpp的文件</p>
+<pre><code>WebChromeClient::WebChromeClient(WebView* webView)
+   76      : m_webView(webView)
+   77  #if ENABLE(NOTIFICATIONS)
+   ..
+   81  }
+</code></pre><p>对，这个就是setWebChromeClient，只不过是在win平台上的在安卓平台上，有一个和他差不多的文件存在。在继续找找其他的方法定义</p>
+<p>stopLoading定义在WebFrame.cpp中</p>
+<pre><code>HRESULT STDMETHODCALLTYPE WebFrame::stopLoading( void)
+{
+    if (Frame* coreFrame = core(this))
+        coreFrame-&gt;loader()-&gt;stopAllLoaders();
+    return S_OK;
 }
-</code></pre><p>以上就是回调函数的执行。</p>
+</code></pre><p>还有关于历史记录的操作定义在WebHistory中，关于缓存的操作定义在WebCache里。继续找下去，所有的webview调用的方法都能在不同平台的响应文件中找到。</p>
+<p>总上所述，其实webview并不是安卓或者IOS独有的东西,webview就是个对不同平台开放的webkit有API,也包括对Ios和安卓，他定义了在不同平台下的操作方式，以及不同平台下,不同的特性，比如在win平台下利用createwindow来创建窗口，用消息方式来处理各种交互等</p>
 
       
     </div>
@@ -459,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/12/28/ajax2/" rel="next" title="Ajax在浏览器上具体是如何执行的（2）">
-                <i class="fa fa-chevron-left"></i> Ajax在浏览器上具体是如何执行的（2）
+              <a href="/blog/2018/12/29/ajax3/" rel="next" title="Ajax在浏览器上具体是如何执行的（3）">
+                <i class="fa fa-chevron-left"></i> Ajax在浏览器上具体是如何执行的（3）
               </a>
             
           </div>
@@ -468,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2019/01/02/2019.01.02/" rel="prev" title="手机程序员常说的webview到底是个啥东西">
-                手机程序员常说的webview到底是个啥东西 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
