@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="webkit,">
+  <meta name="keywords" content="C++,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Ajax是目前web开发中使用很基本的技术了，搞web的程序员一定都搞过Ajax,即使没有自己用javascript写过原生Ajax，也一定使用过javascript框架中封装好的Ajax，比如jquery中，就有对Ajax的很好封装。 不过，用过，不见得就对Ajax真的了解的透彻，比如，Ajax技术是如何实现的？使用Ajax的时候，javascript扮演的角色是什么？浏览器时候是如何工作的？外">
-<meta name="keywords" content="webkit">
+<meta name="description" content="用C++处理JSON的库有很多,JSONCPP,json-parser,Jansson…太多了 不过我们搞程序开发，不一定需要一个库有多么强大的功能，但是这个库一定要能满足我们的要求，同时，开发起来要简单，最好不要增加我们的开发负担和学习负担。 我在开发menthol语言的JSON模块处理时，发现了一个简单、易用的JSON处理库-CJSON 看它的官方介绍  Welcome to cJSON. c">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax在浏览器上具体是如何执行的（1）">
-<meta property="og:url" content="http://www.ltplayer.com/blog/2018/12/24/ajax1/index.html">
+<meta property="og:title" content="cJSON-使用简单且功能强大的JSON解析库">
+<meta property="og:url" content="http://www.ltplayer.com/blog/2019/01/09/2019.01.09/index.html">
 <meta property="og:site_name" content="薄荷醇">
-<meta property="og:description" content="Ajax是目前web开发中使用很基本的技术了，搞web的程序员一定都搞过Ajax,即使没有自己用javascript写过原生Ajax，也一定使用过javascript框架中封装好的Ajax，比如jquery中，就有对Ajax的很好封装。 不过，用过，不见得就对Ajax真的了解的透彻，比如，Ajax技术是如何实现的？使用Ajax的时候，javascript扮演的角色是什么？浏览器时候是如何工作的？外">
+<meta property="og:description" content="用C++处理JSON的库有很多,JSONCPP,json-parser,Jansson…太多了 不过我们搞程序开发，不一定需要一个库有多么强大的功能，但是这个库一定要能满足我们的要求，同时，开发起来要简单，最好不要增加我们的开发负担和学习负担。 我在开发menthol语言的JSON模块处理时，发现了一个简单、易用的JSON处理库-CJSON 看它的官方介绍  Welcome to cJSON. c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T07:35:15.834Z">
+<meta property="og:updated_time" content="2019-01-09T09:46:44.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax在浏览器上具体是如何执行的（1）">
-<meta name="twitter:description" content="Ajax是目前web开发中使用很基本的技术了，搞web的程序员一定都搞过Ajax,即使没有自己用javascript写过原生Ajax，也一定使用过javascript框架中封装好的Ajax，比如jquery中，就有对Ajax的很好封装。 不过，用过，不见得就对Ajax真的了解的透彻，比如，Ajax技术是如何实现的？使用Ajax的时候，javascript扮演的角色是什么？浏览器时候是如何工作的？外">
+<meta name="twitter:title" content="cJSON-使用简单且功能强大的JSON解析库">
+<meta name="twitter:description" content="用C++处理JSON的库有很多,JSONCPP,json-parser,Jansson…太多了 不过我们搞程序开发，不一定需要一个库有多么强大的功能，但是这个库一定要能满足我们的要求，同时，开发起来要简单，最好不要增加我们的开发负担和学习负担。 我在开发menthol语言的JSON模块处理时，发现了一个简单、易用的JSON处理库-CJSON 看它的官方介绍  Welcome to cJSON. c">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ltplayer.com/blog/2018/12/24/ajax1/">
+  <link rel="canonical" href="http://www.ltplayer.com/blog/2019/01/09/2019.01.09/">
 
 
 
 
 
-  <title>Ajax在浏览器上具体是如何执行的（1） | 薄荷醇</title>
+  <title>cJSON-使用简单且功能强大的JSON解析库 | 薄荷醇</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ltplayer.com/blog/blog/2018/12/24/ajax1/">
+    <link itemprop="mainEntityOfPage" href="http://www.ltplayer.com/blog/blog/2019/01/09/2019.01.09/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Will Lee">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ajax在浏览器上具体是如何执行的（1）</h1>
+          <h1 class="post-title" itemprop="name headline">cJSON-使用简单且功能强大的JSON解析库</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T17:17:45+08:00">
-                2018-12-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-09T17:42:40+08:00">
+                2019-01-09
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/web开发/" itemprop="url" rel="index">
-                    <span itemprop="name">web开发</span>
+                  <a href="/blog/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
                   </a>
                 </span>
 
@@ -352,114 +352,111 @@
       
 
       
-        <p>Ajax是目前web开发中使用很基本的技术了，搞web的程序员一定都搞过Ajax,即使没有自己用javascript写过原生Ajax，也一定使用过javascript框架中封装好的Ajax，比如jquery中，就有对Ajax的很好封装。</p>
-<p>不过，用过，不见得就对Ajax真的了解的透彻，比如，Ajax技术是如何实现的？使用Ajax的时候，javascript扮演的角色是什么？浏览器时候是如何工作的？外部数据又是怎样返回到你调用的javascipt程序内？…诸如此类的问题，还是有很多开发人员没有想过，即使想过，也没有深入了解过这个问题。</p>
-<p>没关系，下面我将对Ajax的实现做一次透彻的分析。</p>
-<p><em>我以下所讲内容，全部基于webkit内核浏览器，所以有些内容可能不适用于<strong>Trident，Gecko</strong>或者其他内核</em></p>
-<p>要弄透彻Ajax的工作方式，就要首先了解一下什么是Ajax</p>
+        <p>用C++处理JSON的库有很多,JSONCPP,json-parser,Jansson…太多了</p>
+<p>不过我们搞程序开发，不一定需要一个库有多么强大的功能，但是这个库一定要能满足我们的要求，同时，开发起来要简单，最好不要增加我们的开发负担和学习负担。</p>
+<p>我在开发<a href="https://github.com/ltframe/menthol" target="_blank" rel="noopener">menthol</a>语言的<a href="https://github.com/ltframe/menthol/blob/master/MSystem/Json.cpp" target="_blank" rel="noopener">JSON</a>模块处理时，发现了一个简单、易用的JSON处理库-<a href="https://github.com/DaveGamble/cJSON" target="_blank" rel="noopener">CJSON</a></p>
+<p><strong>看它的官方介绍</strong></p>
 <blockquote>
-<p><strong>Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。</strong></p>
+<p>Welcome to cJSON. cJSON aims to be the dumbest possible parser that<br>you can get your job done with. It’s a single file of C, and a single<br>header file.</p>
+<p>JSON is described best here: <a href="http://www.json.org/" target="_blank" rel="noopener">http://www.json.org/</a> It’s like XML, but<br>fat-free. You use it to move data around, store things, or just<br>generally represent your program’s state.</p>
+<p>As a library, cJSON exists to take away as much legwork as it can, but<br>not get in your way. As a point of pragmatism (i.e. ignoring the<br>truth), I’m going to say that you can use it in one of two modes: Auto<br>and Manual. Let’s have a quick run-through.</p>
+<p>I lifted some JSON from this page: <a href="http://www.json.org/fatfree.html" target="_blank" rel="noopener">http://www.json.org/fatfree.html</a><br>That page inspired me to write cJSON, which is a parser that tries to<br>share the same philosophy as JSON itself. Simple, dumb, out of the<br>way.</p>
 </blockquote>
-<p>从描述上可以看出,Ajax并非一种javascript的方法。而是javascript的一个应用方式<br>。所以基于上述分析，及应该可以了解到，Ajax并非依靠javascript代码就能实现，它必须依靠浏览器更底层工作才能实现，然后作为一个应用，由javascript调用，从而实现后台运行获取数据，而不用通过刷新页面获取数据</p>
-<p>下面是一段标准的javascript实现Ajax的过程 </p>
-<pre><code>var xmlhttp;
-xmlhttp=new XMLHttpRequest();
-xmlhttp.onreadystatechange=function()
+<p>就像上面说的，它的使用相对很简单，就两个文件cJSON.c，cJSON.h，开发的时候，引入你的项目中一起编译就可以了。</p>
+<p>先要了解一下cjson几个基本类型：cJSON_False，cJSON_True，cJSON_NULL，cJSON_Number，cJSON_String，cJSON_Array，cJSON_Object</p>
+<p>1.使用Cjson分析json各时时，要首先使用cJSON_Parse，来返回JSON结构</p>
+<pre><code>cJSON *json = cJSON_Parse(string);
+</code></pre><p>Cjson结构如下</p>
+<pre><code>typedef struct cJSON
 {
-    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+    struct cJSON *next;
+    struct cJSON *prev;
+    struct cJSON *child;
+    int type;
+    char *valuestring;
+    /* writing to valueint is DEPRECATED, use cJSON_SetNumberValue instead */
+    int valueint;
+    double valuedouble;
+    char *string;
+} cJSON;
+</code></pre><p>2.用cJSON_GetObjectItem来获取你要的key所对应的value</p>
+<pre><code>cJSON *json = cJSON_Parse(string);
+v = cJSON_GetObjectItemCaseSensitive(json, &quot;key&quot;);
+</code></pre><p>3.用type属性来判断返回的数据类型，根据不同的数据类型，取不同的值</p>
+<pre><code>v-&gt;type
+</code></pre><p>如果type是cJSON_Number，则用v-&gt;valuedouble来取数值<br>如果type是cJSON_String，则用v-&gt;valuestring来取数值</p>
+<p>4.如果是array,需要用cJSON_GetArrayItem(json,index)来获取一个cJSON*类型，然后在用第3步的方式来获取数据</p>
+<p>5.cJSON_GetArraySize可以获取到数组的大小</p>
+<p>6.解析完成后需要调用cJSON_Delete删除,第一步返回的指针</p>
+<pre><code>cJSON_Delete（json）
+</code></pre><h2 id="看一个官方实例"><a href="#看一个官方实例" class="headerlink" title="看一个官方实例"></a>看一个官方实例</h2><p><strong>JSON实例</strong></p>
+<pre><code>{
+    &quot;name&quot;: &quot;Awesome 4K&quot;,
+    &quot;resolutions&quot;: [
+        {
+            &quot;width&quot;: 1280,
+            &quot;height&quot;: 720
+        },
+        {
+            &quot;width&quot;: 1920,
+            &quot;height&quot;: 1080
+        },
+        {
+            &quot;width&quot;: 3840,
+            &quot;height&quot;: 2160
+        }
+    ]
+}
+</code></pre><p><strong>Cjson解析程序</strong></p>
+<pre><code>int supports_full_hd(const char * const monitor)
+{
+    const cJSON *resolution = NULL;
+    const cJSON *resolutions = NULL;
+    const cJSON *name = NULL;
+    int status = 0;
+    cJSON *monitor_json = cJSON_Parse(monitor);
+    if (monitor_json == NULL)
     {
-        xmlhttp.responseText;
-    }
-}
-xmlhttp.open(&quot;GET&quot;,&quot;http://www.google.com&quot;,true);
-xmlhttp.send();
-</code></pre><p>下面通过上面这个一段简单的脚本来说明Ajax的具体工作方式</p>
-<h2 id="1-JavaScript的角色"><a href="#1-JavaScript的角色" class="headerlink" title="1.JavaScript的角色"></a>1.JavaScript的角色</h2><p>脚本很简单，不用多解释，先说明一点，关于XMLHttpRequest的所有属性方法都定义webkit源码的JSXMLHttpRequest.cpp中。</p>
-<p>在webkit中，javascript是通过javascriptcore(javascript引擎)实现的，javascriptcore是很好的JS引擎，自带JIT。具体可查看webkit源码，Source\JavaScriptCore文件夹下便是全部的jsc的实现代码。</p>
-<p>webkit通过桥接程序，将javascriptcore API与dom 经行连接，让javascript可以操作htmldom,具体可见Source\WebCore\bridge</p>
-<p>以上是一些基本的webkit知识，现在看我们上面写的代码，第一句不用看，谁都知道啥意思.</p>
-<p>现在主要看第二句<br>    new XMLHttpRequest,</p>
-<p>XMLHttpRequest方法定义在Source\WebCore\xml\XMLHttpRequest.cpp</p>
-<p>这个是创建一个XMLHttpRequest对象</p>
-<pre><code>XMLHttpRequest::XMLHttpRequest(ScriptExecutionContext* context, PassRefPtr&lt;SecurityOrigin&gt; securityOrigin):ActiveDOMObject(context, this)
-</code></pre><p>当你调用onreadystatechange实际是调用了</p>
-<p>setJSXMLHttpRequestOnreadystatechange</p>
-<pre><code>void setJSXMLHttpRequestOnreadystatechange(ExecState* exec, JSObject* thisObject, JSValue value)
-{
-UNUSED_PARAM(exec);
-JSXMLHttpRequest* castedThis = static_cast&lt;JSXMLHttpRequest*&gt;(thisObject);
-XMLHttpRequest* impl = static_cast&lt;XMLHttpRequest*&gt;(castedThis-&gt;impl());
-impl-&gt;setOnreadystatechange(createJSAttributeEventListener(exec, value, thisObject));
-}
-</code></pre><p>impl-&gt;setOnreadystatechange(createJSAttributeEventListener(exec, value, thisObject))</p>
-<p>这句话至关重要，这个就是你定义的无名函数，在数据返回时，程序将调用你刚才定义的代码，接下来</p>
-<p>xmlhttp.open(“GET”,”<a href="http://www.google.com&quot;,true)" target="_blank" rel="noopener">www.google.com&quot;,true)</a>;</p>
-<p>这句话会调用Source\WebCore\bindings\js\JSXMLHttpRequestCustom.cpp,目的是通过参数进行调用不同的函数重载，有一些参数，比如user,async这些都是判断时候同步，是否有用户名，密码KURL是webkit处理url时的统一类,主要记录url地址jsUndefined() 是每一个jsc函数扩展的返回类型，如果没有js返回，则返回jsUndefined()，就是js代码中的undefied;</p>
-<pre><code>JSValue JSXMLHttpRequest::open(ExecState* exec)
-{
-    if (exec-&gt;argumentCount() &lt; 2)
-    return throwError(exec, createSyntaxError(exec, &quot;Not enough arguments&quot;));
-
-    const KURL&amp; url = impl()-&gt;scriptExecutionContext()-&gt;completeURL(ustringToString(exec-&gt;argument(1).toString(exec)-&gt;value(exec)));
-    String method = ustringToString(exec-&gt;argument(0).toString(exec)-&gt;value(exec));
-
-    ExceptionCode ec = 0;
-    if (exec-&gt;argumentCount() &gt;= 3) {
-    bool async = exec-&gt;argument(2).toBoolean(exec);
-
-    if (exec-&gt;argumentCount() &gt;= 4 &amp;&amp; !exec-&gt;argument(3).isUndefined()) {
-    String user = valueToStringWithNullCheck(exec, exec-&gt;argument(3));
-
-    if (exec-&gt;argumentCount() &gt;= 5 &amp;&amp; !exec-&gt;argument(4).isUndefined()) {
-    String password = valueToStringWithNullCheck(exec, exec-&gt;argument(4));
-    impl()-&gt;open(method, url, async, user, password, ec);
-    } else
-    impl()-&gt;open(method, url, async, user, ec);
-    } else
-    impl()-&gt;open(method, url, async, ec);
-    } else
-    impl()-&gt;open(method, url, ec);
-
-    setDOMException(exec, ec);
-    return jsUndefined();
-}
-</code></pre><p>以上全是为要发起请求所做的工作，执行xmlhttp.send()才会真正的发送请求,一直到createRequest(ec)以前，还是为发起请求做一个必要的需求，比如判断发送方式、定义httphead、设置字符集。createRequest(ec)是真的开始请求了</p>
-<pre><code>void XMLHttpRequest::send(const String&amp; body, ExceptionCode&amp; ec)
-{
-    if (!initSend(ec))
-    return;
-
-    if (!body.isNull() &amp;&amp; m_method != &quot;GET&quot; &amp;&amp; m_method != &quot;HEAD&quot; &amp;&amp; m_url.protocolInHTTPFamily()) {
-    String contentType = getRequestHeader(&quot;Content-Type&quot;);
-    if (contentType.isEmpty()) {
-    #if ENABLE(DASHBOARD_SUPPORT)
-    if (usesDashboardBackwardCompatibilityMode())
-    setRequestHeaderInternal(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-    else
-    #endif
-    setRequestHeaderInternal(&quot;Content-Type&quot;, &quot;application/xml&quot;);
-    } else {
-    replaceCharsetInMediaType(contentType, &quot;UTF-8&quot;);
-    m_requestHeaders.set(&quot;Content-Type&quot;, contentType);
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL)
+        {
+            fprintf(stderr, &quot;Error before: %s\n&quot;, error_ptr);
+        }
+        status = 0;
+        goto end;
     }
 
-    m_requestEntityBody = FormData::create(UTF8Encoding().encode(body.characters(), body.length(), EntitiesForUnencodables));
-    if (m_upload)
-    m_requestEntityBody-&gt;setAlwaysStream(true);
+    name = cJSON_GetObjectItemCaseSensitive(monitor_json, &quot;name&quot;);
+    if (cJSON_IsString(name) &amp;&amp; (name-&gt;valuestring != NULL))
+    {
+        printf(&quot;Checking monitor \&quot;%s\&quot;\n&quot;, name-&gt;valuestring);
     }
 
-    createRequest(ec);
-}
-</code></pre><p>当然，webkit代码中通过了好多层调用才到了我们上面看的代码，并不是仅仅只有上面一点，不过上面就是代码就是JS操作的基本方式，在javascript代码中，他能做的就是以上这些工作</p>
-<p>总结一下，javascript在ajax是所做的工作</p>
-<div id="flowchart-0" class="flow-chart"></div>
+    resolutions = cJSON_GetObjectItemCaseSensitive(monitor_json, &quot;resolutions&quot;);
+    cJSON_ArrayForEach(resolution, resolutions)
+    {
+        cJSON *width = cJSON_GetObjectItemCaseSensitive(resolution, &quot;width&quot;);
+        cJSON *height = cJSON_GetObjectItemCaseSensitive(resolution, &quot;height&quot;);
 
-<p>有了以上的工作，javascript端就是完成了，具体是如何开是调用数据的，又如何使用异步调用的，请看一下节</p>
-<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start:定义请求的必要参数，如URL,回调地址等
-op=>operation: 由javascriptcore解析后由webcore中的桥接程序绑定至指定
-cond=>condition: 等待后台操作返回
-e=>end
-st->op->cond</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+        if (!cJSON_IsNumber(width) || !cJSON_IsNumber(height))
+        {
+            status = 0;
+            goto end;
+        }
+
+        if ((width-&gt;valuedouble == 1920) &amp;&amp; (height-&gt;valuedouble == 1080))
+        {
+            status = 1;
+            goto end;
+        }
+    }
+
+end:
+    cJSON_Delete(monitor_json);
+    return status;
+}
+</code></pre><p>总体来说，Cjson使用简单、简便、无学习成本，可以说是分析JSON的一个很好的工具</p>
+<p>如果想更了解Cjson到具体使用实例,可以查看我开发的<a href="https://github.com/ltframe/menthol" target="_blank" rel="noopener">menthol</a>语言的<a href="https://github.com/ltframe/menthol/blob/master/MSystem/Json.cpp" target="_blank" rel="noopener">JSON</a>模块实现</p>
 
       
     </div>
@@ -477,7 +474,7 @@ st->op->cond</textarea><textarea id="flowchart-0-options" style="display: none">
       
         <div class="post-tags">
           
-            <a href="/blog/tags/webkit/" rel="tag"># webkit</a>
+            <a href="/blog/tags/C/" rel="tag"># C++</a>
           
         </div>
       
@@ -490,15 +487,15 @@ st->op->cond</textarea><textarea id="flowchart-0-options" style="display: none">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/2019/01/08/2019.01.08/" rel="next" title="deelx-使用C++开发而成的一个优秀的正则表达式库">
+                <i class="fa fa-chevron-left"></i> deelx-使用C++开发而成的一个优秀的正则表达式库
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2018/12/28/ajax2/" rel="prev" title="Ajax在浏览器上具体是如何执行的（2）">
-                Ajax在浏览器上具体是如何执行的（2） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -660,7 +657,7 @@ st->op->cond</textarea><textarea id="flowchart-0-options" style="display: none">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JavaScript的角色"><span class="nav-number">1.</span> <span class="nav-text">1.JavaScript的角色</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#看一个官方实例"><span class="nav-number">1.</span> <span class="nav-text">看一个官方实例</span></a></li></ol></div>
             
 
           </div>
