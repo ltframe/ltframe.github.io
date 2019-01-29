@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>系统模块 - Menthol document</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../v.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7cfb\u7edf\u6a21\u5757";
+    var mkdocs_page_input_path = "builtin-function.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Menthol document</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">教程</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">系统模块</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#console">Console</a></li>
+    
+
+    <li class="toctree-l2"><a href="#datetime">DateTime</a></li>
+    
+
+    <li class="toctree-l2"><a href="#dict">Dict</a></li>
+    
+
+    <li class="toctree-l2"><a href="#environment">Environment</a></li>
+    
+
+    <li class="toctree-l2"><a href="#string">String</a></li>
+    
+
+    <li class="toctree-l2"><a href="#regex">Regex</a></li>
+    
+
+    <li class="toctree-l2"><a href="#json">Json</a></li>
+    
+
+    <li class="toctree-l2"><a href="#math">Math</a></li>
+    
+
+    <li class="toctree-l2"><a href="#number">Number</a></li>
+    
+
+    <li class="toctree-l2"><a href="#array">Array</a></li>
+    
+
+    <li class="toctree-l2"><a href="#file">File</a></li>
+    
+
+    <li class="toctree-l2"><a href="#directory">Directory</a></li>
+    
+
+    <li class="toctree-l2"><a href="#drive">Drive</a></li>
+    
+
+    <li class="toctree-l2"><a href="#mdx">Mdx</a></li>
+    
+
+    <li class="toctree-l2"><a href="#basex">Basex</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ripemd">Ripemd</a></li>
+    
+
+    <li class="toctree-l2"><a href="#shax">Shax</a></li>
+    
+
+    <li class="toctree-l2"><a href="#aesx">Aesx</a></li>
+    
+
+    <li class="toctree-l2"><a href="#desx">Desx</a></li>
+    
+
+    <li class="toctree-l2"><a href="#crx">Crx</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Menthol document</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>系统模块</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="console">Console</h1>
+<p><strong>所在包：Console</strong></p>
+<p class="cu_p">def Out:$arg1</p>
+
+<p>输出至控制台</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要输出的内容</p>
+<p><strong>Return:</strong>Null</p>
+<p class="cu_p">def Oute:$arg1</p>
+
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要输出的内容</p>
+<p><strong>Return:</strong>Null
+<p class="cu_p">def In:</p></p>
+<p>从控制台输入</p>
+<p><strong>Return:</strong>Null</p>
+<p class="cu_p">def Clear:</p>
+
+<p>清除控制台</p>
+<p><strong>Return:</strong>Null</p>
+<hr />
+<h1 id="datetime">DateTime</h1>
+<p><strong>所在包：DateTime</strong></p>
+<p class="cu_p">def CurrentDate:</p>
+
+<p>获取当前日期</p>
+<p><strong>Return:</strong>日期</p>
+<p class="cu_p">def CurrentTime:</p>
+
+<p>获取当前日期和时间</p>
+<p><strong>Return:</strong>日期和时间</p>
+<p class="cu_p">def TimeZone:</p>
+
+<p>获取当前时间戳</p>
+<p><strong>Return:</strong>当前时间戳</p>
+<hr />
+<h1 id="dict">Dict</h1>
+<p><strong>所在包：Dict</strong></p>
+<p class="cu_p">def Length:$arg1</p>
+
+<p>返回一个字典的长度</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要测试的字典</p>
+<p><strong>Return:</strong>测试的字典键的数量</p>
+<p class="cu_p">def Push:$key,$dict,$value</p>
+
+<p><strong>Parameters:</strong></p>
+<p>$key：要加入的新的key
+$dict:要加入的字典
+$key：要加入的新值</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def SetValue:$key,$dict,$value</p>
+
+<p><strong>Parameters:</strong></p>
+<p>$key：要设置的新的key
+$dict:要设置的字典
+$key：要设置的新值</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def GetKey:$arg1,$arg2</p>
+
+<p>获取键</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字典</p>
+<p>$arg2:值</p>
+<p><strong>Return:</strong>键名</p>
+<p class="cu_p">def GetValue:$arg1,$arg2</p>
+
+<p>获取值</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字典</p>
+<p>$arg2:键值</p>
+<p><strong>Return:</strong></p>
+<p class="cu_p">def Reomve:$dict,$key</p>
+
+<p><strong>Parameters:</strong></p>
+<p>$key：要删除的键
+$dict:字典</p>
+<p><strong>Return:</strong>null</p>
+<hr />
+<h1 id="environment">Environment</h1>
+<p><strong>所在包：Environment</strong></p>
+<p class="cu_p">def Version:</p>
+
+<p>返回menthol版本</p>
+<p><strong>Return:</strong>版本号
+<p class="cu_p">def Sleep:$arg1</p>
+系统休眠指定时间</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：休眠的时间，毫秒</p>
+<p><strong>Return:</strong>null
+<p class="cu_p">def SystemInfo:</p></p>
+<p>返回关于当前系统的信息</p>
+<p><strong>Return:</strong>返回字典，包含以下key</p>
+<p>ActiveProcessorMas:处理器掩码</p>
+<p>NumberOfPkrocessors:处理器个数</p>
+<p>PageSize:处理器分页大小</p>
+<p>ProcessorLevel:处理器等级</p>
+<p>ProcessorRevision:处理器版本</p>
+<p class="cu_p">def CpuInfo:</p>
+
+<p>返回关于当前CPUID</p>
+<p><strong>Return:</strong>返回字符串</p>
+<p class="cu_p">def SystemMemory:</p>
+
+<p>返回关于当前内存大小</p>
+<p><strong>Return:</strong>内存大小</p>
+<p class="cu_p">def OsInfo:</p>
+
+<p>返回关于当前操作系统版本</p>
+<p><strong>Return:</strong>字符串</p>
+<p class="cu_p">def Getpid:</p>
+
+<p>取得进程识别码</p>
+<p><strong>Return:</strong>字符串</p>
+<p class="cu_p">def Exit:$arg1</p>
+
+<p><strong>Parameters:</strong></p>
+<p>$arg1：退出的code</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def System:$arg1</p>
+
+<p>执行系统命令</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要执行的系统命令</p>
+<p><strong>Return:</strong>失败返回-1</p>
+<p class="cu_p">def MachineName:</p>
+
+<p>返回关于当前获取电脑名称</p>
+<p><strong>Return:</strong>字符串</p>
+<p class="cu_p">def UserName:</p>
+
+<p>返回关于当前登录的用户名</p>
+<p><strong>Return:</strong>字符串</p>
+<p class="cu_p">def TickCount:</p>
+
+<p>从操作系统启动所经过（elapsed）的毫秒数</p>
+<p><strong>Return:</strong>毫秒数</p>
+<p class="cu_p">def NewGuid:</p>
+
+<p>创建一个GUID</p>
+<p><strong>Return:</strong>字符串</p>
+<hr />
+<h1 id="string">String</h1>
+<p><strong>所在包：String</strong></p>
+<p class="cu_p">def StoN:$arg1</p>
+
+<p>把字符串转换为数字</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要转换的字符串</p>
+<p><strong>Return:</strong>转换后的数字</p>
+<p class="cu_p">def Length:$arg1</p>
+
+<p>测试字符串的字符长度</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要测试字符串</p>
+<p><strong>Return:</strong>字符串的长度</p>
+<p class="cu_p">def IndexOf:$arg1,$arg2</p>
+
+<p>查找$arg2在$arg1中的位置</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：被查找的字符串</p>
+<p>$arg2：要查找的字符</p>
+<p><strong>Return:</strong>数字</p>
+<p class="cu_p">def Replace:$arg1,$arg2,$arg3</p>
+
+<p>在$arg1把$arg2替换为$arg3</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：原字符串</p>
+<p>$arg2：要替换的字符</p>
+<p>$arg2：替换成的字符</p>
+<p><strong>Return:</strong>替换后的字符串</p>
+<p class="cu_p">def Toupper:$arg1</p>
+
+<p>将字符串转换为大写字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要转换的字符串</p>
+<p><strong>Return:</strong>转换后的字符串</p>
+<p class="cu_p">def Tolower:$arg1</p>
+
+<p>将字符串转换为小写字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要转换的字符串</p>
+<p><strong>Return:</strong>转换后的字符串</p>
+<p class="cu_p">def Isdigit:$arg1</p>
+
+<p>测试一个字符串是不是数字</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字符串</p>
+<p><strong>Return:</strong>bool</p>
+<p class="cu_p">def Isalpha:$arg1</p>
+
+<p>判断字符$arg1是否为英文字母</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字符</p>
+<p><strong>Return:</strong>bool</p>
+<p class="cu_p">def Chr:$i</p>
+
+<p>将字符$i转化内ASCII</p>
+<p><strong>Parameters:</strong></p>
+<p>$i：字符</p>
+<p><strong>Return:</strong>bool</p>
+<p class="cu_p">def SubString:$str,$pos1,$pos2</p>
+
+<p>从$str截取,自$pos1到$pos2之间的字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$str：原字符串</p>
+<p>$pos1：开始位置</p>
+<p>$pos2：结束位置</p>
+<p><strong>Return:</strong>截取后的字符串</p>
+<p class="cu_p">def Split:$str,$s</p>
+
+<p>把$str用$s,分割为数组</p>
+<p><strong>Parameters:</strong></p>
+<p>$str：原字符串</p>
+<p>$s：分割字符</p>
+<p><strong>Return:</strong>分割后的数组</p>
+<hr />
+<h1 id="regex">Regex</h1>
+<p><strong>所在包：String</strong></p>
+<p class="cu_p">def Exec:$arg1,$arg2,$arg3</p>
+
+<p>返回匹配组</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字符串</p>
+<p>$arg2：正则</p>
+<p>$arg3：匹配方式</p>
+<p><strong>Return:</strong>数组</p>
+<p class="cu_p">def Test:$arg1,$arg2,$arg3</p>
+
+<p>测试是否匹配到</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字符串</p>
+<p>$arg2：正则</p>
+<p>$arg3：匹配方式</p>
+<p><strong>Return:</strong>bool</p>
+<p class="cu_p">def Replace:$arg1,$arg2,$arg3,$arg4</p>
+
+<p>替换字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：字符串</p>
+<p>$arg2：要替换的字符串</p>
+<p>$arg3：正则</p>
+<p>$arg4：匹配方式</p>
+<p><strong>Return:</strong>替换后的字符串</p>
+<hr />
+<h1 id="json">Json</h1>
+<p><strong>所在包：String</strong></p>
+<p class="cu_p">def JsonParse:$arg1</p>
+
+<p>将字符串转换为JSON object</p>
+<p><strong>Parameters:</strong></p>
+<p>$str：原字符串</p>
+<p><strong>Return:</strong>object</p>
+<p class="cu_p">def GetObjectItem:$arg1,$arg2</p>
+
+<p>获取JSON的值</p>
+<p><strong>Parameters:</strong></p>
+<p>$str：JSON object</p>
+<p><strong>Return:</strong>Type的任何一种类型</p>
+<p class="cu_p">def GetArrayItem:$arg1,$arg2</p>
+
+<p>获取array类型的值</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1： object</p>
+<p>$arg2： 索引</p>
+<p><strong>Return:</strong>Type的任何一种类型</p>
+<p class="cu_p">def GetArraySize:$arg1</p>
+
+<p>获取array类型的值</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1： object</p>
+<p><strong>Return:</strong>数组的元素个数</p>
+<p class="cu_p">def Delete:$arg1</p>
+
+<p>删除JSON中的一个键</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1： 键</p>
+<p><strong>Return:</strong>NULL</p>
+<p class="cu_p">def Type:$arg1</p>
+
+<p>获取键值类型</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1： 键</p>
+<p><strong>Return:</strong>
+cJSON_False,cJSON_True,cJSON_NULL,cJSON_Number,cJSON_String,cJSON_Array,cJSON_Object。中的一种</p>
+<hr />
+<h1 id="math">Math</h1>
+<p><strong>所在包：Math</strong></p>
+<p class="cu_p">@PI</p>
+
+<p>数学中的兀,3.14159265358979323846</p>
+<p class="cu_p">@E</p>
+
+<p>自然对数的底数,2.7182818284590452354</p>
+<p class="cu_p">def Abs:$n</p>
+
+<p>求绝对值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>绝对值</p>
+<p class="cu_p">def Acos:$n</p>
+
+<p>反余弦弧度值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Asin:$n</p>
+
+<p>反正弦函数</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Atan:$n</p>
+
+<p>反正切值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Atan2:$n,$n2</p>
+
+<p>4象限反正切</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p>$n2：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Ceil:$n</p>
+
+<p>返回大于或者等于指定表达式的最小整数</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Cos:$n</p>
+
+<p>返回余弦</p>
+<p><strong>Return:</strong>数值</p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Cosh:$n</p>
+
+<p>返回参数的双曲余弦值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Exp:$n</p>
+
+<p>返回 e 的 $n 次幂的值。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Fabs:$n</p>
+
+<p>求绝对值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>绝对值</p>
+<p class="cu_p">def Floor:$n</p>
+
+<p>返回小于或等于 $n 的最大的整数值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Fmod:$n,$n2</p>
+
+<p>返回 $n 除以 $n2 的余数</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p>$n2：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Log:$n</p>
+
+<p>返回 $n 的自然对数（基数为 e 的对数）。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Log10:$n</p>
+
+<p>返回 $n 的常用对数（基数为 10 的对数）。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Pow:$n,$n2</p>
+
+<p>返回 $n 的 $n2 次幂</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p>$n2：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Sin:$n</p>
+
+<p>返回以弧度表示的 $n 的反正弦</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Sinh:$n</p>
+
+<p>返回 $n 的双曲正弦</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Sqrt:$n</p>
+
+<p>返回 $n 的平方根</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Tan:$n</p>
+
+<p>返回$n弧度角的正切值。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Tanh:$n</p>
+
+<p>返回 $n 的双曲正切</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Random:$n</p>
+
+<p class="cu_p">def Cbrt:$n</p>
+
+<p>返回x的立方根。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<hr />
+<h1 id="number">Number</h1>
+<p><strong>所在包：Number</strong></p>
+<p class="cu_p">@MaxValue</p>
+
+<p>Number所能表示的最大值，1.7976931348623157e+308</p>
+<p class="cu_p">@MinValue</p>
+
+<p>Number所能表示的最小值，-1.7976931348623157e+308</p>
+<p class="cu_p">def ToString:$n</p>
+
+<p>将数字转换为字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要转换的数字</p>
+<p><strong>Return:</strong>转换后的字符串</p>
+<p class="cu_p">def ToNumber:$n</p>
+
+<p>将字符串转换为数字</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要转换的字符串</p>
+<p><strong>Return:</strong>转换后的数字</p>
+<p class="cu_p">def Equals:$n,$n2</p>
+
+<p>比较两个数字是不是相同</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：比较的第一个数字</p>
+<p>$n2：比较的第二个数字</p>
+<p><strong>Return:</strong>bool</p>
+<hr />
+<h1 id="array">Array</h1>
+<p><strong>所在包：Array</strong>
+<p class="cu_p">def Length:$arg1</p></p>
+<p>测试数组的元素个数</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要测试的数组</p>
+<p><strong>Return:</strong>数字</p>
+<p class="cu_p">def Join:$arg1,$arg2</p>
+
+<p>将两个数组连接在一起，成为一个新数组</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：第一个要连接的数组</p>
+<p>$arg2：第二个要连接的数组</p>
+<p><strong>Return:</strong>新的数组</p>
+<p class="cu_p">def Reverse:$arg1</p>
+
+<p>反转数组</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要反转的数组</p>
+<p><strong>Return:</strong>反转后的数组</p>
+<p class="cu_p">def Push:$arg1,$arg2</p>
+
+<p>压入新元素</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数组</p>
+<p>$arg2：新元素</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Rang:$arg1,$arg2,$arg3=1</p>
+
+<p>产生从$arg1到$arg2之间步长为$arg3的数字</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：开始数字</p>
+<p>$arg2：结束数字</p>
+<p>$arg3：步长。默认为1</p>
+<p><strong>Return:</strong>数组</p>
+<p class="cu_p">def Reomve:$arr,$i</p>
+
+<p>删除自定索引的元素</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数组</p>
+<p>$i：索引</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def IsInArray:$arr,$element</p>
+
+<p>判断一个元素是否在数组内</p>
+<p><strong>Parameters:</strong></p>
+<p>$arr：数组</p>
+<p>$element：元素</p>
+<p><strong>Return:</strong>bool</p>
+<hr />
+<h1 id="file">File</h1>
+<p><strong>所在包：FileSystem</strong>
+<p class="cu_p">def Open:$arg1,$arg2</p>
+<p class="cu_p">def Readfile:$arg1</p>
+<p class="cu_p">def Close:$arg1</p>
+<p class="cu_p">def Writefile:$arg1,$arg2</p></p>
+<p>写入文件内容</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p>$arg2：文件内容</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Copy:$arg1,$arg2</p>
+
+<p>复制文件</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p>$arg2：新文件路径</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Create:$arg1</p>
+
+<p>创建文件</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Delete:$arg1</p>
+
+<p>删除文件</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Exists:$arg1</p>
+
+<p>测试文件是否存在</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p><strong>Return:</strong>bool</p>
+<p class="cu_p">def Move:$arg1,$arg2</p>
+
+<p>移动文件到新的路径</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p>$arg2：新文件路径</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def GetCreationTime:$arg1</p>
+
+<p>获取其文件创建日期</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p><strong>Return:</strong>时间</p>
+<p class="cu_p">def GetLastAccessTime:$arg1</p>
+
+<p>获取其文件访问日期和时间信息</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p><strong>Return:</strong>时间</p>
+<p class="cu_p">def GetLastWriteTime:$arg1</p>
+
+<p>获取其文件操作日期和时间信息</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：文件路径</p>
+<p><strong>Return:</strong>时间</p>
+<hr />
+<h1 id="directory">Directory</h1>
+<p><strong>所在包：FileSystem</strong>
+<p class="cu_p">def Getcwd:</p></p>
+<p>获取当前工作目录</p>
+<p><strong>Return:</strong>当前工作目录</p>
+<p class="cu_p">def Chdir:$arg1</p>
+
+<p>用于改变当前工作目录</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：目录名</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Getenv:$arg1</p>
+
+<p>从环境中取字符串,获取环境变量的值</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：名称</p>
+<p><strong>Return:</strong>名称所对应的值</p>
+<p class="cu_p">def Remove:$arg1</p>
+
+<p>删除目录</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：目录名</p>
+<p><strong>Return:</strong>失败返回-1</p>
+<p class="cu_p">def Rmdir:$arg1</p>
+
+<p>删除目录</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：目录名</p>
+<p><strong>Return:</strong>失败返回-1</p>
+<p class="cu_p">def Mkdir:$arg1</p>
+
+<p>创建目录</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：目录名</p>
+<p><strong>Return:</strong>若成功则返回0，否则返回-1</p>
+<p class="cu_p">def Rename:$arg1,$arg2</p>
+
+<p>将目录$arg2,改名为$arg2</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：目录名</p>
+<p>$arg2：目录名</p>
+<p><strong>Return:</strong>若成功则返回0，否则返回-1</p>
+<p class="cu_p">def Exists:$arg1</p>
+
+<p>测试目录是否存在</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：目录名</p>
+<p><strong>Return:</strong>没有找到返回0</p>
+<hr />
+<h1 id="drive">Drive</h1>
+<p><strong>所在包：FileSystem</strong></p>
+<p class="cu_p">def GetDrives:</p>
+
+<p>获取电脑上的盘符数组</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>Return:</strong>盘符数组</p>
+<p class="cu_p">def AvailableFreeSpace:$arg1</p>
+
+<p>获取自定分区的空闲空间</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：指定的盘符</p>
+<p><strong>Return:</strong>字节数</p>
+<p class="cu_p">def DriveType:$arg1</p>
+
+<p>获取分区类型</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：指定的盘符</p>
+<p><strong>Return:</strong>类型，如下</p>
+<p>0  |DRIVE_UNKNOWN       |The drive type cannot be determined.</p>
+<hr />
+<p>1  |DRIVE_NO_ROOT_DIR   |The root path is invalid; </p>
+<hr />
+<p>2  |DRIVE_REMOVABLE     |The drive has removable media</p>
+<hr />
+<p>3  |DRIVE_FIXED         |The drive has fixed media</p>
+<hr />
+<p>4  |DRIVE_REMOTE        |The drive is a remote (network) drive.</p>
+<hr />
+<p>5  |DRIVE_CDROM         |The drive is a CD-ROM drive.</p>
+<hr />
+<p>6  |DRIVE_RAMDISK       |The drive is a RAM disk.</p>
+<p class="cu_p">def TotalFreeSpace:$arg1</p>
+
+<p>驱动器上的可用空闲空间总量（以字节为单位）。</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：指定的盘符</p>
+<p><strong>Return:</strong>字节数</p>
+<p class="cu_p">def TotalSize:$arg1</p>
+
+<p>获取驱动器上的存储空间的总大小</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：指定的盘符</p>
+<p><strong>Return:</strong>字节数</p>
+<hr />
+<h1 id="mdx">Mdx</h1>
+<p><strong>所在包：Mdx</strong></p>
+<p class="cu_p">def MD5:$arg1</p>
+
+<p>用MD5加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def MD4:$arg1</p>
+
+<p>用MD4加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串
+<p class="cu_p">def MD2:$arg1</p></p>
+<p>用MD2加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def MD5File:$arg1</p>
+
+<p>用MD5加密文件</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密文件路径</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<hr />
+<h1 id="basex">Basex</h1>
+<p><strong>所在包：Basex</strong>
+<p class="cu_p">def Base64Encoder:$arg1</p></p>
+<p>用base64编码字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要编码的字符串</p>
+<p><strong>Return:</strong>编码后的字符串</p>
+<p class="cu_p">def Base64Decoder:$arg1</p>
+
+<p>解码base64编码</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要解码的字符串</p>
+<p><strong>Return:</strong>解码后的字符串</p>
+<p class="cu_p">def Base32Encoder:$arg1</p>
+
+<p>用base32编码字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要编码的字符串</p>
+<p><strong>Return:</strong>编码后的字符串</p>
+<p class="cu_p">def Base32Decoder:$arg1</p>
+
+<p>解码base32编码</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要解码的字符串</p>
+<p><strong>Return:</strong>解码后的字符串</p>
+<hr />
+<h1 id="ripemd">Ripemd</h1>
+<p><strong>所在包：Ripemd</strong>
+<p class="cu_p">def RIPEMD128:$arg1</p></p>
+<p>用RIPEMD128加密字符串
+<strong>Parameters:</strong></p>
+<p>$arg1：要加密字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def RIPEMD160:$arg1</p>
+
+<p>用RIPEMD160加密字符串
+<strong>Parameters:</strong></p>
+<p>$arg1：要加密字符串</p>
+<p><strong>Return:</strong>加密后的字符串
+<p class="cu_p">def RIPEMD256:$arg1</p></p>
+<p>用RIPEMD256加密字符串
+<strong>Parameters:</strong></p>
+<p>$arg1：要加密字符串</p>
+<p><strong>Return:</strong>加密后的字符串
+<p class="cu_p">def RIPEMD320:$arg1</p></p>
+<p>用RIPEMD320加密字符串
+<strong>Parameters:</strong></p>
+<p>$arg1：要加密字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<hr />
+<h1 id="shax">Shax</h1>
+<p><strong>所在包：Shax</strong>
+<p class="cu_p">def SHA1:$arg1</p></p>
+<p>用SHA1加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def SHA224:$arg1</p>
+
+<p>用SHA224加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def SHA256:$arg1</p>
+
+<p>用SHA256加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def SHA384:$arg1</p>
+
+<p>用SHA384加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def SHA512:$arg1</p>
+
+<p>用SHA512加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<hr />
+<h1 id="aesx">Aesx</h1>
+<p><strong>所在包：Aesx</strong>
+<p class="cu_p">def AESEncryp:$arg1,$arg2</p></p>
+<p>用AES加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def AESDecryp:$arg1,$arg2</p>
+
+<p>用AES解密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要解密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>解密后的字符串</p>
+<hr />
+<h1 id="desx">Desx</h1>
+<p><strong>所在包：Desx</strong>
+<p class="cu_p">def DESEncryp:$arg1,$arg2</p></p>
+<p>用DES加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def DESDecryp:$arg1,$arg2</p>
+
+<p>用DES解密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要解密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>解密后的字符串</p>
+<hr />
+<h1 id="crx">Crx</h1>
+<p><strong>所在包：Crx</strong>
+<p class="cu_p">def RC4Encryp:$arg1,$arg2</p></p>
+<p>用RC4加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def RC4Decryp:$arg1,$arg2</p>
+
+<p>用RC4解密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要解密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>解密后的字符串</p>
+<p class="cu_p">def RC2Encryp:$arg1,$arg2</p>
+
+<p>用RC2加密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要加密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>加密后的字符串</p>
+<p class="cu_p">def RC2Decryp:$arg1,$arg2</p>
+
+<p>用RC2解密字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要解密的字符串</p>
+<p>$arg2 : 18位加密密码</p>
+<p><strong>Return:</strong>解密后的字符串</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
