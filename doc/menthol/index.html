@@ -213,7 +213,7 @@ Menthol 是一种无类型的语言。无类型意味着不必显式定义变量
 <p><img src="/images/mentholhtmlimg/mentholhtml5517.png"></p>
 <p>然后我们就可以运行这个程序了，同样的操作方式，只不过要执行run.exe ,将刚才生成的main.mee 作为参数跟在后面执行即可。因为程序内什么都没有执行，所以没有任何输出。</p>
 <p>现在把上述程序该一下。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Conosle;
 module test{
   def func:$str
@@ -236,7 +236,7 @@ _mmain:$a,$b
 <p><strong>1.5.程序注释</strong></p>
 <p>“注释”就是你不舍得删除又嫌它碍眼，或者你可能又不知道在啥时候会继续使用的一段代码的临时废除符号，使用注释符号，可以把你代码中被注释的代码在编译时候忽略掉，但你还能看见它，但编译器不会处理它，它的存在不会对程序运行起任何作用</p>
 <p>“注释”是一个以正斜杠/星号组合（/<em>）开头的字符序列，到分隔符 (</em>/) 结束的一段表示。 注释可以占用多行，但无法嵌套。如果你要注释单行也可以采用两个正斜杠//</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Conosle;
 /*def func:$str
 {
@@ -259,7 +259,7 @@ Null
 Object
 布尔类型
 函数类型</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 
 module test
@@ -325,7 +325,7 @@ _mmain:$a,$c
 
 <p>数值类型的表示范围为-2^1024 ~ +2^1024,如果超过这个范围，程序将会报错。</p>
 <p>在表示布尔判断的时候.0将表示为false,非0将表示为true</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -341,7 +341,7 @@ _mmain:$a,$c
 <p><strong>2.4. 字符串类型</strong></p>
 <p>一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节</p>
 <p>定义一个字符串的最简单的方法是用双引号（“）把它包围起来。 如果””中没有任何字符，则称之为空字符串，它代表“”中只有一个没有字符，从计算机本身的角度来讲空字符串中也有要给字符是\0，ascii为0</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -358,7 +358,7 @@ Console.Out(&quot;this is a string&quot;);
 <p>\b  退格</p>
 <p>\”  双引号</p>
 <p>字符串的连接通过加号（+）来实现，可以将两个或多个字符串连接在一起成为一个新的字符串</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -431,7 +431,7 @@ var $p = [];
 </code></pre>
 
 <p>字典的便利可以通过for in 方式</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -444,7 +444,7 @@ _mmain:$a,$c
 </code></pre>
 
 <p>如果要设置一个不存在的key，则会将新设置的key加入到字典中，如果取一个不存在的值则会返回null</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -477,7 +477,7 @@ Console.Out($arr::key3); //print null
 </code></pre>
 
 <p>函数类型类型可以是模块函数，本模块内函数，但需要在使用前就已经定义，否则编译将会报错</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 module test
 {
@@ -515,7 +515,7 @@ _mmain:$a,$c
 </code></pre>
 
 <p>变量默认总是传值赋值。那也就是说，当将一个表达式的值赋予一个变量时，整个原始表达式的值被赋值到目标变量。这意味着，例如，当一个变量的值赋予另外一个变量时，改变其中一个变量的值，将不会影响到另外一个变量</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -528,7 +528,7 @@ _mmain:$a,$c
 </code></pre>
 
 <p>变量的声明，可以不要初始化，如果不初始化则变量被默认声明为null,全局变量和局部变量都一样</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -538,7 +538,7 @@ _mmain:$a,$c
 </code></pre>
 
 <p>变量的声明可以是一行一个，也可以在一个var 关键字后声明多个变量，并且遵循可以初始化也可以不初始化的原则</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {   
@@ -559,7 +559,7 @@ _mmain:$a,$c
 
 <p><strong>3.2.作用域</strong></p>
 <p>对于menthol来说作用域一般指一个模块、运行程序，以及花括号”{}”，变量的范围即它定义的上下文背景（也就是它的生效范围）。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 { 
@@ -635,7 +635,7 @@ _mmain:$a,$c
 <p><strong>4.2.加法运算符</strong></p>
 <p>将数字表达式的值加到另一数字表达式上，或连接两个字符串,数组等</p>
 <p>result = expression1 + expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -659,7 +659,7 @@ _mmain:$a,$c
 <p>从一个表达式的值中减去另一个表达式的值，只有一个表达式时取其相反数。</p>
 <p>result = expression1 - expression2</p>
 <p>result = -expression1</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -675,7 +675,7 @@ _mmain:$a,$c
 <p><strong>4.4.乘(*)运算符</strong></p>
 <p>两个表达式的值相乘。</p>
 <p>result = expression1 * expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -688,7 +688,7 @@ _mmain:$a,$c
 <p><strong>4.5.除法(/)运算符</strong></p>
 <p>两个表达式的值相除。</p>
 <p>result = expression1 / expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 
 _mmain:$a,$c
@@ -705,7 +705,7 @@ _mmain:$a,$c
 <p>test ? expression1 : expression2</p>
 <p>test：bool表达式语句expression1,expression2为表达式.</p>
 <p>当test为true则执行expression1,否则执行expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -738,7 +738,7 @@ _mmain:$a,$c
 <p>对一个表达式执行逻辑非。</p>
 <p>result = !expression</p>
 <p>Expression 任何表达式。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -753,7 +753,7 @@ _mmain:$a,$c
 <p>result = number1 % number2</p>
 <p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0</p>
 <p>除以上类型外，其他类型进行详见操作，则会报错</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 
 _mmain:$a,$c
@@ -783,7 +783,7 @@ _mmain:$a,$c
 <p><strong>4.13.小于运算符 (&lt;)</strong></p>
 <p>两个表达式的小于比较。</p>
 <p>result = expression1 &lt; expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -796,7 +796,7 @@ _mmain:$a,$c
 <p><strong>4.14.大于运算符 (&gt;)</strong></p>
 <p>两个表达式的大于比较。</p>
 <p>result = expression1 &gt;expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -809,7 +809,7 @@ _mmain:$a,$c
 <p><strong>4.15.比较运算符 (!=)</strong></p>
 <p>两个表达式的大于比较。</p>
 <p>result = expression1 &lt;&gt;(!=) expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -829,7 +829,7 @@ _mmain:$a,$c
 <p>False False False</p>
 <p><strong>4.17.逻辑“与”运算符 (&amp;&amp;)</strong></p>
 <p>对两个表达式执行逻辑“与”。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -842,7 +842,7 @@ _mmain:$a,$c
 <p>当且仅当两个表达式的值都等于 True 时， result 才是 True。如果任一表达式的值等于 False， 则 result 为 False。</p>
 <p><strong>4.18.逻辑大于或等于运算符 (&gt;=)</strong></p>
 <p>result = expression1 &gt;= expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -853,7 +853,7 @@ _mmain:$a,$c
 <p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，按照逐字符比较</p>
 <p><strong>4.19.逻辑“小于或等于”运算符 (&lt;=)</strong></p>
 <p>result = expression1 &lt;= expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -864,7 +864,7 @@ _mmain:$a,$c
 <p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，按照逐字符比较</p>
 <p><strong>4.20.逻辑“等于”运算符 (==)</strong></p>
 <p>result = expression1 == expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -876,7 +876,7 @@ _mmain:$a,$c
 <p><strong>4.21.加法赋值运算符 (+=)</strong></p>
 <p>将变量值与表达式值相加，并将和赋给该变量。</p>
 <p>result += expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -892,7 +892,7 @@ _mmain:$a,$c
 <p><strong>4.22.减法赋值运算符 (-=)</strong></p>
 <p>将变量值与表达式值相减，并将和赋给该变量。</p>
 <p>result -= expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -907,7 +907,7 @@ Console.Out($p);//print 0
 <p><strong>4.23.除法赋值运算符 (/=)</strong></p>
 <p>将变量值与表达式值相除，并将和赋给该变量。</p>
 <p>result /= expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -922,7 +922,7 @@ _mmain:$a,$c
 <p><strong>4.24.乘法赋值运算符 (*=)</strong></p>
 <p>将变量值与表达式值相乘，并将和赋给该变量。</p>
 <p>result *= expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -937,7 +937,7 @@ _mmain:$a,$c
 <p>result = result * expression</p>
 <p><strong>4.25.取余赋值运算符 (%=)</strong></p>
 <p>result %= expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -952,7 +952,7 @@ _mmain:$a,$c
 <p>result = result % expression</p>
 <p><strong>4.26.按位“与”赋值运算符 (&amp;=)</strong></p>
 <p>result &amp;= expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -968,7 +968,7 @@ _mmain:$a,$c
 <p><strong>4.27.按位“或”赋值运算符 (|=)</strong></p>
 <p>result |= expression</p>
 <p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -982,7 +982,7 @@ _mmain:$a,$c
 <p>result = result | expression</p>
 <p><strong>4.28.按位“异或”赋值运算符 (^=)</strong></p>
 <p>result ^= expression</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -997,7 +997,7 @@ _mmain:$a,$c
 <p>result = result ^ expression</p>
 <p><strong>4.29.按位左移运算符 (&lt;&lt;)</strong></p>
 <p>result = expression1 &gt;&gt; expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1009,7 +1009,7 @@ _mmain:$a,$c
 <p>运算符把 expression1 的所有位向右移 expression2 指定的位数。expression1 的符号位被用来填充右移后左边空出来的位。向右移出的位被丢弃</p>
 <p><strong>4.30.按位右移运算符 (&gt;&gt;)</strong></p>
 <p>result = expression1 &gt;&gt; expression2</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1022,7 +1022,7 @@ _mmain:$a,$c
 <p><strong>4.31.幂运算符 (</strong>)**</p>
 <p>result = expression1 ** expression2</p>
 <p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1052,7 +1052,7 @@ _mmain:$a,$c
    statement2}]</p>
 <p>condition必选项。一个 Boolean 表达式</p>
 <p>statement1可选项。condition 是 true 时要执行的语句。可以是复合语句。statement2可选项。condition 是 false 时要被执行的语句。可以是复合语句。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1066,7 +1066,7 @@ if(1&gt;2){
 </code></pre>
 
 <p>If else 流程的else部分是可选的，可以不写，只写if 也是可以的</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1082,7 +1082,7 @@ if(1&gt;2){
 <p>}</p>
 <p>expression必选项。Boolean 表达式，在循环的每次迭代前被检查。 如果 expression 是 true，则执行循环。如果 expression 是 false，则结束循环。</p>
 <p>statements可选项。expression 是 true 时要执行的一个或多个语句。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1102,7 +1102,7 @@ _mmain:$a,$c
 <p>variable必选项。一个变量，它可以是 object 的任一属性或 array 的任一元素。 </p>
 <p>dict, array要在其上遍历的字典或数组。</p>
 <p>statement可选项。相对于 object 的每个属性或 array 的每个元素，都要被执行的一个或多个语句。</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1127,7 +1127,7 @@ try {
 <p>statements2</p>
 <p>}</p>
 <p>statements可选.在执行statements1 内容时，如果有throw抛出，则跳转至statements2,$arg1...为抛出错误时的参数可有多个</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1145,7 +1145,7 @@ Console.Out($arg1) //print 222
 <p><strong>5.6 throw</strong></p>
 <p>抛出错误
 Thorw $arg,$arg....</p>
-<pre><code>import &quot;console&quot;;
+<pre><code>Import console;
 use Console;
 _mmain:$a,$c
 {
@@ -1556,8 +1556,8 @@ MentholModuleMethod void MP_Init()
 </code></pre>
 
 <p>然后在代码中调用</p>
-<pre><code>import &quot;mypackage&quot;;
-import &quot;mio&quot;;
+<pre><code>import mypackage;
+import mio;
 use mymodule;
 use Console;
 _mmain:$a,$c
@@ -1617,5 +1617,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-04-26 06:32:28
+Build Date UTC : 2019-04-26 08:35:16
 -->
