@@ -1361,7 +1361,7 @@ _mmain:$a,$c
 
 <p>3.typedef int (<em>PrintErrorFunc)(char</em> str,char* cf,int line);</p>
 <p>错误调用的函数指针，str 参数为错误信息，cf为发生错误的文件，line 为错误的行数</p>
-<p>4.typedef StackState (*funcallback)();</p>
+<p>4.typedef StackState (<em>funcallback)(VmState</em>);</p>
 <p>扩展函数函数的函数指针</p>
 <p>5.MentholPackMethod void SetPrintCompileErrorFunc(PrintErrorFunc _pef);</p>
 <p>指示编译时如果发生错，将调用哪个函数显示错误信息,_per为函数指针</p>
@@ -1372,11 +1372,11 @@ _mmain:$a,$c
 <p>执行可执行文件,files为可执行文件.mee的完整文件名，arg1,为__mmain的第一个参数,arg2,为__mmain的第二个参数</p>
 <p>9.MentholPackMethod void RegisterModuleFunciton(RunTimeState<em> moduleinst,UserFunctionAtter</em> functionlist);</p>
 <p>向系统注册需要扩展的函数名，moduleinst为模块实例，functionlist为函数定义数组</p>
-<p>10.MentholPackMethod StackState GetParam(int index);</p>
+<p>10.MentholPackMethod StackState GetParam(int index,VmState*);</p>
 <p>获取函数参数，index为参数的索引位置，从1开始</p>
-<p>11.MentholPackMethod RunTimeState<em> CreateModuleRunTime(char</em> modulename);</p>
+<p>11.MentholPackMethod RunTimeState<em> CreateModuleRunTime(char</em> modulename,VmState*);</p>
 <p>创建一个运行模块</p>
-<p>12.MentholPackMethod StackState Array_CreateArray();</p>
+<p>12.MentholPackMethod StackState Array_CreateArray(VmState*);</p>
 <p>创建一个数组</p>
 <p>3.MentholPackMethod StackState Array_Get(pArray sk1,int index);</p>
 <p>获取数组元素，sk1为数组,index为数组位置索引，从0开始</p>
@@ -1386,11 +1386,11 @@ _mmain:$a,$c
 <p>获取数组元素个数，p为数组</p>
 <p>16.MentholPackMethod void Array_Push(pArray sk1,StackState sk2);</p>
 <p>增加数组元素，sk1为数组,sk2为要增加的元素</p>
-<p>17.MentholPackMethod pString Array_Join(pArray a1,char* link);</p>
+<p>17.MentholPackMethod pString Array_Join(pArray a1,char<em> link,VmState</em>);</p>
 <p>用link 将数组a1，连接在一起返回字符串</p>
 <p>18.MentholPackMethod pArray Array_Reverse(pArray a1);</p>
 <p>反转数组，返回新的数组</p>
-<p>19.MentholPackMethod StackState Dict_CreateDict();</p>
+<p>19.MentholPackMethod StackState Dict_CreateDict(VmState*);</p>
 <p>创建一个字典</p>
 <p>20.MentholPackMethod void Dict_Push(char* key,pDict sk1,StackState sk2);</p>
 <p>增加字典元素，key 为键，sk1为字典，sk2为值</p>
@@ -1400,21 +1400,21 @@ _mmain:$a,$c
 <p>获取字典值对个数，sk1为字典，key为key的hash值</p>
 <p>23.MentholPackMethod void Dict_Set(char* key,pDict sk1,StackState sk2);</p>
 <p>设置字典值对个数，sk1为字典,key为键，sk2为新值</p>
-<p>24.MentholPackMethod pString Dict_Key(pDict pdict,hashValue sk2);</p>
+<p>24.MentholPackMethod pString Dict_Key(pDict pdict,hashValue sk2,VmState*);</p>
 <p>获取字典值对个数，sk1为字典，key为key的hash值</p>
-<p>25.MentholPackMethod StackState String_CreateString(char* str);</p>
+<p>25.MentholPackMethod StackState String_CreateString(char<em> str,VmState</em>);</p>
 <p>创建字符串</p>
-<p>26.MentholPackMethod void CreateFunctionCall(int pc);</p>
+<p>26.MentholPackMethod void CreateFunctionCall(int pc,VmState*);</p>
 <p>创建回调函数的运行环境,pc为压入函数的参数个数</p>
-<p>27.MentholPackMethod void PushNumber(double d);</p>
+<p>27.MentholPackMethod void PushNumber(double d,VmState*);</p>
 <p>向栈内压入一个数值</p>
-<p>28.MentholPackMethod void PushString(pString str);</p>
+<p>28.MentholPackMethod void PushString(pString str,VmState*);</p>
 <p>向栈内压入一个字符串</p>
-<p>29.MentholPackMethod void PushArray(pArray arr);</p>
+<p>29.MentholPackMethod void PushArray(pArray arr,VmState*);</p>
 <p>向栈内压入一个数组</p>
-<p>30.MentholPackMethod void PushDict(pDict arr);</p>
+<p>30.MentholPackMethod void PushDict(pDict arr,VmState*);</p>
 <p>向栈内压入一个字典</p>
-<p>31.MentholPackMethod StackState CallFunction(StackState fu);</p>
+<p>31.MentholPackMethod StackState CallFunction(StackState fu,VmState*);</p>
 <p>执行函数</p>
 <p>32.MentholPackMethod StackState Number_CreateNumber(double d);</p>
 <p>创建一个数字</p>
@@ -1422,6 +1422,14 @@ _mmain:$a,$c
 <p>创建一个null</p>
 <p>34.MentholPackMethod StackState Bool_CreateBool(bool b);</p>
 <p>创建一个bool</p>
+<p>35.MentholModuleMethod StackState Object_CreateObject(pInst p);</p>
+<p>创建一个object</p>
+<p>36.MentholModuleMethod  VmState* NewVmState();</p>
+<p>创建一个新的vm状态，用于多线程运行</p>
+<p>37.MentholModuleMethod  void NewVm(VmState* vmstate);</p>
+<p>创建一个新的虚拟机环境，用于多线程运行</p>
+<p>38.MentholModuleMethod  void ClearVmState(VmState* vmstate);</p>
+<p>删除虚拟机</p>
 <h1 id="_6">第八章 桌面程序开发</h1>
 <p>menthol自带的GUI开发库是基于IUP的界面库，实现了大部分的IUP界面库中的功能。创建一个IUP界面非常简单：</p>
 <pre><code>import iup.system;
@@ -1504,7 +1512,7 @@ _mmain:$a,$c
 <p>name表示在menthol程序中调用的函数名称</p>
 <p>postion为函数指针，执行你刚才定义的函数</p>
 <p>paramcount表示你定义的函数的参数个数</p>
-<p>4.所有的扩展函数库必须有个函数MentholModuleMethod void MP_Init()，这个函数内会调用CreateModuleRunTimehe和RegisterModuleFunciton将你的函数增加至运行环境内</p>
+<p>4.所有的扩展函数库必须有个函数MentholModuleMethod void MP_Init(VmState* vmstate)，这个函数内会调用CreateModuleRunTimehe和RegisterModuleFunciton将你的函数增加至运行环境内</p>
 <p>5.会写或者会改C/C++源码，并且能生成DLL库</p>
 <p>menthol扩展开发非常简单，你需要在你的C/C++页面内引入menthol.lib静态库，并且将头文件menthol.h加入到你的源代码中。我下面将以VS中开发为范例开发一个最简单的扩展库</p>
 <p>1.在VS中创建了一个类库</p>
@@ -1516,7 +1524,7 @@ _mmain:$a,$c
 #pragma comment(lib,&quot;Menthol.lib&quot;)
 #include &quot;Menthol.h&quot;
 
-MentholModuleMethod void MP_Init()
+MentholModuleMethod void MP_Init(VmState* vmstate)
 {
 
 }
@@ -1529,7 +1537,7 @@ MentholModuleMethod void MP_Init()
 #include &quot;Menthol.h&quot;
 
 
-StackState Hello()
+StackState Hello(VmState* vmstate)
 {
   StackState input = GetParam(1);
   int c = strlen(input.str-&gt;string)+7;
@@ -1548,9 +1556,9 @@ UserFunctionAtter test[] = {
 }; 
 
 
-MentholModuleMethod void MP_Init()
+MentholModuleMethod void MP_Init(VmState* vmstate)
 {
-  RunTimeState* aesprt = CreateModuleRunTime(&quot;mymodule&quot;);
+  RunTimeState* aesprt = CreateModuleRunTime(&quot;mymodule&quot;,vmstate);
   RegisterModuleFunciton(aesprt,test);
 }
 </code></pre>
@@ -1617,5 +1625,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-04-26 08:35:16
+Build Date UTC : 2019-04-26 08:53:03
 -->
