@@ -1539,7 +1539,7 @@ MentholModuleMethod void MP_Init(VmState* vmstate)
 
 StackState Hello(VmState* vmstate)
 {
-  StackState input = GetParam(1);
+  StackState input = GetParam(1,vmstate);
   int c = strlen(input.str-&gt;string)+7;
   char* str =(char*)malloc(c);
   memset(str,0,c);
@@ -1625,5 +1625,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-04-26 08:53:03
+Build Date UTC : 2019-04-26 08:58:05
 -->
