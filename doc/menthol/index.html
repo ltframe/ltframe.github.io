@@ -75,7 +75,13 @@
     <li class="toctree-l2"><a href="#api">第七章 API列表</a></li>
     
 
-    <li class="toctree-l2"><a href="#_6">第八章 开发扩展程序</a></li>
+    <li class="toctree-l2"><a href="#_6">第八章 桌面程序开发</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_7">第九章 多线程</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_8">第十章 开发扩展程序</a></li>
     
 
     </ul>
@@ -83,7 +89,57 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="builtin-function/">系统模块</a>
+    <span class="caption-text">系统模块</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="inou/">输入输出</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="files/">文件系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="crypto/">加密解密</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="string/">字符串</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="type/">内置类型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="math/">数学相关</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="env/">系统环境</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="database/">数据库</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="thread/">多线程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="datatime/">时间日期</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="network/">网络系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="iup/">GUI</a>
+                </li>
+    </ul>
 	    </li>
           
         </ul>
@@ -125,7 +181,7 @@
 Menthol 是一种无类型的语言。无类型意味着不必显式定义变量的数据类型。实际上你也无法上明确地定义数据类型。因为所有的类型都是在运行时才会确定的。为了开发方便，Menthol还引入了包和模块的概念，包就是一堆模块，模块就是全局变量，函数的集合体，有点类似面向对象语言里的类的概念，但又不太相同。模块可以是你自己开发的变量函数集合体，也可以是用C/C++开发出来的类库，不过在引用的时候它们没有差别</p>
 <p><strong>1.2.准备工作</strong></p>
 <p>Menthol是一个使用简单，易于学习的编程语言，如果你有其他编程语言，例如C,javascript,Python等编程语言的编写经验的话，本手册对你来说可能有点多余，你看看程序包或者源码包里的example中的实例就可以开始干了。其实我想说的是，Menthol就是如此简单的一个编程语言，下面我将详细说明</p>
-<p>首先，你要获得menthol，访问www.ltplayer.com/menthol.html</p>
+<p>首先，你要获得menthol，访问<a href="http://www.ltplayer.com/menthol.html">www.ltplayer.com/menthol.html</a></p>
 <p><img src="/images/mentholhtmlimg/mentholhtml4163.png"></p>
 <p>这个是menthol项目的页面，它部署于github上，如果你不想研究menthol的源码，直接点击read more会进入github menthol是项目页，在点击release就进入了下载页面</p>
 <p><img src="/images/mentholhtmlimg/mentholhtml4242.png"></p>
@@ -1366,7 +1422,73 @@ _mmain:$a,$c
 <p>创建一个null</p>
 <p>34.MentholPackMethod StackState Bool_CreateBool(bool b);</p>
 <p>创建一个bool</p>
-<h1 id="_6">第八章 开发扩展程序</h1>
+<h1 id="_6">第八章 桌面程序开发</h1>
+<p>menthol自带的GUI开发库是基于IUP的界面库，实现了大部分的IUP界面库中的功能。创建一个IUP界面非常简单：</p>
+<pre><code>import iup.system;
+import iup.Dialogs;
+import iup.Callbacks;
+import iup.ControlsStandard;
+import iup.Attributes;
+import iup.const;
+import iup.ControlsContainers;
+use IupSystem,IupDialogs,IupCallbacks,IupControlsStandard,IupAttributes;
+use IupConst,IupControlsContainers;
+_mmain:$a,$c
+{
+
+  IupSystem.Init();
+  var $maindialog = IupDialogs.Dialog();
+  IupAttributes.SetAttribute($maindialog, &quot;RASTERSIZE&quot;, &quot;1000X600&quot;);
+  IupAttributes.SetAttribute($maindialog, &quot;TITLE&quot;, &quot;MentholIup&quot;);
+  IupDialogs.ShowXY($maindialog,IupConst.@IUP_CENTER,IupConst.@IUP_CENTER);
+  IupCallbacks.MainLoop();
+}
+
+</code></pre>
+
+<p><img src="/images/mentholhtmlimg/iup1.png"></p>
+<p>下面是menthol iup实现的大部分iup界面控件</p>
+<p><img src="/images/mentholhtmlimg/iup2.png"></p>
+<p>关于IUP的更多说明，可以访问IUP官方网站</p>
+<p><a href="http://webserver2.tecgraf.puc-rio.br/iup/">http://webserver2.tecgraf.puc-rio.br/iup/</a></p>
+<h1 id="_7">第九章 多线程</h1>
+<p>多线程（英语：multithreading），是指从软件或者硬件上实现多个线程并发执行的技术。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程，进而提升整体处理性能。具有这种能力的系统包括对称多处理机、多核心处理器以及芯片级多处理（Chip-level multithreading）或同时多线程（Simultaneous multithreading）处理器。在一个程序中，这些独立运行的程序片段叫作“线程”（Thread），利用它编程的概念就叫作“多线程处理（Multithreading）”。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程（台湾译作“执行绪”），进而提升整体处理性能。【引用自百度百科】</p>
+<p>menthol多线程使用非常简单,使用thread模块便可以创建多线程运行程序</p>
+<pre><code>import console;
+import Thread;
+use Console,Thread;
+
+module test
+{
+  def thread2:
+  {
+    while(1){
+      Console.Out(&quot;thread2&quot;);
+    }
+  }
+
+  def thread1:
+  {
+    while(1){
+      Console.Out(&quot;thread1&quot;);
+    }
+  }
+}
+_mmain:$a,$c
+{ 
+  var $k1 = Thread.NewThread(test.thread1);
+  var $k2 = Thread.NewThread(test.thread2); 
+  while(1){
+
+  }
+}
+
+
+</code></pre>
+
+<p><img src="/images/mentholhtmlimg/thread.png"></p>
+<p>menthol使用pthread实现多线程，关于thread模块的更多信息，请查看关于thread模块的使用说明</p>
+<h1 id="_8">第十章 开发扩展程序</h1>
 <p>如果要开发自定义的扩展类库，目前menthol的扩展开发仅可使用C/C++进行开发，你需要了解的几个开发前提是：</p>
 <p>1.所有被扩展的函数必须要是静态的函数或者是全局的函数</p>
 <p>2.所有被扩展的函数都必须要返回StackState</p>
@@ -1454,7 +1576,7 @@ _mmain:$a,$c
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="builtin-function/" class="btn btn-neutral float-right" title="系统模块">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="inou/" class="btn btn-neutral float-right" title="输入输出">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -1482,7 +1604,7 @@ _mmain:$a,$c
       
       
       
-        <span style="margin-left: 15px"><a href="builtin-function/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="inou/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -1495,5 +1617,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-01-29 07:25:47
+Build Date UTC : 2019-04-26 06:32:28
 -->

@@ -7,17 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="./img/favicon.ico">
-  <title>Menthol document</title>
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>多线程 - Menthol document</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="./v.css" rel="stylesheet">
+  <link href="../v.css" rel="stylesheet">
   
-  <script src="./js/jquery-2.1.1.min.js" defer></script>
-  <script src="./js/modernizr-2.8.3.min.js" defer></script>
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u591a\u7ebf\u7a0b";
+    var mkdocs_page_input_path = "thread.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -30,9 +37,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="./." class="icon icon-home"> Menthol document</a>
+        <a href=".." class="icon icon-home"> Menthol document</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -44,7 +51,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="./.">教程</a>
+    <a class="" href="..">教程</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -53,51 +60,57 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="./inou/">输入输出</a>
+    <a class="" href="../inou/">输入输出</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./files/">文件系统</a>
+    <a class="" href="../files/">文件系统</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./crypto/">加密解密</a>
+    <a class="" href="../crypto/">加密解密</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./string/">字符串</a>
+    <a class="" href="../string/">字符串</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./type/">内置类型</a>
+    <a class="" href="../type/">内置类型</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./math/">数学相关</a>
+    <a class="" href="../math/">数学相关</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./env/">系统环境</a>
+    <a class="" href="../env/">系统环境</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./database/">数据库</a>
+    <a class="" href="../database/">数据库</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">多线程</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#thread">Thread</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="./thread/">多线程</a>
+    <a class="" href="../datatime/">时间日期</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./datatime/">时间日期</a>
+    <a class="" href="../network/">网络系统</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="./network/">网络系统</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="./iup/">GUI</a>
+    <a class="" href="../iup/">GUI</a>
                 </li>
     </ul>
 	    </li>
@@ -112,7 +125,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="./.">Menthol document</a>
+        <a href="..">Menthol document</a>
       </nav>
 
       
@@ -120,9 +133,15 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="./.">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
+      
+        
+          <li>系统模块 &raquo;</li>
+        
+      
     
+    <li>多线程</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,22 +151,42 @@
           <div role="main">
             <div class="section">
               
+                <h1 id="thread">Thread</h1>
+<p><strong>所在包：thread</strong>
+<p class="cu_p">def NewThread:$arg1</p></p>
+<p>创建一个新线程</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：回调函数</p>
+<p><strong>Return:</strong> 线程ID</p>
+<p class="cu_p">def Join:$arg1</p>
 
-  <h1 id="search">Search Results</h1>
+<p>阻塞一个线程</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：线程ID</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Lock:</p>
 
-  <form id="content_search" action="search.html">
-    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
-  </form>
+<p>锁定线程</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def UnLock:</p>
 
-  <div id="mkdocs-search-results" class="search-results">
-    Searching...
-  </div>
-
-
+<p>解锁线程</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>Return:</strong> 是否成功</p>
+              
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../datatime/" class="btn btn-neutral float-right" title="时间日期">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../database/" class="btn btn-neutral" title="数据库"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -171,12 +210,16 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../database/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../datatime/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="./js/theme.js" defer></script>
-      <script src="./search/main.js" defer></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
