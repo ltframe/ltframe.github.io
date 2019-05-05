@@ -586,7 +586,7 @@ var $f;
 }
 </code></pre>
 
-<p><strong>2.3表达式</strong></p>
+<p><strong>3.3表达式</strong></p>
 <p>对大多数语言来说，程序就是一堆表达式的集合.在menthol中，任何的语句基本都叫做表达式，最简单的表达式就是语句的结束符”;”，这就是个表达式，没有任何意思。再比如随便一个数组，数字，字符串，声明、赋值语句等，都可以叫做表达式</p>
 <pre><code>_mmain:$a,$c
 { 
@@ -617,6 +617,37 @@ _mmain:$a,$c
 { 
   var $g1,$g2=1,$g3;//ok
   test.@g1=test.@g2=test.$g3=2;
+}
+</code></pre>
+
+<p><strong>3.4 const变量</strong></p>
+<p>const变量是不能被修改的变量，也就是说，const变量一旦被初始化后，则在以后不能被修改它的值，例如</p>
+<pre><code>
+_mmain:$a,$c
+{ 
+  var const $test = 999;
+  $test = 666; //error
+}
+
+</code></pre>
+
+<p>$test变初始化为const变量，如果再设置它的值，则会产生错误。但是,const变量值只修饰被初始化时候的那个变量,如果,将const变量修饰的值，赋值给了非const变量，则非const变量是可以修改的</p>
+<pre><code>
+_mmain:$a,$c
+{ 
+  var const $test = 999;
+  var $aaa = $test; //ok
+}
+
+</code></pre>
+
+<p>const变量除了可以修饰全局变量、局部变量以外，还可以函数的参数，或者except参数</p>
+<pre><code>module test
+{
+  def func:const $a,const $b
+  {
+
+  }
 }
 </code></pre>
 
@@ -1160,6 +1191,7 @@ Console.Out($arg1) //print 222
 }
 </code></pre>
 
+<p>用throw抛出异常，并不一定需要except去接受，如果throw没有用在try except中，则向用户注册的错误函数回调抛出 </p>
 <p><strong>5.7 break</strong></p>
 <p>跳出一个循环，用在for in 和while中 </p>
 <p>Break是无条件的，碰到break就会跳出循环</p>
@@ -1625,5 +1657,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-04-26 09:06:54
+Build Date UTC : 2019-05-05 06:16:39
 -->
