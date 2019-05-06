@@ -1222,7 +1222,7 @@ Console.Out($arg1) //print 222
 <p>menthol包的就是一个编译后的menthol文件或者是一个用C/C++写的库,Menthol包的扩展名是.mep,不过一个包从代码上来说和.me文件写法完全一样。包被编译好后，生成的文件扩展名为.med.用C/C++写的包编译后也需要将扩展名改为.med</p>
 <p><strong>6.2.导入包</strong></p>
 <p>无论是menthol写的包还是C/C++写的扩展包，包名就是文件名，例如有个包叫做a.med则在程序使用他的时候使用</p>
-<p>Improt “a”;</p>
+<p>Improt a;</p>
 <p>就可以导入这个包了，包名并不区分大小写，也就是说imprt “a”和improt “A”同样都是导入了a.med文件，在语法上，包是可以重复导入的，不过重复导入的包会被忽略掉。</p>
 <p><strong>6.3.模块的概念</strong></p>
 <p>事实上，一个包中可以包含的只有另外的包，和模块了。模块相当于全局变量和函数的合集，全局变量和函数被封装在一个模块中，可以供其他的模块中的函数或者启动函数调用。</p>
@@ -1248,14 +1248,14 @@ Console.Out($arg1) //print 222
 <p><strong>6.4.模块的使用</strong></p>
 <p>在一个包被导入后，你就可以使用这个包中所包含的所有模块了，不过要使用一个模块，要使用关键字use 模块名，来定义</p>
 <p>use 关键字后面的模块名可以是一个，也可以是用逗号隔开的多个模块名，这些模块名可以是多个包内的，不要求完全从一个包内引入</p>
-<pre><code>Import “FileSystem”;
+<pre><code>Import  FileSystem;
 use File,Drives;
 use Directory
 </code></pre>
 
 <p>模块名是区分大小写的，在使用时一定要了解，被使用的模块名是大写还是小写，否则将找不到。</p>
 <p>模块也可以被多次使用，但是如果存在的话，在此被使用的，将被忽略</p>
-<pre><code>Import “FileSystem”;
+<pre><code>Import FileSystem;
 use File,Drives，Directory;
 use Directory
 </code></pre>
@@ -1277,7 +1277,7 @@ use Directory
 
 <p>函数必须在调用之前被定义，否则编译程序将无法使用。 所有的函数都是基于包的概念存在的，他们全都在一个包内。</p>
 <p>在同一包内，调用函数不需要加包名，只需要函数名（参数列表）就可以，但是代用外部包函数则需要报名.函数名（参数列表）.在本手册中多次使用的Console.Out就是Console模块中的out函数</p>
-<pre><code>import “conosle”;
+<pre><code>import conosle;
 use Console;
 _mmain:$a,$c
 {
@@ -1289,7 +1289,7 @@ _mmain:$a,$c
 <p><strong>6.7.函数参数</strong></p>
 <p>通过参数列表可以传递信息到函数，即以逗号作为分隔符的表达式列表。参数是从左向右求值的，并且在menthol中参数值传递</p>
 <p>1.函数的参数可能有多个，但在调用时候出入的参数比函数定义的参数要少，则默认传入NULL</p>
-<pre><code>import “conosle”;
+<pre><code>import conosle;
 use Console;
 module test
 {
@@ -1307,7 +1307,7 @@ _mmain:$a,$c
 
 <p>2.函数参数如果少于传入的参数，则多余的将被忽略</p>
 <p>3.函数的参数列表使用C++风格的默认参数，不过默认参数都是在最后，即有个默认参数后，后面要么是没有参数，要么剩下的都是默认参数</p>
-<pre><code>import “conosle”;
+<pre><code>import conosle;
 use Console;
 module test
 {
@@ -1327,7 +1327,7 @@ _mmain:$a,$c
 
 <p><strong>6.8.函数返回值</strong></p>
 <p>值通过使用可选的返回语句返回。可以返回包括数组和对象的任意类型。返回语句会立即中止函数的运行，并且将控制权交回调用该函数的代码行</p>
-<pre><code>import “conosle”;
+<pre><code>import conosle;
 use Console;
 module test
 {
@@ -1657,5 +1657,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-05-05 06:16:39
+Build Date UTC : 2019-05-06 09:26:10
 -->
