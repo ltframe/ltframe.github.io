@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>数据库 - Menthol document -v1.4</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../v.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u6570\u636e\u5e93";
+    var mkdocs_page_input_path = "database.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Menthol document -v1.4</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">教程</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">系统模块</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../inou/">输入输出</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../files/">文件系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">加密解密</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../string/">字符串</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../type/">内置类型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../math/">数学相关</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../env/">系统环境</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">数据库</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#sqlite3">Sqlite3</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../thread/">多线程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../datatime/">时间日期</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../network/">网络系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../iup/">GUI</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Menthol document -v1.4</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>系统模块 &raquo;</li>
+        
+      
+    
+    <li>数据库</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sqlite3">Sqlite3</h1>
+<p><strong>所在包：sqlite3</strong>
+<p class="cu_p">def Connect:$arg1</p></p>
+<p>连接sqlite3数据库,没有则会创建</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库文件地址</p>
+<p><strong>Return:</strong>数据库连接</p>
+<p class="cu_p">def Close:$arg1</p>
+
+<p>关闭sqlite3数据库</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库文件地址</p>
+<p><strong>Return:</strong> 无</p>
+<p class="cu_p">def Execute:$arg1</p>
+
+<p>执行数据库数据</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p><strong>Return:</strong> 结果集</p>
+<p class="cu_p">def ExecuteNonQuery:$arg1,$arg2</p>
+
+<p>执行数据库数据</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p>$arg2：SQL语句</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Busytimeout:$arg1,$arg2</p>
+
+<p>设置超时时间</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p>$arg2：超时时间</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Changes:$arg1</p>
+
+<p>返回insert update delete所影响的条数</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p><strong>Return:</strong> 所影响的条数</p>
+<p class="cu_p">def Errcode:$arg1</p>
+
+<p>返回错误代码</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p><strong>Return:</strong> 错误代码</p>
+<p class="cu_p">def Errmsg:$arg1</p>
+
+<p>返回错误信息</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p><strong>Return:</strong> 错误信息</p>
+<p class="cu_p">def Lastinsertrowid:$arg1</p>
+
+<p>返回最后插入的行ID</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p><strong>Return:</strong> ID</p>
+<p class="cu_p">def Version:</p>
+
+<p>返回数据库版本</p>
+<p><strong>Return:</strong> 字典，versionNumber，versionString</p>
+<p class="cu_p">def Columnname:$arg1,$arg2</p>
+
+<p>返回列名称</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p>$arg2：列索引</p>
+<p><strong>Return:</strong> 列名称</p>
+<p class="cu_p">def Bindtext:$arg1,$arg2,$arg3</p>
+
+<p>绑定文本</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p>$arg2：列索引</p>
+<p>$arg3 : 要绑定的值</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Bindnumber:$arg1,$arg2,$arg3</p>
+
+<p>绑定数值</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p>$arg2：列索引</p>
+<p>$arg3 : 要绑定的值</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Bindnull:$arg1,$arg2,$arg3</p>
+
+<p>绑定null</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p>$arg2：列索引</p>
+<p>$arg3 : 要绑定的值</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Prepare:$arg1,$arg2</p>
+
+<p>预编译SQL</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数据库链接</p>
+<p>$arg2：SQL语句</p>
+<p><strong>Return:</strong> sqlite statement</p>
+<p class="cu_p">def Columncount:$arg1</p>
+
+<p>返回列数量</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p><strong>Return:</strong> 列数</p>
+<p class="cu_p">def Columntype:$arg1,$arg2</p>
+
+<p>返回列类型</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p>$arg1：列索引</p>
+<p><strong>Return:</strong> 列类型</p>
+<p class="cu_p">def Finalize:$arg1</p>
+
+<p>返回列类型</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p><strong>Return:</strong> 是否成功</p>
+<p class="cu_p">def Reset:$arg1</p>
+
+<p>重置statement</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：Prepare 返回的statement</p>
+<p><strong>Return:</strong> 是否成功</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../thread/" class="btn btn-neutral float-right" title="多线程">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../env/" class="btn btn-neutral" title="系统环境"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../env/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../thread/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

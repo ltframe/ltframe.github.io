@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>教程 - Menthol document -v1.4</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="v.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u6559\u7a0b";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Menthol document -v1.4</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">教程</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#menthol">第一章 关于Menthol</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_1">第二章 数据类型</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">第三章 变量基础</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_3">第四章 运算符</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_4">第五章 流程控制</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_5">第六章 包、模块、函数</a></li>
+    
+
+    <li class="toctree-l2"><a href="#api">第七章 API列表</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_6">第八章 桌面程序开发</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_7">第九章 多线程</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_8">第十章 开发扩展程序</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">系统模块</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="inou/">输入输出</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="files/">文件系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="crypto/">加密解密</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="string/">字符串</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="type/">内置类型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="math/">数学相关</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="env/">系统环境</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="database/">数据库</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="thread/">多线程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="datatime/">时间日期</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="network/">网络系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="iup/">GUI</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Menthol document -v1.4</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>教程</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="menthol">第一章 关于Menthol</h1>
+<p><strong>1.1. 什么是Menthol？</strong></p>
+<p>Menthol 是一种解释型的、面向函数的编程语言。它采用C++开发而成，并且开放源码。配合简便的扩展方式，它可以满足你任何的开发需求
+不过，Menthol也有其局限性。你不能使用 Menthol开发出独立的使用操作系统运行的程序，所有Menthol的程序都必须使用一个宿主进行解析后才可正常运行
+Menthol 是一种无类型的语言。无类型意味着不必显式定义变量的数据类型。实际上你也无法上明确地定义数据类型。因为所有的类型都是在运行时才会确定的。为了开发方便，Menthol还引入了包和模块的概念，包就是一堆模块，模块就是全局变量，函数的集合体，有点类似面向对象语言里的类的概念，但又不太相同。模块可以是你自己开发的变量函数集合体，也可以是用C/C++开发出来的类库，不过在引用的时候它们没有差别</p>
+<p><strong>1.2.准备工作</strong></p>
+<p>Menthol是一个使用简单，易于学习的编程语言，如果你有其他编程语言，例如C,javascript,Python等编程语言的编写经验的话，本手册对你来说可能有点多余，你看看程序包或者源码包里的example中的实例就可以开始干了。其实我想说的是，Menthol就是如此简单的一个编程语言，下面我将详细说明</p>
+<p>首先，你要获得menthol，访问<a href="http://www.ltplayer.com/menthol.html">www.ltplayer.com/menthol.html</a></p>
+<p><img src="/images/mentholhtmlimg/mentholhtml4163.png"></p>
+<p>这个是menthol项目的页面，它部署于github上，如果你不想研究menthol的源码，直接点击read more会进入github menthol是项目页，在点击release就进入了下载页面</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml4242.png"></p>
+<p>点第一个就可以下载release版本就可以了。</p>
+<p>这个是个压缩包，解压后你会看到大概像如下的结构</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml4301.png"></p>
+<p>Compile.exe是编译程序，源码编写都要经过此程序编译后才能正常使用.Run.exe，为运行程序，编译后的源码使用此程序运行，便可以运行menthol程序。menthol.dll是动态链接库，是支持menthol运行的核心库，menthol.lib是静态库，如果你要开发menthol程序的话，需要使用这个静态库，menthol.h，头文件。</p>
+<p>lib文件夹下，是menthol自带的一些基本的类库。example是一些实例，关于基本语法等，还包括一个使用zplay开发而成的简单音乐播放器</p>
+<p>但是，如果你想研究或者自己编译menthol程序，就需要下载menthol源代码，同样进入menthol页面，点击sourcecode按钮，便会进入menthol在github上的项目仓库，不过前提需要你的电脑上安装过vs2015或者更高版本，因为menthol1.4是在vs2015上开发而成，所以vs2015以下版本是否能正常编译，无法确定</p>
+<p><strong>libsrc目录为系统自带包，在编译完menthol以后，需要用menthol编译程序编译它们，并将编译后的文件存入lib文件夹里，example1为实例测试使用的库，如果你要运行测试实例，需要将它放在你运行的程序目录中，或者在程序中指定它的路径，具体可以参考release中的文件安排</strong></p>
+<p><img src="/images/mentholhtmlimg/mentholhtml4736.png"></p>
+<p>可以点击download zip下载源码，这个最简单，如果有你要clone 的话，需要git工具，这需要你有操作git工具的知识，本文档不讨论git文档的使用，不过git工具的使用并不复杂，如果使用GUI工具的话，使用会更加简便，读者只需简单学习便可以使用。</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml4892.png"></p>
+<p>获得源码后，点击menthol.sln将会用打开。然后可以选择release或者debug编译,最后将在debug或者release文件夹中产生编译后的文件</p>
+<p><strong>1.3.开始写第一个程序</strong></p>
+<p>一个完整的Menthol程序应该包括的是一个__mmain函数、导入的程序包、模块调用、模块定义。__mmain函数很重要，这是启动函数，在程序被调用时，系统会自动执行这个函数，作为整个程序调用的入口，所以，它是必须要有的，否则程序无法正常启动。在menthol中，因为所有的函数定义必须要基于模块开发，但是，__mmain函数是唯一个不需要定义模块就能单独使用的函数，仅此一个函数。</p>
+<p>一个最小的Menthol程序不要包含任何的包、模块、全局变量，便可以正常启动。但这似乎并没有什么意义。下面的代码就是一个最小的menthol程序</p>
+<pre><code>    _mmain:$a,$c
+    {   
+
+    }
+</code></pre>
+
+<p>但是他什么都不执行，仅仅是程序编写上的正常。</p>
+<p>你可以把它复制到记事本或其他编辑器内，将文件保存为main.me类型。me类型为menthol的可执行文件原文件名,取menthol单词的前两个字母。</p>
+<p>现在打开控制台，并进入刚才文件所存储目录中，打开Compile.exe,将刚才你存的文件作为参数跟在后面，回车执行,会生成一些调试信息，包括发生错误时,原文件的行数，以及源文件的完整路径</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml5427.png"></p>
+<p>好了，可以看到编译完成,你会发现在main.me下面多出来个main.mee。这个便是编译以后生成的文件，mee是menthol可执行文件的缩写(me execute)</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml5517.png"></p>
+<p>然后我们就可以运行这个程序了，同样的操作方式，只不过要执行run.exe ,将刚才生成的main.mee 作为参数跟在后面执行即可。因为程序内什么都没有执行，所以没有任何输出。</p>
+<p>现在把上述程序该一下。</p>
+<pre><code>Import console;
+use Conosle;
+module test{
+  def func:$str
+  {
+      mmrt(Console).Out($str);
+  }
+}
+_mmain:$a,$b
+{
+    mmrt(test).func(&quot;牛逼!!!!!!&quot;);
+}
+</code></pre>
+
+<p>然后重复上面的编译过程，然后运行
+<img src="/images/mentholhtmlimg/mentholhtml5746.png"></p>
+<p>可以看看到了输出文字。Console是控制输入输出与文件读写的库，我们会在后面讲到。</p>
+<p><strong>1.4.关键字</strong></p>
+<p>“关键字”是对menthol具有特殊含义的单词。标识符不能具有与 menthol关键字相同的拼写和大小写,同时你也不能重新定义关键字， 也不能将关键字用于定义函数名。Menthol目前拥有19个关键字，下面是所有关键字</p>
+<p>if         else        for       break       true      false      try        except       throw     continue    return     while       null      import    _mmain    def    var       in          typeof         module          use
+const      mmrt</p>
+<p><strong>1.5.程序注释</strong></p>
+<p>“注释”就是你不舍得删除又嫌它碍眼，或者你可能又不知道在啥时候会继续使用的一段代码的临时废除符号，使用注释符号，可以把你代码中被注释的代码在编译时候忽略掉，但你还能看见它，但编译器不会处理它，它的存在不会对程序运行起任何作用</p>
+<p>“注释”是一个以正斜杠/星号组合（/<em>）开头的字符序列，到分隔符 (</em>/) 结束的一段表示。 注释可以占用多行，但无法嵌套。如果你要注释单行也可以采用两个正斜杠//</p>
+<pre><code>Import console;
+use Conosle;
+/*def func:$str
+{
+    mmrt(Console).Out($str);
+}*/
+_mmain:$a,$b
+{
+    //var $a = 0;
+}
+</code></pre>
+
+<h1 id="_1">第二章 数据类型</h1>
+<p><strong>2.1.基础</strong></p>
+<p>Menthol支持目前以下几种类型：</p>
+<p>数值
+Null
+字符串
+数组
+字典
+Object
+布尔类型
+函数类型
+Mmrt</p>
+<pre><code>Import console;
+use Console;
+
+module test
+{
+def func:
+  {
+  }
+}
+_mmain:$a,$c
+{ 
+    var $p = 123; //数值
+    var $consolemmrt = mmrt(Console);
+    $consolemmrt.Out(typeof($p)); //print M_NUMBER
+    $p = null;//null
+    $consolemmrt.Out(typeof($p));//print M_NULL
+    $p = &quot;string&quot;; //字符串
+    $consolemmrt.Out(typeof($p));//print M_STRING
+    $p = {1,2,3}; //数组
+    $consolemmrt.Out(typeof($p));//print M_ARRAY
+    $p = (key1::&quot;value1&quot;,key2::&quot;value2&quot;); //字典
+    $consolemmrt.Out(typeof($p));//print M_DICT
+    $p = true; //bool
+    $consolemmrt.Out(typeof($p));//print M_BOOL
+    $p = mmrt(test);//mmrt
+    $consolemmrt.Out(typeof($p.func));//函数
+    $consolemmrt.Out(typeof($p));
+  }
+</code></pre>
+
+<p>Menthol作为无类型语言，变量类型可以随时转换类型，而不需其它任何操作</p>
+<p><strong>2.2. 布尔类型</strong></p>
+<p>布尔类型是数据类型中最简单的类型了，就两个值，true,false，它区分大小写</p>
+<p>声明一个布尔类型如下</p>
+<pre><code>_mmain:$a,$c
+{   
+  Var $p = true;
+}
+</code></pre>
+
+<p>布尔类型的值通常用在流程判断里，例如while,if语句中</p>
+<pre><code>_mmain:$a,$c
+{   
+  Var $p = true;
+  If($p==true){
+
+  }
+}
+</code></pre>
+
+<p>但是布尔值也是可以隐式转换的，比如:</p>
+<p>用在判断中的时候，0表示为false,非0表位为true
+用在加法时候，false将转换为数值0,true将转换为数值1
+用在字符串连接的时候,false将转换为字符串”false”,true将转换为字符串”true”</p>
+<p><strong>2.3. 数值类型</strong></p>
+<p>数值可以使用十进制，十六进制，八进制表示，前面可以加上可选的符号（- 或者 +）。 要使用八进制表达，数字前必须加上 0（零）。要使用十六进制表达，数字前必须加上 0x。</p>
+<pre><code>_mmain:$a,$c
+{   
+  var $p = 066;//八进制
+  $p = 0xFF;//十六进制
+  $p = 123;
+  $p = -123; //负数
+  $p = 33.648;
+}
+</code></pre>
+
+<p>数值类型的表示范围为-2^1024 ~ +2^1024,如果超过这个范围，程序将会报错。</p>
+<p>在表示布尔判断的时候.0将表示为false,非0将表示为true</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+    var $m = mmrt(Console);
+    if(-1223){
+      $m.Out(&quot;true&quot;);
+    }
+    if(0){
+      $m.Out(&quot;false&quot;);
+    }
+}
+</code></pre>
+
+<p><strong>2.4. 字符串类型</strong></p>
+<p>一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节</p>
+<p>定义一个字符串的最简单的方法是用双引号（“）把它包围起来。 如果””中没有任何字符，则称之为空字符串，它代表“”中只有一个没有字符，从计算机本身的角度来讲空字符串中也有要给字符是\0，ascii为0</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+  var $m = mmrt(Console);
+  $m.Out(&quot;this is a string&quot;);
+  var $p = &quot;this is a string&quot;;
+  $m.Out($p);
+}
+</code></pre>
+
+<p>要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。</p>
+<p>转义符列表</p>
+<p>\n   换行</p>
+<p>\r   回车</p>
+<p>\b  退格</p>
+<p>\”  双引号</p>
+<p>字符串的连接通过加号（+）来实现，可以将两个或多个字符串连接在一起成为一个新的字符串</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+mmrt(Console).Out(&quot;this is a string&quot;++&quot;1&quot;+&quot;2&quot;);//print this is a string12
+}
+</code></pre>
+
+<p>事实上。字符串也是一个数组，关于数组的操作可以应用于字符串中，有关数组的定义及操作方式，下一节将会介绍</p>
+<p><strong>2.5. 数组类型</strong></p>
+<p>所谓数组，是有序的元素序列。若将有限个类型相同的变量的集合命名，那么这个名称为数组名。组成数组的各个变量称为数组的分量，也称为数组的元素</p>
+<p>Menthol定义数组使用括号定义([]),在括号中，包含若干用逗号（，）分给的元素。如果括号中没有元素，则这个数组为0个元素的数组。数组元素可以是Menthol中的任何类型、表达式。</p>
+<pre><code>_mmain:$a,$c
+{   
+var $p = [];
+  $p = [1,2,3,3+2,true];
+}
+</code></pre>
+
+<p>如果要获取数组元素或设置数组元素的新值，可以使用[]来实现，[]是填写数组的索引值，索引值也称为下标，从0开始，0表示数组的第一个元素</p>
+<pre><code>_mmain:$a,$c
+{   
+  var $arr = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+  $a = $arr[1..];  //$a is [&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;]
+  $a = $arr[..3];//$a is [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]
+  $a = $arr[2..4];//$a is [&quot;c&quot;,&quot;d&quot;,&quot;e&quot;]
+  $a = $arr[1];$a is b
+}
+</code></pre>
+
+<p>如果要设置也可以用[]方式来表示，如果设置一个大于当前数组索引的值，则这个索引以前的元素会被自动填充为null</p>
+<pre><code>_mmain:$a,$c
+{   
+  var $arr = [];
+  $arr[0] = 1; //$arr is [1]
+  $[3] = 2;// $arr is [1,null,null,2]
+}
+</code></pre>
+
+<p>在上一节讲道字符串也是数组的时候说过，数组的操作方式也适用于字符串</p>
+<pre><code>_mmain:$a,$c
+{   
+  var $arr = &quot;abcdef&quot;;
+  $a = $arr[1..];  //$a is &quot;bcdef&quot;
+  $a = $arr[..3];//$a is &quot;abcd&quot;
+  $a = $arr[2..4];//$a is &quot;cde&quot;
+  $a = $arr[1];$a is b
+}
+</code></pre>
+
+<p><strong>2.6. 字典类型</strong></p>
+<p>字典是另一种可变容器模型，且可存储任意类型对象。</p>
+<p>字典的每个键值 key,value 对用双冒号 :: 分割，每个键值对之间用逗号 , 分割，整个字典包括在括号()中 , 在字典中，键是唯一的，但值可以重复，键必须是字符串类型，但值可以是任意类型</p>
+<pre><code>_mmain:$a,$c
+{   
+  var $str = &quot;this is a string&quot;;
+  var $dict = (key1::-111,key2::$str);
+}
+</code></pre>
+
+<p>值可以设置任何数据类型，但键必须是不可变的。</p>
+<p>字典的取值和设置方式同样也是通过key,value 用双冒号分割”::”</p>
+<pre><code>_mmain:$a,$c
+{   
+    var $str = &quot;this is a string&quot;;
+    var $dict = (key1::-111,key2::$str);
+    Var $v = $dict::key1; //print -111
+    $dict::key1 = -222;
+    $v = $dict::key1; //print -222
+}
+</code></pre>
+
+<p>字典的便利可以通过for in 方式</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+  Var $arr =(key1::&quot;value1&quot;,key2::&quot;value2&quot;);
+  for(var $key,$value in $arr)
+  {
+    mmrt(Console).Out($key+&quot;:&quot;+$value);
+  }
+}
+</code></pre>
+
+<p>如果要设置一个不存在的key，则会将新设置的key加入到字典中，如果取一个不存在的值则会返回null</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+  var $m = mmrt(Console);
+  Var $arr =(key1::&quot;value1&quot;,key2::&quot;value2&quot;);
+  $m.Out($arr::key3); //print null
+  $arr::key3=333;
+  $m.Out($arr::key3);//print 333
+}
+</code></pre>
+
+<p><strong>2.7. object</strong></p>
+<p>Object 通常用在和外部扩展库的交互上，例如C/C++返回了指针类型，则在menthol程序总表示为Object类型，但在menthol源码中，不会使用这种类型</p>
+<p><strong>2.8. null类型</strong></p>
+<p>null是一个特殊的数据类型,null 值表示一个变量没有值。其实际含义就是部署于任何类型</p>
+<p>在下列情况下一个变量被认为是 NULL：</p>
+<p>1.被赋值为 NULL。</p>
+<p>2.未被赋值。</p>
+<pre><code>_mmain:$a,$c
+{   
+  Var $arr =null;
+}
+</code></pre>
+
+<p><strong>2.9. 函数类型</strong></p>
+<p>函数类型不是说定义一个函数，而是说把函数看做一个变量类型，例如把函数当做另一个函数的参数传入，通常被称为回调函数</p>
+<pre><code>_mmain:$a,$c
+{   
+  Var $arr =null;
+}
+</code></pre>
+
+<p>函数类型类型可以是模块函数，本模块内函数，但需要在使用前就已经定义，否则编译将会报错</p>
+<pre><code>Import console;
+use Console;
+module test
+{
+  var @c=mmrt(Console);
+  def callback:$i
+  { 
+    @c.Out($i);
+  }
+
+  def func:$fun,$i
+  {
+    $fun($i);
+  }
+}
+_mmain:$a,$c
+{ 
+  var $t =mmrt(test);
+  $t.func($t.callback,1000);
+}
+</code></pre>
+
+<h1 id="_2">第三章 变量基础</h1>
+<p><strong>3.1.基础</strong> </p>
+<p>menthol中的变量用一个var关键字空格，变量名来表示一个变量。在menthol中变量分为全局变量和局部变量两种，全局变量为在一个模块内可以发生作用的变量用@为前缀，局部变量为一个函数内或者一个作用域内发生作用的变量，用$符号后面跟变量名来表示。变量名是区分大小写的。一个有效的变量名由字母或者下划线开头，后面跟上任意数量的字母，数字，或者下划线</p>
+<pre><code>module test
+{
+var @global; 
+}
+_mmain:$a,$c
+{   
+    var $v1=123;
+    var $_v2 = “aaaa”;
+    {
+    Var $v3 = 666;
+    }
+}
+</code></pre>
+
+<p>变量默认总是传值赋值。那也就是说，当将一个表达式的值赋予一个变量时，整个原始表达式的值被赋值到目标变量。这意味着，例如，当一个变量的值赋予另外一个变量时，改变其中一个变量的值，将不会影响到另外一个变量</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+  var $arr =(key1::&quot;value1&quot;,key2::&quot;value2&quot;);
+  var $n = $arr;
+  var $m =mmrt(Console);
+  $m.Out($n::key1); //print value1
+  $n = 4;
+  $m.Out($arr::key1); //print value1
+}
+</code></pre>
+
+<p>变量的声明，可以不要初始化，如果不初始化则变量被默认声明为null,全局变量和局部变量都一样</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+  var $n ;
+  mmrt(Console).Out($n); //print null
+}
+</code></pre>
+
+<p>变量的声明可以是一行一个，也可以在一个var 关键字后声明多个变量，并且遵循可以初始化也可以不初始化的原则</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{   
+  var $m =mmrt(Console);
+  var $n=333,$f,$t = 666 ;
+  $m.Out($n); //print 333
+  $m.Out($f);//print NULL
+  $m.Out($t);//print 666 
+}
+</code></pre>
+
+<p>一个重要原则，任何变量的使用(调用或给其赋值)，在使用前必须优先被声明，如果未声明时而使用或者在使用后再声明，则编译程序将会报错</p>
+<pre><code>_mmain:$a,$c
+{   
+    $n  = 666; //error
+    Var $n; 
+}
+</code></pre>
+
+<p><strong>3.2.作用域</strong></p>
+<p>对于menthol来说作用域一般指一个模块、运行程序，以及花括号”{}”，变量的范围即它定义的上下文背景（也就是它的生效范围）。</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{ 
+var $f;
+  {
+    var $g;
+  }
+  {
+    var $m =mmrt(Console);
+    $m.Out($g); //错误，在本作用域内没有发现$g
+    $m.Out($f); //ok
+  } 
+}
+</code></pre>
+
+<p>对于全部变量，他的作用域在整个程序运行范围内，也就是说，在程序启动后，全部变量不论是不是在本模块内，都是可见的，他的生存期是在整个程序启动到结束</p>
+<p>对于函数参数，它的作用域就是本函数内，出了本函数，参数就失效了.</p>
+<p>对于for in 中的临时变量生命，它只在for in 的循环体内</p>
+<pre><code>mmain:$a,$c
+{ 
+  for(var $g in [1,2,3]){
+    $g;   
+}
+  $g;//错误，$g为临时变量
+}
+</code></pre>
+
+<p><strong>3.3表达式</strong></p>
+<p>对大多数语言来说，程序就是一堆表达式的集合.在menthol中，任何的语句基本都叫做表达式，最简单的表达式就是语句的结束符”;”，这就是个表达式，没有任何意思。再比如随便一个数组，数字，字符串，声明、赋值语句等，都可以叫做表达式</p>
+<pre><code>_mmain:$a,$c
+{ 
+  123456;
+  &quot;asdfasdf&quot;;
+  $a = 666;
+  var $t = &quot;fffff&quot;;
+  1+2;
+  1*2;
+  &quot;aaaaaaa&quot;+&quot;bbbbbbbbbb&quot;;
+  $a+$c;
+  [];
+  [1,2,3];
+}
+</code></pre>
+
+<p>但是，一定要注意，任何一个表达式，它的结尾都要有结束符 “;”,否则会被编译器认为存在语法错误。表达式一行可以写多个，但需要在每个表达式后面写结束符</p>
+<p>不过表达式本身是可以用”,”分割的，例如</p>
+<pre><code>$a = 1,2,3;
+</code></pre>
+
+<p>类似这种的也是合法的表达式，但是上边的表达式，只会返回1赋值给$a.所以对于声明变量,一下声明都是正确的</p>
+<pre><code>module test
+{
+var @g1,@g2=1,@g3;//ok
+}
+_mmain:$a,$c
+{ 
+  var $g1,$g2=1,$g3;//ok
+  mmrt(test).@g1=test.@g2=test.$g3=2;
+}
+</code></pre>
+
+<p><strong>3.4 const变量</strong></p>
+<p>const变量是不能被修改的变量，也就是说，const变量一旦被初始化后，则在以后不能被修改它的值，例如</p>
+<pre><code>
+_mmain:$a,$c
+{ 
+  var const $test = 999;
+  $test = 666; //error
+}
+
+</code></pre>
+
+<p>$test变初始化为const变量，如果再设置它的值，则会产生错误。但是,const变量值只修饰被初始化时候的那个变量,如果,将const变量修饰的值，赋值给了非const变量，则非const变量是可以修改的</p>
+<pre><code>
+_mmain:$a,$c
+{ 
+  var const $test = 999;
+  var $aaa = $test; //ok
+}
+
+</code></pre>
+
+<p>const变量除了可以修饰全局变量、局部变量以外，还可以函数的参数，或者except参数</p>
+<pre><code>module test
+{
+  def func:const $a,const $b
+  {
+
+  }
+}
+</code></pre>
+
+<p><strong>3.5 关于MMRT</strong></p>
+<p>MMRT是整个menthol中最重要的关键字,它用来创建可以隔离运行的模块，所谓的隔离运行，是指模块中的全局变量可以在不同的mmrt环境中相互不干涉，不同的mmrt修改模块全局变量，只会修改自身运行时，不会对整个模块造成影响，在mentho 1.3以前，模块是无法隔离运行的,例如</p>
+<pre><code>module test
+{
+  var @a =1;
+}
+
+_mmain:$a,$c
+{ 
+  test.@a = 2 
+  test.@a //output 2
+}
+</code></pre>
+
+<p>在采用mmrt以后,会发现,不同的mmrt环境不会对模块本身产生影响</p>
+<pre><code>module test
+{
+  var @a =1;
+}
+
+_mmain:$a,$c
+{ 
+  mmrt(test).@a = 2 
+  mmrt(test).@a //output 1
+}
+</code></pre>
+
+<p>如果你熟悉java,js,c#等语言话，可以把mmrt理解为new,但menthol本身不是面向对象的语言，所以，mmrt只在意思上相近，并非完全相同</p>
+<p>用mmrt创建运行时，会进行相应代码的执行，因此，在使用mmrt时，会对运行效率产生一定的影响，所以，在使用mmrt时，应尽量避免多次使用，将统一模块申明为一个变量，在其他代码中重复使用</p>
+<p>注意:1.4开始模块的使用必须使用mmrt创建运行环境</p>
+<h1 id="_3">第四章 运算符</h1>
+<p><strong>4.1运算符基础</strong></p>
+<p>运算符是可以通过给出的一或多个值（用编程行话来说，表达式）来产生另一个值（因而整个结构成为一个表达式）的东西。</p>
+<p>运算符可按照其能接受几个值来分组。一元运算符只能接受一个值，例如 !（逻辑取反运算符）二元运算符可接受两个值，例如熟悉的算术运算符 +（加）和 -（减），大多数 PHP 运算符都是这种。最后是唯一的三元运算符 ? :，可接受三个值；通常就简单称之为“三元运算符”（尽管称之为条件运算符可能更合适）。</p>
+<p>Menthol支持目前以下运算符：</p>
+<ul>
+<li>
+<ul>
+<li>/ () ; , | &amp;  ? [] ! % ^ : :: .. = &lt; &gt; != &lt;&gt; || &amp;&amp;  &gt;= &lt;= == += -= /= <em>= %= &amp;= |= ^= &lt;&lt; &gt;&gt; </em>* typeof</li>
+</ul>
+</li>
+</ul>
+<p><strong>4.2.加法运算符</strong></p>
+<p>将数字表达式的值加到另一数字表达式上，或连接两个字符串,数组等</p>
+<p>result = expression1 + expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    var $arr = [1,2,3,4,5,6];
+    $arr = 888+$arr;
+    $a = null;
+    $a = $a+true;
+    mmrt(Console).Out($a);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。</p>
+<p>1.expression1,expression2同为数字时，相加</p>
+<p>2.expression1,expression2同为bool时，先转换bool值为数字，true转换为1，false转换为0，然后相加</p>
+<p>3.expression1,expression2同为string时，连接</p>
+<p>4.expression1,expression2有一个为array时，组合为新的array</p>
+<p>5.expression1,expression2有一个为string，另一个数字转字符串，bool转true,false,null转空</p>
+<p>6.expression1,expression2 有一个为bool时,先转换bool值为数字，true转换为1，false转换为0，然后相加</p>
+<p>7.expression1,expression2 有一个为null时,另一个如果是字符，null转换为空字符串，如果为数字时，true转换为1，false转换为0</p>
+<p><strong>4.3减法运算符</strong></p>
+<p>从一个表达式的值中减去另一个表达式的值，只有一个表达式时取其相反数。</p>
+<p>result = expression1 - expression2</p>
+<p>result = -expression1</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    var $cc = mmrt(Console);
+    $a =-6;
+    $cc.Out($a);
+    $a = null;
+    $cc.Out($a-3);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.4.乘(*)运算符</strong></p>
+<p>两个表达式的值相乘。</p>
+<p>result = expression1 * expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3*3);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.5.除法(/)运算符</strong></p>
+<p>两个表达式的值相除。</p>
+<p>result = expression1 / expression2</p>
+<pre><code>Import console;
+use Console;
+
+_mmain:$a,$c
+{
+    $a = 3;
+    mmrt(Console).Out($a/3);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.6.三目(?:)运算符</strong></p>
+<p>根据条件执行两个语句中的其中一个。</p>
+<p>test ? expression1 : expression2</p>
+<p>test：bool表达式语句expression1,expression2为表达式.</p>
+<p>当test为true则执行expression1,否则执行expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  var $cc = mmrt(Console);
+  $cc.Out(3&gt;1?3:1); //print 3
+  $cc.Out(3&lt;1?3:1);//print 1
+}
+</code></pre>
+
+<p><strong>4.7.按位“或”运算符 (|)</strong></p>
+<p>对两个表达式执行按位“或”</p>
+<p>result = expression1 | expression2</p>
+<p>expression1,expression2为表达式</p>
+<p>运算符查看两个表达式的二进制表示法的值，并执行按位“或”操作。该操作的结果如下所示：</p>
+<p>0101   (expression1)</p>
+<p>1100   (expression2)</p>
+<hr />
+<p>1101   (结果)</p>
+<p>任何时候，只要任一表达式的一位为 1，则结果的该位为 1。否则，结果的该位为 0。 </p>
+<p><strong>4.8.按位“与”运算符 (&amp;)</strong></p>
+<p>对两个表达式执行按位“与”</p>
+<p>result = expression1 &amp; expression2</p>
+<p>expression1,expression2为表达式</p>
+<p>运算符查看两个表达式的二进制表示法的值，并执行按位“与”操作。该操作的结果如下所示：</p>
+<p>0101   (expression1)</p>
+<p>1100   (expression2)</p>
+<hr />
+<p>0100   (结果)</p>
+<p>任何时候，只要任一表达式的一位为 1，则结果的该位为 1。否则，结果的该位为 0。</p>
+<p><strong>4.9.逻辑“非”运算符 (!)</strong></p>
+<p>对一个表达式执行逻辑非。</p>
+<p>result = !expression</p>
+<p>Expression 任何表达式。</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  var $con = mmrt(Console); 
+  $con.Out(!false); //print true
+  $con.Out(!true);//print false
+}
+</code></pre>
+
+<p>Expression为null则转换为false,如果是数字，则0为false,非0为true,其他类型则true</p>
+<p><strong>4.10.取余运算符 (%)</strong></p>
+<p>一个表达式的值除以另一个表达式的值，返回余数。</p>
+<p>result = number1 % number2</p>
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<pre><code>Import console;
+use Console;
+
+_mmain:$a,$c
+{
+  mmrt(Console).Out(19.9%7); //print 5
+}
+</code></pre>
+
+<p>取余（或余数）运算符用 number1 除以 number2 ,会将两个操作数做取整操作后，再取余数，然后只返回余数作为 result。</p>
+<p><strong>4.11.按位“异或”运算符 (^)</strong></p>
+<p>对两个表达式执行按位“异或”</p>
+<p>result = expression1 ^ expression2</p>
+<p>expression1,expression2为表达式</p>
+<p>运算符查看两个表达式的二进制表示法的值，并执行按位“异或”操作。该操作的结果如下所示：</p>
+<p>0101   (expression1)</p>
+<p>1100   (expression2)</p>
+<hr />
+<p>1001   (结果)</p>
+<p>任何时候，只要任一表达式的一位为 1，则结果的该位为 1。否则，结果的该位为 0。</p>
+<p><strong>4.12.赋值运算符 (=)</strong></p>
+<p>给变量赋值</p>
+<p>result = expression</p>
+<p>expression任何表达式。</p>
+<p>= 运算符和其他运算符一样，除了把值赋给变量外，使用它的表达式还有一个值。这就意味着可以象下面这样把赋值操作连起来写：</p>
+<p>j = k = l = 0;</p>
+<p>执行完该例子语句后，j、k、和 l 的值都等于零。 但上面的写法，仅限于赋值，初始化不可以</p>
+<p><strong>4.13.小于运算符 (&lt;)</strong></p>
+<p>两个表达式的小于比较。</p>
+<p>result = expression1 &lt; expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  mmrt(Console).Out(3&lt;true)
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，遵循C的strcmp原则</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.14.大于运算符 (&gt;)</strong></p>
+<p>两个表达式的大于比较。</p>
+<p>result = expression1 &gt;expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3&gt;true);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，遵循C的strcmp原则</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.15.比较运算符 (!=)</strong></p>
+<p>两个表达式的大于比较。</p>
+<p>result = expression1 &lt;&gt;(!=) expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3!=true);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，按照逐字符比较</p>
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.16.逻辑或运算符 (||)</strong></p>
+<p>对两个表达式执行逻辑或。</p>
+<p>result = expression1 || expression2</p>
+<p>expression1,expression2为表达式。null时,转换为false,数字0转换为false,非0为true,其他类型为true</p>
+<p>True True True</p>
+<p>True False True</p>
+<p>False True True</p>
+<p>False False False</p>
+<p><strong>4.17.逻辑“与”运算符 (&amp;&amp;)</strong></p>
+<p>对两个表达式执行逻辑“与”。</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3&amp;&amp;true);
+}
+</code></pre>
+
+<p>result = expression1 &amp;&amp; expression2</p>
+<p>expression1,expression2为表达式。null时,转换为false,数字0转换为false,非0为true,其他类型为true</p>
+<p>当且仅当两个表达式的值都等于 True 时， result 才是 True。如果任一表达式的值等于 False， 则 result 为 False。</p>
+<p><strong>4.18.逻辑大于或等于运算符 (&gt;=)</strong></p>
+<p>result = expression1 &gt;= expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3&gt;=true);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，按照逐字符比较</p>
+<p><strong>4.19.逻辑“小于或等于”运算符 (&lt;=)</strong></p>
+<p>result = expression1 &lt;= expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3&lt;=true);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，按照逐字符比较</p>
+<p><strong>4.20.逻辑“等于”运算符 (==)</strong></p>
+<p>result = expression1 == expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3==true);
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串比较，按照逐字符比较</p>
+<p><strong>4.21.加法赋值运算符 (+=)</strong></p>
+<p>将变量值与表达式值相加，并将和赋给该变量。</p>
+<p>result += expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    Var $p = 1;
+    $p+=1;
+    mmrt(Console).Out($p);//print 2
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.两个字符串,则进行连接操作</p>
+<p>使用本运算符与这样指定完全相同：</p>
+<p>result = result + expression</p>
+<p><strong>4.22.减法赋值运算符 (-=)</strong></p>
+<p>将变量值与表达式值相减，并将和赋给该变量。</p>
+<p>result -= expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+Var $p = 1;
+$p-=1;
+mmrt(Console).Out($p);//print 0
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.使用本运算符与这样指定完全相同：</p>
+<p>result = result - expression</p>
+<p><strong>4.23.除法赋值运算符 (/=)</strong></p>
+<p>将变量值与表达式值相除，并将和赋给该变量。</p>
+<p>result /= expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    Var $p = 9;
+    $p/=3;
+    mmrt(Console).Out($p);//print 3
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.使用本运算符与这样指定完全相同：</p>
+<p>result = result / expression</p>
+<p><strong>4.24.乘法赋值运算符 (*=)</strong></p>
+<p>将变量值与表达式值相乘，并将和赋给该变量。</p>
+<p>result *= expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    Var $p = 9;
+    $p*=3;
+    mmrt(Console).Out($p);//print 27
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
+<p>使用本运算符与这样指定完全相同：</p>
+<p>result = result * expression</p>
+<p><strong>4.25.取余赋值运算符 (%=)</strong></p>
+<p>result %= expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    Var $p = 9;
+    $p%=3;
+    mmrt(Console).Out($p);//print 0
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
+<p>使用本运算符与这样指定完全相同：</p>
+<p>result = result % expression</p>
+<p><strong>4.26.按位“与”赋值运算符 (&amp;=)</strong></p>
+<p>result &amp;= expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    var $p =1;
+    $p&amp;=1;
+    mmrt(Console).Out($p);//print 1
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
+<p>使用本运算符与这样指定完全相同：</p>
+<p>result = result &amp; expression</p>
+<p><strong>4.27.按位“或”赋值运算符 (|=)</strong></p>
+<p>result |= expression</p>
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    var $p =1;
+    $p|=1;
+    mmrt(Console).Out($p);//print 1
+}
+</code></pre>
+
+<p>使用本运算符与这样指定完全相同：</p>
+<p>result = result | expression</p>
+<p><strong>4.28.按位“异或”赋值运算符 (^=)</strong></p>
+<p>result ^= expression</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    var $p =1;
+    $p^=1;
+    mmrt(Console).Out($p);//print false
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.其他类型则转换为0</p>
+<p>使用本运算符与这样指定完全相同：</p>
+<p>result = result ^ expression</p>
+<p><strong>4.29.按位左移运算符 (&lt;&lt;)</strong></p>
+<p>result = expression1 &gt;&gt; expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(1&lt;&lt;1);//print 2
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.其他类型则转换为0</p>
+<p>运算符把 expression1 的所有位向右移 expression2 指定的位数。expression1 的符号位被用来填充右移后左边空出来的位。向右移出的位被丢弃</p>
+<p><strong>4.30.按位右移运算符 (&gt;&gt;)</strong></p>
+<p>result = expression1 &gt;&gt; expression2</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(1&gt;&gt;1);//print 0
+}
+</code></pre>
+
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.其他类型则转换为0</p>
+<p>&lt;&lt; 运算符把 expression1 的所有位向左移 expression2 指定的位数。</p>
+<p><strong>4.31.幂运算符 (</strong>)**</p>
+<p>result = expression1 ** expression2</p>
+<p>expression1,expression2为表达式。null时,转换为0，true转换为1，false转换为0.</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+    mmrt(Console).Out(3**3);//print 27
+}
+</code></pre>
+
+<p>除以上类型外，其他类型进行详见操作，则会报错</p>
+<p><strong>4.32.typeof</strong></p>
+<pre><code>result = typeof(expression)
+</code></pre>
+
+<p>返回expression的类型</p>
+<h1 id="_4">第五章 流程控制</h1>
+<p><strong>5.1.基础介绍</strong></p>
+<p>menthol中的语句一般是按照写的顺序来运行的。这种运行称为顺序运行，是程序流的默认方向。</p>
+<p>与顺序运行不同，另一种运行将程序流转换到脚本的另外的部分。也就是，不按顺序运行下一条语句，而是运行另外的语句。</p>
+<p>要使脚本可用，该控制的转换必须以逻辑方式执行。程序控制的转换是基于一个“决定”，这个“决定”结果是真或假（返回  Boolean 型 true 或 false）。 创建一个表达式，然后测试其是否为真。主要有两种程序结构实现本功能。</p>
+<p>Menthol使用三种流程控制方式</p>
+<p>If ,if else ,while,for  in</p>
+<p><strong>5.2. if else</strong></p>
+<p>根据一个表达式的值，有条件地执行一组语句。</p>
+<p>if (condition){
+   statement1</p>
+<p>}
+[else{
+   statement2}]</p>
+<p>condition必选项。一个 Boolean 表达式</p>
+<p>statement1可选项。condition 是 true 时要执行的语句。可以是复合语句。statement2可选项。condition 是 false 时要被执行的语句。可以是复合语句。</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+if(1&gt;2){
+  mmrt(Console).Out(1);
+}else
+{
+  mmrt(Console).Out(2);
+}
+}
+</code></pre>
+
+<p>If else 流程的else部分是可选的，可以不写，只写if 也是可以的</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+if(1&gt;2){
+  mmrt(Console).Out(1);
+}
+</code></pre>
+
+<p><strong>5.3. while</strong></p>
+<p>执行一个语句，直到指定的条件为 false。</p>
+<p>while (expression){
+   statements</p>
+<p>}</p>
+<p>expression必选项。Boolean 表达式，在循环的每次迭代前被检查。 如果 expression 是 true，则执行循环。如果 expression 是 false，则结束循环。</p>
+<p>statements可选项。expression 是 true 时要执行的一个或多个语句。</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  $a = 0;
+  var $m = mmrt(Console);
+  while($a&lt;10){
+    $m.Out($a);
+    $a = $a+1;
+  }
+}
+</code></pre>
+
+<p>表达式的值在每次开始循环时检查，所以即使这个值在循环语句中改变了，语句也不会停止执行，直到本次循环结束。有时候如果 while 表达式的值一开始就是 FALSE，则循环语句一次都不会执行。</p>
+<p><strong>5.4.for in</strong></p>
+<p>对应于一个对象的每个，或一个数组的每个元素，执行一个或多个语句。</p>
+<p>for (var variable,variable.... in [dict | array]){</p>
+<p>} </p>
+<p>variable必选项。一个变量，它可以是 object 的任一属性或 array 的任一元素。 </p>
+<p>dict, array要在其上遍历的字典或数组。</p>
+<p>statement可选项。相对于 object 的每个属性或 array 的每个元素，都要被执行的一个或多个语句。</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  var $m = mmrt(Console);
+  for(var $t,$s in (key1::1,key2::2))
+  {
+    $m.Out($t + &quot;:&quot; + $s);
+  }
+  for(var $t in [0,1,2])
+  {
+    $m.Out($t);
+  }
+}
+</code></pre>
+
+<p>在循环的每次迭代前，variable 被赋予 object 的下一个属性或 array 的下一个元素。然后可以在循环内的任一语句中使用它，就好像正在使用 object 的该属性或 array 的该元素一样。</p>
+<p>如果结合是dict则variable至少需要两个，一个是key,一个是值</p>
+<p><strong>5.5. try except</strong></p>
+<p>错误处理
+try {
+   statements1 </p>
+<p>}except:$arg1...{</p>
+<p>statements2</p>
+<p>}</p>
+<p>statements可选.在执行statements1 内容时，如果有throw抛出，则跳转至statements2,$arg1...为抛出错误时的参数可有多个</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  Try{
+Throw 111,222
+}
+Except:$arg1,$arg2
+{
+var $m = mmrt(Console);
+$m.Out($arg1) //print 111
+$m.Out($arg1) //print 222
+}
+}
+</code></pre>
+
+<p><strong>5.6 throw</strong></p>
+<p>抛出错误
+Thorw $arg,$arg....</p>
+<pre><code>Import console;
+use Console;
+_mmain:$a,$c
+{
+  Try{
+Throw 111,222
+}
+Except:$arg1,$arg2
+{
+  var $m = mmrt(Console);
+$m.Out($arg1) //print 111
+$m.Out($arg1) //print 222
+}
+}
+</code></pre>
+
+<p>用throw抛出异常，并不一定需要except去接受，如果throw没有用在try except中，则向用户注册的错误函数回调抛出 </p>
+<p><strong>5.7 break</strong></p>
+<p>跳出一个循环，用在for in 和while中 </p>
+<p>Break是无条件的，碰到break就会跳出循环</p>
+<pre><code>_mmain:$a,$c
+{
+  $a = 0;
+  while($a&lt;10){
+    Break;
+  }
+}
+</code></pre>
+
+<p><strong>5.8 continue</strong></p>
+<p>继续一个循环，用在for in 和while中 </p>
+<p>continue是无条件的，碰到continue就会跳会循环开始位置</p>
+<pre><code>_mmain:$a,$c
+{
+  $a = 0;
+  while($a&lt;10){
+    continue
+  }
+}
+</code></pre>
+
+<h1 id="_5">第六章 包、模块、函数</h1>
+<p><strong>6.1包的基本概念</strong></p>
+<p>在menthol中，包分为两个类型，一个类型是用menthol写的包，另一个是用C/C++写的扩展包</p>
+<p>menthol包的就是一个编译后的menthol文件或者是一个用C/C++写的库,Menthol包的扩展名是.mep,不过一个包从代码上来说和.me文件写法完全一样。包被编译好后，生成的文件扩展名为.med.用C/C++写的包编译后也需要将扩展名改为.med</p>
+<p><strong>6.2.导入包</strong></p>
+<p>无论是menthol写的包还是C/C++写的扩展包，包名就是文件名，例如有个包叫做a.med则在程序使用他的时候使用</p>
+<p>Improt a;</p>
+<p>就可以导入这个包了，包名并不区分大小写，也就是说imprt “a”和improt “A”同样都是导入了a.med文件，在语法上，包是可以重复导入的，不过重复导入的包会被忽略掉。</p>
+<p><strong>6.3.模块的概念</strong></p>
+<p>事实上，一个包中可以包含的只有另外的包，和模块了。模块相当于全局变量和函数的合集，全局变量和函数被封装在一个模块中，可以供其他的模块中的函数或者启动函数调用。</p>
+<p>一个包中，可以包含无数个模块，每个模块中又能包含无数个全局变量和函数，而且不能模块中的全局变量和函数相互并不冲突，即使他们叫了相同的名字。</p>
+<p>模块使用关键字module开始，后跟模块名{},{}中就是全局变量和函数了</p>
+<pre><code>Module test
+{
+    Var @g;
+    def func:
+    {
+    }
+}
+</code></pre>
+
+<p>一个最简单的模块可以没有全局变量或者函数，只有模块名就够了</p>
+<pre><code>Module test
+{
+
+}
+</code></pre>
+
+<p>虽然在语法上是正确的，但是这样的模块实际上并没有什么意义</p>
+<p><strong>6.4.模块的使用</strong></p>
+<p>在一个包被导入后，你就可以使用这个包中所包含的所有模块了，不过要使用一个模块，要使用关键字use 模块名，来定义</p>
+<p>use 关键字后面的模块名可以是一个，也可以是用逗号隔开的多个模块名，这些模块名可以是多个包内的，不要求完全从一个包内引入</p>
+<pre><code>Import  FileSystem;
+use File,Drives;
+use Directory
+</code></pre>
+
+<p>模块名是区分大小写的，在使用时一定要了解，被使用的模块名是大写还是小写，否则将找不到。</p>
+<p>模块也可以被多次使用，但是如果存在的话，在此被使用的，将被忽略</p>
+<pre><code>Import FileSystem;
+use File,Drives，Directory;
+use Directory
+</code></pre>
+
+<p><strong>6.5.函数的基本知识</strong></p>
+<p>函数执行操作，也可以返回值。某些时候是计算或比较的结果。</p>
+<p>一个函数中包含有几个操作。这样可使得代码更合理化。可以写一组语句并给其命名，然后通过调用它并传递其需要的信息来运行整组语句。</p>
+<p>给函数传递信息可以把信息放在函数名称后面的圆括号中。传递给函数的信息称作参数。某些函数根本不带任何参数，而其他函数带一个或者多个参数。在某些函数中，参数的个数取决于如何使用该函数。</p>
+<p><strong>6.6.函数定义和调用</strong></p>
+<p>无论是menthol写的包还是C/C++写的扩展包，包名就是文件名，例如有个包叫做a.med则在程序使用他的时候使用</p>
+<pre><code>module moduletest
+{
+    def fucn:$arg1,$arg2...
+    {
+      return 
+    }
+}
+</code></pre>
+
+<p>函数必须在调用之前被定义，否则编译程序将无法使用。 所有的函数都是基于包的概念存在的，他们全都在一个包内。</p>
+<p>在同一包内，调用函数不需要加包名，只需要函数名（参数列表）就可以，但是代用外部包函数则需要,在使用模块前,对模块使用mmrt关键字,创建模块的隔离运行环境.在本手册中多次使用的Out就是Console模块中的out函数</p>
+<pre><code>import conosle;
+use Console;
+_mmain:$a,$c
+{
+  mmrt(Console).Out(1);
+}
+</code></pre>
+
+<p><strong>6.7.函数参数</strong></p>
+<p>通过参数列表可以传递信息到函数，即以逗号作为分隔符的表达式列表。参数是从左向右求值的，并且在menthol中参数值传递</p>
+<p>1.函数的参数可能有多个，但在调用时候出入的参数比函数定义的参数要少，则默认传入NULL</p>
+<pre><code>import conosle;
+use Console;
+module test
+{
+def fucn:$a,$s
+{
+  var $m = mmrt(Console);
+  $m.Out($a);  //print 1
+  $m.Out($s); //print null
+}
+}
+_mmain:$a,$c
+{
+  mmrt(test).fucn(1);
+}
+</code></pre>
+
+<p>2.函数参数如果少于传入的参数，则多余的将被忽略</p>
+<p>3.函数的参数列表使用C++风格的默认参数，不过默认参数都是在最后，即有个默认参数后，后面要么是没有参数，要么剩下的都是默认参数</p>
+<pre><code>import conosle;
+use Console;
+module test
+{
+def fucn:$a,$f,$s = 2,$t = 3
+{
+  var $m = mmrt(Console);
+  $m.Out($a); //print 1
+  $m.Out($f); //print null
+  $m.Out($s); //print 2
+  $m.Out($t); //print 3
+}
+}
+_mmain:$a,$c
+{
+  mmrt(test).fucn(1);
+}
+</code></pre>
+
+<p><strong>6.8.函数返回值</strong></p>
+<p>值通过使用可选的返回语句返回。可以返回包括数组和对象的任意类型。返回语句会立即中止函数的运行，并且将控制权交回调用该函数的代码行</p>
+<pre><code>import conosle;
+use Console;
+module test
+{
+    def fucn:
+    {
+      return 666;
+    }
+}
+_mmain:$a,$c
+{
+     mmrt(Console).Out(test.fucn(1));
+}
+</code></pre>
+
+<p>如果省略了 return，则返回值为 NULL。</p>
+<h1 id="api">第七章 API列表</h1>
+<p>所有的API都在menthol.h中可以看到</p>
+<p>1.enum ValueType:
+表示所有menthol所使用的数据类型，有些你可能永远不会使用到，但你可以了解</p>
+<pre><code>enum ValueType{
+    M_NUMBER,
+    M_LONG,
+    M_DOUBLE,
+    M_STRING,
+    M_SSTRING,//system string,and it's not remove forever
+    M_FUN,
+    M_PFUN,
+    M_BPMARK,
+    M_BOOL,
+    M_ARRAY,
+    M_DICT,
+    M_NULL,
+    M_TRYMARK,
+    M_FORMARK,
+    M_MODULE,
+    M_HASH,
+    M_UNKONWN,
+    M_OBJECT,
+    M_MMRT
+};
+</code></pre>
+
+<p>2.StackState</p>
+<pre><code>struct StackState
+{
+
+  union{
+    double d;//数值
+    int i;
+    hashValue hash;//hash值
+    pDict pdict;//字典值
+    pArray parray;//数组值
+    pString str;//字符串
+    StackMark m;
+    bool b;//布尔值
+    ModuleState* ms;
+  };
+  pInst p;//表示一个object或者一个指针
+  char* name;
+  hashValue namehash;//变量或者函数名的hash值
+  ValueType v; //数据类型
+};
+</code></pre>
+
+<p>3.typedef int (<em>PrintErrorFunc)(char</em> str,char* cf,int line);</p>
+<p>错误调用的函数指针，str 参数为错误信息，cf为发生错误的文件，line 为错误的行数</p>
+<p>4.typedef StackState (<em>funcallback)(VmState</em>);</p>
+<p>扩展函数函数的函数指针</p>
+<p>5.MentholPackMethod void SetPrintCompileErrorFunc(PrintErrorFunc _pef);</p>
+<p>指示编译时如果发生错，将调用哪个函数显示错误信息,_per为函数指针</p>
+<p>6.MentholPackMethod void SetPrintRunTimeErrorFunc(PrintErrorFunc _pef);</p>
+<p>指示运行时如果发生错，将调用哪个函数显示错误信息,_per为函数指针</p>
+<p>7.MentholPackMethod int Compile(char* cfile,bool isdebug);</p>
+<p>8.MentholPackMethod int Run(char<em> files,char</em> arg1,char* arg2);</p>
+<p>执行可执行文件,files为可执行文件.mee的完整文件名，arg1,为__mmain的第一个参数,arg2,为__mmain的第二个参数</p>
+<p>9.MentholPackMethod void RegisterModuleFunciton(RunTimeState<em> moduleinst,UserFunctionAtter</em> functionlist);</p>
+<p>向系统注册需要扩展的函数名，moduleinst为模块实例，functionlist为函数定义数组</p>
+<p>10.MentholPackMethod StackState GetParam(int index,VmState*);</p>
+<p>获取函数参数，index为参数的索引位置，从1开始</p>
+<p>11.MentholPackMethod RunTimeState<em> CreateModuleRunTime(char</em> modulename,VmState*);</p>
+<p>创建一个运行模块</p>
+<p>12.MentholPackMethod StackState Array_CreateArray(VmState*);</p>
+<p>创建一个数组</p>
+<p>3.MentholPackMethod StackState Array_Get(pArray sk1,int index);</p>
+<p>获取数组元素，sk1为数组,index为数组位置索引，从0开始</p>
+<p>14.MentholPackMethod void Array_Set(pArray sk1,StackState sk2,int index);</p>
+<p>设置数组元素，sk1为数组,index为数组位置索引，从0开始，sk2为要这只的新值</p>
+<p>15.MentholPackMethod int Array_Length(pArray p);</p>
+<p>获取数组元素个数，p为数组</p>
+<p>16.MentholPackMethod void Array_Push(pArray sk1,StackState sk2);</p>
+<p>增加数组元素，sk1为数组,sk2为要增加的元素</p>
+<p>17.MentholPackMethod pString Array_Join(pArray a1,char<em> link,VmState</em>);</p>
+<p>用link 将数组a1，连接在一起返回字符串</p>
+<p>18.MentholPackMethod pArray Array_Reverse(pArray a1);</p>
+<p>反转数组，返回新的数组</p>
+<p>19.MentholPackMethod StackState Dict_CreateDict(VmState*);</p>
+<p>创建一个字典</p>
+<p>20.MentholPackMethod void Dict_Push(char* key,pDict sk1,StackState sk2);</p>
+<p>增加字典元素，key 为键，sk1为字典，sk2为值</p>
+<p>21.MentholPackMethod int Dict_Length(pDict p);</p>
+<p>获取字典键值对个数，p为字典</p>
+<p>22.MentholPackMethod StackState Dict_Get(pDict sk1,hashValue key);</p>
+<p>获取字典值对个数，sk1为字典，key为key的hash值</p>
+<p>23.MentholPackMethod void Dict_Set(char* key,pDict sk1,StackState sk2);</p>
+<p>设置字典值对个数，sk1为字典,key为键，sk2为新值</p>
+<p>24.MentholPackMethod pString Dict_Key(pDict pdict,hashValue sk2,VmState*);</p>
+<p>获取字典值对个数，sk1为字典，key为key的hash值</p>
+<p>25.MentholPackMethod StackState String_CreateString(char<em> str,VmState</em>);</p>
+<p>创建字符串</p>
+<p>26.MentholPackMethod void CreateFunctionCall(int pc,VmState*);</p>
+<p>创建回调函数的运行环境,pc为压入函数的参数个数</p>
+<p>27.MentholPackMethod void PushNumber(double d,VmState*);</p>
+<p>向栈内压入一个数值</p>
+<p>28.MentholPackMethod void PushString(pString str,VmState*);</p>
+<p>向栈内压入一个字符串</p>
+<p>29.MentholPackMethod void PushArray(pArray arr,VmState*);</p>
+<p>向栈内压入一个数组</p>
+<p>30.MentholPackMethod void PushDict(pDict arr,VmState*);</p>
+<p>向栈内压入一个字典</p>
+<p>31.MentholPackMethod StackState CallFunction(StackState fu,VmState*);</p>
+<p>执行函数</p>
+<p>32.MentholPackMethod StackState Number_CreateNumber(double d);</p>
+<p>创建一个数字</p>
+<p>33.MentholPackMethod StackState Null_CreateNull();</p>
+<p>创建一个null</p>
+<p>34.MentholPackMethod StackState Bool_CreateBool(bool b);</p>
+<p>创建一个bool</p>
+<p>35.MentholModuleMethod StackState Object_CreateObject(pInst p);</p>
+<p>创建一个object</p>
+<p>36.MentholModuleMethod  VmState* NewVmState();</p>
+<p>创建一个新的vm状态，用于多线程运行</p>
+<p>37.MentholModuleMethod  void NewVm(VmState* vmstate);</p>
+<p>创建一个新的虚拟机环境，用于多线程运行</p>
+<p>38.MentholModuleMethod  void ClearVmState(VmState* vmstate);</p>
+<p>删除虚拟机</p>
+<h1 id="_6">第八章 桌面程序开发</h1>
+<p>menthol自带的GUI开发库是基于IUP的界面库，实现了大部分的IUP界面库中的功能。创建一个IUP界面非常简单：</p>
+<pre><code>import iup.system;
+import iup.Dialogs;
+import iup.Callbacks;
+import iup.ControlsStandard;
+import iup.Attributes;
+import iup.const;
+import iup.ControlsContainers;
+use IupSystem,IupDialogs,IupCallbacks,IupControlsStandard,IupAttributes;
+use IupConst,IupControlsContainers;
+_mmain:$a,$c
+{
+
+  IupSystem.Init();
+  var $maindialog = IupDialogs.Dialog();
+  IupAttributes.SetAttribute($maindialog, &quot;RASTERSIZE&quot;, &quot;1000X600&quot;);
+  IupAttributes.SetAttribute($maindialog, &quot;TITLE&quot;, &quot;MentholIup&quot;);
+  IupDialogs.ShowXY($maindialog,IupConst.@IUP_CENTER,IupConst.@IUP_CENTER);
+  IupCallbacks.MainLoop();
+}
+
+</code></pre>
+
+<p><img src="/images/mentholhtmlimg/iup1.png"></p>
+<p>下面是menthol iup实现的大部分iup界面控件</p>
+<p><img src="/images/mentholhtmlimg/iup2.png"></p>
+<p>关于IUP的更多说明，可以访问IUP官方网站</p>
+<p><a href="http://webserver2.tecgraf.puc-rio.br/iup/">http://webserver2.tecgraf.puc-rio.br/iup/</a></p>
+<h1 id="_7">第九章 多线程</h1>
+<p>多线程（英语：multithreading），是指从软件或者硬件上实现多个线程并发执行的技术。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程，进而提升整体处理性能。具有这种能力的系统包括对称多处理机、多核心处理器以及芯片级多处理（Chip-level multithreading）或同时多线程（Simultaneous multithreading）处理器。在一个程序中，这些独立运行的程序片段叫作“线程”（Thread），利用它编程的概念就叫作“多线程处理（Multithreading）”。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程（台湾译作“执行绪”），进而提升整体处理性能。【引用自百度百科】</p>
+<p>menthol多线程使用非常简单,使用thread模块便可以创建多线程运行程序</p>
+<pre><code>import console;
+import Thread;
+use Console,Thread;
+
+module test
+{
+  var @c=mmrt(Console);
+  def thread2:
+  {
+    while(1){
+      @c.Out(&quot;thread2&quot;);
+    }
+  }
+
+  def thread1:
+  {
+    while(1){
+      @c.Out(&quot;thread1&quot;);
+    }
+  }
+}
+_mmain:$a,$c
+{ 
+  var $thread =mmrt(Thread),$test=mmrt(test);
+  var $k1 = $thread.NewThread($test.thread1);
+  var $k2 = $thread.NewThread($test.thread2); 
+  while(1){
+
+  }
+}
+
+
+</code></pre>
+
+<p><img src="/images/mentholhtmlimg/thread.png"></p>
+<p>menthol使用pthread实现多线程，关于thread模块的更多信息，请查看关于thread模块的使用说明</p>
+<h1 id="_8">第十章 开发扩展程序</h1>
+<p>如果要开发自定义的扩展类库，目前menthol的扩展开发仅可使用C/C++进行开发，你需要了解的几个开发前提是：</p>
+<p>1.所有被扩展的函数必须要是静态的函数或者是全局的函数</p>
+<p>2.所有被扩展的函数都必须要返回StackState</p>
+<p>3.将所有定的函数方位一个类型为UserFunctionAtter的数组当中，UserFunctionAtter是一个结构，有3个属性</p>
+<pre><code>struct UserFunctionAtter
+{
+    char* name;
+    funcallback postion; 
+    int paramcount;
+};
+</code></pre>
+
+<p>name表示在menthol程序中调用的函数名称</p>
+<p>postion为函数指针，执行你刚才定义的函数</p>
+<p>paramcount表示你定义的函数的参数个数</p>
+<p>4.所有的扩展函数库必须有个函数MentholModuleMethod void MP_Init(VmState* vmstate)，这个函数内会调用CreateModuleRunTimehe和RegisterModuleFunciton将你的函数增加至运行环境内</p>
+<p>5.会写或者会改C/C++源码，并且能生成DLL库</p>
+<p>menthol扩展开发非常简单，你需要在你的C/C++页面内引入menthol.lib静态库，并且将头文件menthol.h加入到你的源代码中。我下面将以VS中开发为范例开发一个最简单的扩展库</p>
+<p>1.在VS中创建了一个类库</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml24871.png"></p>
+<p><img src="/images/mentholhtmlimg/mentholhtml24882.png"></p>
+<p>引入Menthol.h或者引入menthol所在目录也可以，然后把lib文件包含在内，然后创建启动函数，启动函数的MP_Init,大小写要注意</p>
+<pre><code>#include &quot;stdafx.h&quot;
+
+#pragma comment(lib,&quot;Menthol.lib&quot;)
+#include &quot;Menthol.h&quot;
+
+MentholModuleMethod void MP_Init(VmState* vmstate)
+{
+
+}
+</code></pre>
+
+<p>我们写一个函数，这个函数的功能是，我们输入任何字符串，他都会输出”hello”+ 刚才你输入的字符串</p>
+<pre><code>#include &quot;stdafx.h&quot;
+
+#pragma comment(lib,&quot;Menthol.lib&quot;)
+#include &quot;Menthol.h&quot;
+
+
+StackState Hello(VmState* vmstate)
+{
+  StackState input = GetParam(1,vmstate);
+  int c = strlen(input.str-&gt;string)+7;
+  char* str =(char*)malloc(c);
+  memset(str,0,c);
+  strcat(str,&quot;hello &quot;);
+  strcat(str,input.str-&gt;string);
+  printf(&quot;%s&quot;,str);
+  free(str);
+  return Null_CreateNull();
+}
+
+UserFunctionAtter test[] = {
+  {&quot;Hello&quot;,Hello,1},
+  {NULL,NULL,0}
+}; 
+
+
+MentholModuleMethod void MP_Init(VmState* vmstate)
+{
+  RunTimeState* aesprt = CreateModuleRunTime(&quot;mymodule&quot;,vmstate);
+  RegisterModuleFunciton(aesprt,test);
+}
+</code></pre>
+
+<p>然后在代码中调用</p>
+<pre><code>import mypackage;
+import mio;
+use mymodule;
+use Console;
+_mmain:$a,$c
+{
+
+  mmrt(mymodule).Hello(mmrt(Console.In()));
+}
+</code></pre>
+
+<p>好了，现在到程序中测试一下，</p>
+<p><img src="/images/mentholhtmlimg/mentholhtml25046.png"></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inou/" class="btn btn-neutral float-right" title="输入输出">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="inou/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2021-08-06 08:56:37
+-->
