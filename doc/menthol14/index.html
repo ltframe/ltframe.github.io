@@ -125,12 +125,12 @@ Menthol 是一种无类型的语言。无类型意味着不必显式定义变量
 <p><strong>1.2.准备工作</strong></p>
 <p>Menthol是一个使用简单，易于学习的编程语言，如果你有其他编程语言，例如C,javascript,Python等编程语言的编写经验的话，本手册对你来说可能有点多余，你看看程序包或者源码包里的example中的实例就可以开始干了。其实我想说的是，Menthol就是如此简单的一个编程语言，下面我将详细说明</p>
 <p>首先，你要获得menthol，访问<a href="http://www.ltplayer.com">www.ltplayer.com</a></p>
-<p><img src="/images/mentholhtml4163.png"></p>
+<p><img src="images/mentholhtml4163.png"></p>
 <p>如果你想研究或者自己编译menthol程序，就需要下载menthol源代码，进入menthol在github上的项目仓库下载，不过前提需要你的电脑上安装过vs2015或者更高版本，因为menthol1.4是在vs2015上开发而成，所以vs2015以下版本是否能正常编译，无法确定</p>
 <p><strong>libsrc目录为系统自带包，在编译完menthol以后，需要用menthol编译程序编译它们，并将编译后的文件存入lib文件夹里，example1为实例测试使用的库，如果你要运行测试实例，需要将它放在你运行的程序目录中，或者在程序中指定它的路径，具体可以参考release中的文件安排</strong></p>
-<p><img src="/images/mentholhtml4736.png"></p>
+<p><img src="images/mentholhtml4736.png"></p>
 <p>可以点击download zip下载源码，这个最简单，如果有你要clone 的话，需要git工具，这需要你有操作git工具的知识，本文档不讨论git文档的使用，不过git工具的使用并不复杂，如果使用GUI工具的话，使用会更加简便，读者只需简单学习便可以使用。</p>
-<p><img src="/images/mentholhtml4892.png"></p>
+<p><img src="images/mentholhtml4892.png"></p>
 <p>获得源码后，点击menthol.sln将会用打开。然后可以选择release或者debug编译,最后将在debug或者release文件夹中产生编译后的文件</p>
 <p><strong>1.3.开始写第一个程序</strong></p>
 <p>一个完整的Menthol程序应该包括的是一个__mmain函数、导入的程序包、模块调用、模块定义。__mmain函数很重要，这是启动函数，在程序被调用时，系统会自动执行这个函数，作为整个程序调用的入口，所以，它是必须要有的，否则程序无法正常启动。在menthol中，因为所有的函数定义必须要基于模块开发，但是，__mmain函数是唯一个不需要定义模块就能单独使用的函数，仅此一个函数。</p>
@@ -143,9 +143,9 @@ Menthol 是一种无类型的语言。无类型意味着不必显式定义变量
 <p>但是他什么都不执行，仅仅是程序编写上的正常。</p>
 <p>你可以把它复制到记事本或其他编辑器内，将文件保存为main.me类型。me类型为menthol的可执行文件原文件名,取menthol单词的前两个字母。</p>
 <p>现在打开控制台，并进入刚才文件所存储目录中，打开Compile.exe,将刚才你存的文件作为参数跟在后面，回车执行,会生成一些调试信息，包括发生错误时,原文件的行数，以及源文件的完整路径</p>
-<p><img src="/images/mentholhtml5427.png"></p>
+<p><img src="images/mentholhtml5427.png"></p>
 <p>好了，可以看到编译完成,你会发现在main.me下面多出来个main.mee。这个便是编译以后生成的文件，mee是menthol可执行文件的缩写(me execute)</p>
-<p><img src="/images/mentholhtml5517.png"></p>
+<p><img src="images/mentholhtml5517.png"></p>
 <p>然后我们就可以运行这个程序了，同样的操作方式，只不过要执行run.exe ,将刚才生成的main.mee 作为参数跟在后面执行即可。因为程序内什么都没有执行，所以没有任何输出。</p>
 <p>现在把上述程序该一下。</p>
 <pre><code>Import console;
@@ -162,7 +162,7 @@ _mmain:$a,$b
 }
 </code></pre>
 <p>然后重复上面的编译过程，然后运行
-<img src="/images/mentholhtml5746.png"></p>
+<img src="images/mentholhtml5746.png"></p>
 <p>可以看看到了输出文字。Console是控制输入输出与文件读写的库，我们会在后面讲到。</p>
 <p><strong>1.4.关键字</strong></p>
 <p>“关键字”是对menthol具有特殊含义的单词。标识符不能具有与 menthol关键字相同的拼写和大小写,同时你也不能重新定义关键字， 也不能将关键字用于定义函数名。Menthol目前拥有19个关键字，下面是所有关键字</p>
@@ -1391,9 +1391,9 @@ _mmain:$a,$c
 }
 
 </code></pre>
-<p><img src="/images/iup1.png"></p>
+<p><img src="images/iup1.png"></p>
 <p>下面是menthol iup实现的大部分iup界面控件</p>
-<p><img src="/images/iup2.png"></p>
+<p><img src="images/iup2.png"></p>
 <p>关于IUP的更多说明，可以访问IUP官方网站</p>
 <p><a href="http://webserver2.tecgraf.puc-rio.br/iup/">http://webserver2.tecgraf.puc-rio.br/iup/</a></p>
 <h1 id="_7">第九章 多线程</h1>
@@ -1432,7 +1432,7 @@ _mmain:$a,$c
 
 
 </code></pre>
-<p><img src="/images/thread.png"></p>
+<p><img src="images/thread.png"></p>
 <p>menthol使用pthread实现多线程，关于thread模块的更多信息，请查看关于thread模块的使用说明</p>
 <h2 id="_8">第十章 开发扩展程序</h2>
 <p>如果要开发自定义的扩展类库，目前menthol的扩展开发仅可使用C/C++进行开发，你需要了解的几个开发前提是：</p>
@@ -1453,8 +1453,8 @@ _mmain:$a,$c
 <p>5.会写或者会改C/C++源码，并且能生成DLL库</p>
 <p>menthol扩展开发非常简单，你需要在你的C/C++页面内引入menthol.lib静态库，并且将头文件menthol.h加入到你的源代码中。我下面将以VS中开发为范例开发一个最简单的扩展库</p>
 <p>1.在VS中创建了一个类库</p>
-<p><img src="/images/mentholhtml24871.png"></p>
-<p><img src="/images/mentholhtml24882.png"></p>
+<p><img src="images/mentholhtml24871.png"></p>
+<p><img src="images/mentholhtml24882.png"></p>
 <p>引入Menthol.h或者引入menthol所在目录也可以，然后把lib文件包含在内，然后创建启动函数，启动函数的MP_Init,大小写要注意</p>
 <pre><code>#include &quot;stdafx.h&quot;
 
@@ -1510,7 +1510,7 @@ _mmain:$a,$c
 }
 </code></pre>
 <p>好了，现在到程序中测试一下，</p>
-<p><img src="/images/mentholhtml25046.png"></p>
+<p><img src="images/mentholhtml25046.png"></p>
               
             </div>
           </div><footer>
@@ -1559,5 +1559,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2024-12-17 09:06:46.078539+00:00
+Build Date UTC : 2024-12-17 09:24:25.359414+00:00
 -->
