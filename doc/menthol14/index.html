@@ -55,10 +55,6 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="crypto/">加密解密</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="string/">字符串</a>
                 </li>
               </ul>
@@ -75,10 +71,6 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="database/">数据库</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="thread/">多线程</a>
                 </li>
               </ul>
@@ -88,10 +80,6 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="network/">网络系统</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="iup/">GUI</a>
                 </li>
               </ul>
       </div>
@@ -1367,32 +1355,7 @@ _mmain:$a,$c
 <p>创建一个新的虚拟机环境，用于多线程运行</p>
 <p>38.MentholModuleMethod  void ClearVmState(VmState* vmstate);</p>
 <p>删除虚拟机</p>
-<h1 id="_6">第八章 桌面程序开发</h1>
-<p>menthol自带的GUI开发库是基于IUP的界面库，实现了大部分的IUP界面库中的功能。创建一个IUP界面非常简单：</p>
-<pre><code>import iup.system;
-import iup.Dialogs;
-import iup.Callbacks;
-import iup.ControlsStandard;
-import iup.Attributes;
-import iup.const;
-import iup.ControlsContainers;
-use IupSystem,IupDialogs,IupCallbacks,IupControlsStandard,IupAttributes;
-use IupConst,IupControlsContainers;
-_mmain:$a,$c
-{
-
-  IupSystem.Init();
-  var $maindialog = IupDialogs.Dialog();
-  IupAttributes.SetAttribute($maindialog, &quot;RASTERSIZE&quot;, &quot;1000X600&quot;);
-  IupAttributes.SetAttribute($maindialog, &quot;TITLE&quot;, &quot;MentholIup&quot;);
-  IupDialogs.ShowXY($maindialog,IupConst.@IUP_CENTER,IupConst.@IUP_CENTER);
-  IupCallbacks.MainLoop();
-}
-
-</code></pre>
-<p>关于IUP的更多说明，可以访问IUP官方网站</p>
-<p><a href="http://webserver2.tecgraf.puc-rio.br/iup/">http://webserver2.tecgraf.puc-rio.br/iup/</a></p>
-<h1 id="_7">第九章 多线程</h1>
+<h1 id="_6">第八章 多线程</h1>
 <p>多线程（英语：multithreading），是指从软件或者硬件上实现多个线程并发执行的技术。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程，进而提升整体处理性能。具有这种能力的系统包括对称多处理机、多核心处理器以及芯片级多处理（Chip-level multithreading）或同时多线程（Simultaneous multithreading）处理器。在一个程序中，这些独立运行的程序片段叫作“线程”（Thread），利用它编程的概念就叫作“多线程处理（Multithreading）”。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程（台湾译作“执行绪”），进而提升整体处理性能。【引用自百度百科】</p>
 <p>menthol多线程使用非常简单,使用thread模块便可以创建多线程运行程序</p>
 <pre><code>import console;
@@ -1430,7 +1393,7 @@ _mmain:$a,$c
 </code></pre>
 <p><img src="images/thread.png"></p>
 <p>menthol使用pthread实现多线程，关于thread模块的更多信息，请查看关于thread模块的使用说明</p>
-<h2 id="_8">第十章 开发扩展程序</h2>
+<h2 id="_7">第九章 开发扩展程序</h2>
 <p>如果要开发自定义的扩展类库，目前menthol的扩展开发仅可使用C/C++进行开发，你需要了解的几个开发前提是：</p>
 <p>1.所有被扩展的函数必须要是静态的函数或者是全局的函数</p>
 <p>2.所有被扩展的函数都必须要返回StackState</p>
@@ -1555,5 +1518,5 @@ _mmain:$a,$c
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2024-12-20 01:11:07.766079+00:00
+Build Date UTC : 2024-12-20 10:58:25.289710+00:00
 -->
