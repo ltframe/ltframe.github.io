@@ -31,7 +31,7 @@
                     Console.Out(&quot;hello Menthol&quot;);
                     return;
                 }
-                </pre></div></div><div><a class="btn" href="https://github.com/ltframe/menthol">Github</a></div></div>`,1)])))}},cf={class:"document"},uf={__name:"Document",setup(e){function t(){window.open("http://www.ltplayer.com/doc/menthol14/index.html","_blank")}return gn(()=>{}),(n,s)=>(Nt(),Kn("div",cf,[be("div",{class:"listbox"},[be("div",{class:"list",onClick:t},s[0]||(s[0]=[be("span",null,"版本:1.4(online)",-1),be("span",null,"2021-8-6",-1)]))])]))}},ff=[{path:"/",name:"Index",component:lf},{path:"/document",name:"Document",component:uf}],af=Qu({history:du(),routes:ff});var df=!1;/*!
+                </pre></div></div><div><a class="btn" href="https://github.com/ltframe/menthol">Github</a></div></div>`,1)])))}},cf={class:"document"},uf={__name:"Document",setup(e){function t(){window.open("http://www.ltplayer.com/doc/menthol/index.html","_blank")}return gn(()=>{}),(n,s)=>(Nt(),Kn("div",cf,[be("div",{class:"listbox"},[be("div",{class:"list",onClick:t},s[0]||(s[0]=[be("span",null,"版本:1.4(online)",-1),be("span",null,"2021-8-6",-1)]))])]))}},ff=[{path:"/",name:"Index",component:lf},{path:"/document",name:"Document",component:uf}],af=Qu({history:du(),routes:ff});var df=!1;/*!
  * pinia v2.2.4
  * (c) 2024 Eduardo San Martin Morote
  * @license MIT

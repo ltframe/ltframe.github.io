@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>时间日期 - Menthol document -v1.4</title>
+    <title>内置类型 - Menthol document -v1.4</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u65f6\u95f4\u65e5\u671f";
-        var mkdocs_page_input_path = "datatime.md";
+        var mkdocs_page_name = "\u5185\u7f6e\u7c7b\u578b";
+        var mkdocs_page_input_path = "type.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -56,8 +56,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../string/">字符串</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../type/">内置类型</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">内置类型</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -69,17 +71,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../thread/">多线程</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">时间日期</a>
-    <ul class="current">
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../network/">网络系统</a>
+                <li class="toctree-l1"><a class="reference internal" href="../datatime/">时间日期</a>
                 </li>
               </ul>
       </div>
@@ -96,7 +88,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">时间日期</li>
+      <li class="breadcrumb-item active">内置类型</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,61 +97,126 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="datetime">DateTime</h1>
-<p><strong>所在包：DateTime</strong></p>
-<p class="cu_p">def CurrentDate:</p>
-
-<p>获取当前日期</p>
-<p><strong>Return:</strong>日期</p>
-<p class="cu_p">def CurrentTime:</p>
-
-<p>获取当前日期和时间</p>
-<p><strong>Return:</strong>日期和时间</p>
-<p class="cu_p">def TimeZone:</p>
-
-<p>获取当前时间戳</p>
-<p><strong>Return:</strong>当前时间戳</p>
-<p class="cu_p">def AddDays:</p>
-
-<p>在某个日期上在加入指定天数</p>
+                <h1 id="dict">Dict</h1>
+<p><strong>所在包：Dict</strong></p>
+<p class="cu_p">def Length:$arg1</p>
+<p>返回一个字典的长度</p>
 <p><strong>Parameters:</strong></p>
-<p>$datetime:制定的日期</p>
-<p>$v:增加的天数</p>
-<p><strong>Return:</strong>新的时间</p>
-<p class="cu_p">def AddHours:</p>
+<p>$arg1：要测试的字典</p>
+<p><strong>Return:</strong>测试的字典键的数量</p>
+<p class="cu_p">def Push:$key,$dict,$value</p>
 
-<p>在某个日期上在加入指定小时</p>
 <p><strong>Parameters:</strong></p>
-<p>$datetime:制定的日期</p>
-<p>$v:增加的小时</p>
-<p><strong>Return:</strong>新的时间</p>
-<p class="cu_p">def AddMinutes:</p>
+<p>$key：要加入的新的key
+$dict:要加入的字典
+$key：要加入的新值</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def SetValue:$key,$dict,$value</p>
 
-<p>在某个日期上在加入指定分钟</p>
 <p><strong>Parameters:</strong></p>
-<p>$datetime:制定的日期</p>
-<p>$v:增加的分钟</p>
-<p><strong>Return:</strong>新的时间</p>
-<p class="cu_p">def AddSeconds:</p>
+<p>$key：要设置的新的key
+$dict:要设置的字典
+$key：要设置的新值</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def GetKey:$arg1,$arg2</p>
 
-<p>在某个日期上在加入指定秒</p>
+<p>获取键</p>
 <p><strong>Parameters:</strong></p>
-<p>$datetime:制定的日期</p>
-<p>$v:增加的秒</p>
-<p><strong>Return:</strong>新的时间</p>
-<p class="cu_p">def AddYears:</p>
+<p>$arg1：字典</p>
+<p>$arg2:值</p>
+<p><strong>Return:</strong>键名</p>
+<p class="cu_p">def GetValue:$arg1,$arg2</p>
 
-<p>在某个日期上在加入指年</p>
+<p>获取值</p>
 <p><strong>Parameters:</strong></p>
-<p>$datetime:制定的日期</p>
-<p>$v:增加的年</p>
-<p><strong>Return:</strong>新的时间</p>
+<p>$arg1：字典</p>
+<p>$arg2:键值</p>
+<p><strong>Return:</strong></p>
+<p class="cu_p">def Reomve:$dict,$key</p>
+
+<p><strong>Parameters:</strong></p>
+<p>$key：要删除的键
+$dict:字典</p>
+<p><strong>Return:</strong>null</p>
+<hr />
+<h1 id="array">Array</h1>
+<p><strong>所在包：Array</strong></p>
+<p class="cu_p">def Length:$arg1</p>
+
+<p>测试数组的元素个数</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要测试的数组</p>
+<p><strong>Return:</strong>数字</p>
+<p class="cu_p">def Join:$arg1,$arg2</p>
+
+<p>将两个数组连接在一起，成为一个新数组</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：第一个要连接的数组</p>
+<p>$arg2：第二个要连接的数组</p>
+<p><strong>Return:</strong>新的数组</p>
+<p class="cu_p">def Reverse:$arg1</p>
+
+<p>反转数组</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：要反转的数组</p>
+<p><strong>Return:</strong>反转后的数组</p>
+<p class="cu_p">def Push:$arg1,$arg2</p>
+
+<p>压入新元素</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数组</p>
+<p>$arg2：新元素</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def Rang:$arg1,$arg2,$arg3=1</p>
+
+<p>产生从$arg1到$arg2之间步长为$arg3的数字</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：开始数字</p>
+<p>$arg2：结束数字</p>
+<p>$arg3：步长。默认为1</p>
+<p><strong>Return:</strong>数组</p>
+<p class="cu_p">def Reomve:$arr,$i</p>
+
+<p>删除自定索引的元素</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：数组</p>
+<p>$i：索引</p>
+<p><strong>Return:</strong>null</p>
+<p class="cu_p">def IsInArray:$arr,$element</p>
+
+<p>判断一个元素是否在数组内</p>
+<p><strong>Parameters:</strong></p>
+<p>$arr：数组</p>
+<p>$element：元素</p>
+<p><strong>Return:</strong>bool</p>
+<p class="cu_p">def Clone:$arr</p>
+
+<p>克隆一个数组</p>
+<p><strong>Parameters:</strong></p>
+<p>$arr：数组</p>
+<p><strong>Return:</strong>新数组</p>
+<p class="cu_p">def indexOf:$arr,$element</p>
+
+<p>判断一个元素是否在字符内</p>
+<p><strong>Parameters:</strong></p>
+<p>$arr：数组</p>
+<p>$element：元素</p>
+<p><strong>Return:</strong>索引地址</p>
+<hr />
+<h1 id="type">Type</h1>
+<p><strong>所在包：type</strong></p>
+<p class="cu_p">def TypeToString:$t</p>
+
+<p>将任意类型转换成为字符串</p>
+<p><strong>Parameters:</strong></p>
+<p>$arg1：被转换的值</p>
+<p><strong>Return:</strong> 转换后的值</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../thread/" class="btn btn-neutral float-left" title="多线程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../network/" class="btn btn-neutral float-right" title="网络系统">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../string/" class="btn btn-neutral float-left" title="字符串"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../math/" class="btn btn-neutral float-right" title="数学相关">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -182,10 +239,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../thread/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../string/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../network/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../math/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

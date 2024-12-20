@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>内置类型 - Menthol document -v1.4</title>
+    <title>数学相关 - Menthol document -v1.4</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u5185\u7f6e\u7c7b\u578b";
-        var mkdocs_page_input_path = "type.md";
+        var mkdocs_page_name = "\u6570\u5b66\u76f8\u5173";
+        var mkdocs_page_input_path = "math.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -56,14 +56,14 @@
                 <li class="toctree-l1"><a class="reference internal" href="../string/">字符串</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">内置类型</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../type/">内置类型</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../math/">数学相关</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">数学相关</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -71,15 +71,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../thread/">多线程</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../datatime/">时间日期</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../network/">网络系统</a>
                 </li>
               </ul>
       </div>
@@ -96,7 +88,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">内置类型</li>
+      <li class="breadcrumb-item active">数学相关</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,126 +97,183 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="dict">Dict</h1>
-<p><strong>所在包：Dict</strong></p>
-<p class="cu_p">def Length:$arg1</p>
-<p>返回一个字典的长度</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：要测试的字典</p>
-<p><strong>Return:</strong>测试的字典键的数量</p>
-<p class="cu_p">def Push:$key,$dict,$value</p>
+                <h1 id="math">Math</h1>
+<p><strong>所在包：Math</strong></p>
+<p class="cu_p">@PI</p>
 
-<p><strong>Parameters:</strong></p>
-<p>$key：要加入的新的key
-$dict:要加入的字典
-$key：要加入的新值</p>
-<p><strong>Return:</strong>null</p>
-<p class="cu_p">def SetValue:$key,$dict,$value</p>
+<p>数学中的兀,3.14159265358979323846</p>
+<p class="cu_p">@E</p>
 
-<p><strong>Parameters:</strong></p>
-<p>$key：要设置的新的key
-$dict:要设置的字典
-$key：要设置的新值</p>
-<p><strong>Return:</strong>null</p>
-<p class="cu_p">def GetKey:$arg1,$arg2</p>
+<p>自然对数的底数,2.7182818284590452354</p>
+<p class="cu_p">def Abs:$n</p>
 
-<p>获取键</p>
+<p>求绝对值</p>
 <p><strong>Parameters:</strong></p>
-<p>$arg1：字典</p>
-<p>$arg2:值</p>
-<p><strong>Return:</strong>键名</p>
-<p class="cu_p">def GetValue:$arg1,$arg2</p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>绝对值</p>
+<p class="cu_p">def Acos:$n</p>
 
-<p>获取值</p>
+<p>反余弦弧度值</p>
 <p><strong>Parameters:</strong></p>
-<p>$arg1：字典</p>
-<p>$arg2:键值</p>
-<p><strong>Return:</strong></p>
-<p class="cu_p">def Reomve:$dict,$key</p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Asin:$n</p>
 
+<p>反正弦函数</p>
 <p><strong>Parameters:</strong></p>
-<p>$key：要删除的键
-$dict:字典</p>
-<p><strong>Return:</strong>null</p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Atan:$n</p>
+
+<p>反正切值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Atan2:$n,$n2</p>
+
+<p>4象限反正切</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p>$n2：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Ceil:$n</p>
+
+<p>返回大于或者等于指定表达式的最小整数</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Cos:$n</p>
+
+<p>返回余弦</p>
+<p><strong>Return:</strong>数值</p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Cosh:$n</p>
+
+<p>返回参数的双曲余弦值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Exp:$n</p>
+
+<p>返回 e 的 $n 次幂的值。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Fabs:$n</p>
+
+<p>求绝对值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>绝对值</p>
+<p class="cu_p">def Floor:$n</p>
+
+<p>返回小于或等于 $n 的最大的整数值</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Fmod:$n,$n2</p>
+
+<p>返回 $n 除以 $n2 的余数</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p>$n2：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Log:$n</p>
+
+<p>返回 $n 的自然对数（基数为 e 的对数）。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Log10:$n</p>
+
+<p>返回 $n 的常用对数（基数为 10 的对数）。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Pow:$n,$n2</p>
+
+<p>返回 $n 的 $n2 次幂</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p>$n2：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Sin:$n</p>
+
+<p>返回以弧度表示的 $n 的反正弦</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Sinh:$n</p>
+
+<p>返回 $n 的双曲正弦</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Sqrt:$n</p>
+
+<p>返回 $n 的平方根</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Tan:$n</p>
+
+<p>返回$n弧度角的正切值。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Tanh:$n</p>
+
+<p>返回 $n 的双曲正切</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Random:</p>
+
+<p>产生0-1之间的一个随机数</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
+<p class="cu_p">def Cbrt:$n</p>
+
+<p>返回x的立方根。</p>
+<p><strong>Parameters:</strong></p>
+<p>$n：数值</p>
+<p><strong>Return:</strong>数值</p>
 <hr />
-<h1 id="array">Array</h1>
-<p><strong>所在包：Array</strong></p>
-<p class="cu_p">def Length:$arg1</p>
+<h1 id="number">Number</h1>
+<p><strong>所在包：Number</strong></p>
+<p class="cu_p">@MaxValue</p>
 
-<p>测试数组的元素个数</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：要测试的数组</p>
-<p><strong>Return:</strong>数字</p>
-<p class="cu_p">def Join:$arg1,$arg2</p>
+<p>Number所能表示的最大值，1.7976931348623157e+308</p>
+<p class="cu_p">@MinValue</p>
 
-<p>将两个数组连接在一起，成为一个新数组</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：第一个要连接的数组</p>
-<p>$arg2：第二个要连接的数组</p>
-<p><strong>Return:</strong>新的数组</p>
-<p class="cu_p">def Reverse:$arg1</p>
+<p>Number所能表示的最小值，-1.7976931348623157e+308</p>
+<p class="cu_p">def ToString:$n</p>
 
-<p>反转数组</p>
+<p>将数字转换为字符串</p>
 <p><strong>Parameters:</strong></p>
-<p>$arg1：要反转的数组</p>
-<p><strong>Return:</strong>反转后的数组</p>
-<p class="cu_p">def Push:$arg1,$arg2</p>
+<p>$arg1：要转换的数字</p>
+<p><strong>Return:</strong>转换后的字符串</p>
+<p class="cu_p">def ToNumber:$n</p>
 
-<p>压入新元素</p>
+<p>将字符串转换为数字</p>
 <p><strong>Parameters:</strong></p>
-<p>$arg1：数组</p>
-<p>$arg2：新元素</p>
-<p><strong>Return:</strong>null</p>
-<p class="cu_p">def Rang:$arg1,$arg2,$arg3=1</p>
+<p>$arg1：要转换的字符串</p>
+<p><strong>Return:</strong>转换后的数字</p>
+<p class="cu_p">def Equals:$n,$n2</p>
 
-<p>产生从$arg1到$arg2之间步长为$arg3的数字</p>
+<p>比较两个数字是不是相同</p>
 <p><strong>Parameters:</strong></p>
-<p>$arg1：开始数字</p>
-<p>$arg2：结束数字</p>
-<p>$arg3：步长。默认为1</p>
-<p><strong>Return:</strong>数组</p>
-<p class="cu_p">def Reomve:$arr,$i</p>
-
-<p>删除自定索引的元素</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：数组</p>
-<p>$i：索引</p>
-<p><strong>Return:</strong>null</p>
-<p class="cu_p">def IsInArray:$arr,$element</p>
-
-<p>判断一个元素是否在数组内</p>
-<p><strong>Parameters:</strong></p>
-<p>$arr：数组</p>
-<p>$element：元素</p>
+<p>$n：比较的第一个数字</p>
+<p>$n2：比较的第二个数字</p>
 <p><strong>Return:</strong>bool</p>
-<p class="cu_p">def Clone:$arr</p>
-
-<p>克隆一个数组</p>
-<p><strong>Parameters:</strong></p>
-<p>$arr：数组</p>
-<p><strong>Return:</strong>新数组</p>
-<p class="cu_p">def indexOf:$arr,$element</p>
-
-<p>判断一个元素是否在字符内</p>
-<p><strong>Parameters:</strong></p>
-<p>$arr：数组</p>
-<p>$element：元素</p>
-<p><strong>Return:</strong>索引地址</p>
-<hr />
-<h1 id="type">Type</h1>
-<p><strong>所在包：type</strong></p>
-<p class="cu_p">def TypeToString:$t</p>
-
-<p>将任意类型转换成为字符串</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：被转换的值</p>
-<p><strong>Return:</strong> 转换后的值</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../string/" class="btn btn-neutral float-left" title="字符串"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../math/" class="btn btn-neutral float-right" title="数学相关">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../type/" class="btn btn-neutral float-left" title="内置类型"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../env/" class="btn btn-neutral float-right" title="系统环境">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -247,10 +296,10 @@ $dict:字典</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../string/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../type/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../math/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../env/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>系统环境 - Menthol document -v1.4</title>
+    <title>输入输出 - Menthol document -v1.4</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u7cfb\u7edf\u73af\u5883";
-        var mkdocs_page_input_path = "env.md";
+        var mkdocs_page_name = "\u8f93\u5165\u8f93\u51fa";
+        var mkdocs_page_input_path = "inou.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,8 +44,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">教程</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../inou/">输入输出</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">输入输出</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -64,22 +66,12 @@
                 <li class="toctree-l1"><a class="reference internal" href="../math/">数学相关</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">系统环境</a>
-    <ul class="current">
-    </ul>
-                </li>
-              </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../thread/">多线程</a>
+                <li class="toctree-l1"><a class="reference internal" href="../env/">系统环境</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../datatime/">时间日期</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../network/">网络系统</a>
                 </li>
               </ul>
       </div>
@@ -96,7 +88,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">系统环境</li>
+      <li class="breadcrumb-item active">输入输出</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,72 +97,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="environment">Environment</h1>
-<p><strong>所在包：Environment</strong></p>
-<p class="cu_p">def Version:</p>
-<p>返回menthol版本</p>
-<p><strong>Return:</strong>版本号</p>
-<p class="cu_p">def Sleep:$arg1</p>
-<p>系统休眠指定时间</p>
+                <h1 id="console">Console</h1>
+<p><strong>所在包：Console</strong></p>
+<p class="cu_p">def Out:$arg1</p>
+
+<p>输出至控制台</p>
 <p><strong>Parameters:</strong></p>
-<p>$arg1：休眠的时间，毫秒</p>
-<p><strong>Return:</strong>null</p>
-<p class="cu_p">def SystemInfo:</p>
-
-<p>返回关于当前系统的信息</p>
-<p><strong>Return:</strong>返回字典，包含以下key</p>
-<p>ActiveProcessorMas:处理器掩码</p>
-<p>NumberOfPkrocessors:处理器个数</p>
-<p>PageSize:处理器分页大小</p>
-<p>ProcessorLevel:处理器等级</p>
-<p>ProcessorRevision:处理器版本</p>
-<p class="cu_p">def CpuInfo:</p>
-
-<p>返回关于当前CPUID</p>
-<p><strong>Return:</strong>返回字符串</p>
-<p class="cu_p">def SystemMemory:</p>
-
-<p>返回关于当前内存大小</p>
-<p><strong>Return:</strong>内存大小</p>
-<p class="cu_p">def OsInfo:</p>
-
-<p>返回关于当前操作系统版本</p>
-<p><strong>Return:</strong>字符串</p>
-<p class="cu_p">def Getpid:</p>
-
-<p>取得进程识别码</p>
-<p><strong>Return:</strong>字符串</p>
-<p class="cu_p">def Exit:$arg1</p>
+<p>$arg1：要输出的内容</p>
+<p><strong>Return:</strong>Null</p>
+<p class="cu_p">def Oute:$arg1</p>
 
 <p><strong>Parameters:</strong></p>
-<p>$arg1：退出的code</p>
-<p><strong>Return:</strong>null</p>
-<p class="cu_p">def System:$arg1</p>
+<p>$arg1：要输出的内容</p>
+<p><strong>Return:</strong>Null</p>
+<p class="cu_p">def In:</p>
 
-<p>执行系统命令</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：要执行的系统命令</p>
-<p><strong>Return:</strong>失败返回-1</p>
-<p class="cu_p">def MachineName:</p>
+<p>从控制台输入</p>
+<p><strong>Return:</strong>Null</p>
+<p class="cu_p">def Clear:</p>
 
-<p>返回关于当前获取电脑名称</p>
-<p><strong>Return:</strong>字符串</p>
-<p class="cu_p">def UserName:</p>
-
-<p>返回关于当前登录的用户名</p>
-<p><strong>Return:</strong>字符串</p>
-<p class="cu_p">def TickCount:</p>
-<p>从操作系统启动所经过（elapsed）的毫秒数</p>
-<p><strong>Return:</strong>毫秒数</p>
-<p class="cu_p">def NewGuid:</p>
-<p>创建一个GUID</p>
-<p><strong>Return:</strong>字符串</p>
+<p>清除控制台</p>
+<p><strong>Return:</strong>Null</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../math/" class="btn btn-neutral float-left" title="数学相关"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../thread/" class="btn btn-neutral float-right" title="多线程">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href=".." class="btn btn-neutral float-left" title="教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../files/" class="btn btn-neutral float-right" title="文件系统">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -193,10 +146,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../math/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../thread/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../files/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

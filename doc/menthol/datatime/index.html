@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>多线程 - Menthol document -v1.4</title>
+    <title>时间日期 - Menthol document -v1.4</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u591a\u7ebf\u7a0b";
-        var mkdocs_page_input_path = "thread.md";
+        var mkdocs_page_name = "\u65f6\u95f4\u65e5\u671f";
+        var mkdocs_page_input_path = "datatime.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -69,17 +69,9 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">多线程</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">时间日期</a>
     <ul class="current">
     </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../datatime/">时间日期</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../network/">网络系统</a>
                 </li>
               </ul>
       </div>
@@ -96,7 +88,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">多线程</li>
+      <li class="breadcrumb-item active">时间日期</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,36 +97,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="thread">Thread</h1>
-<p><strong>所在包：thread</strong></p>
-<p class="cu_p">def NewThread:$arg1</p>
+                <h1 id="datetime">DateTime</h1>
+<p><strong>所在包：DateTime</strong></p>
+<p class="cu_p">def CurrentDate:</p>
 
-<p>创建一个新线程</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：回调函数</p>
-<p><strong>Return:</strong> 线程ID</p>
-<p class="cu_p">def Join:$arg1</p>
+<p>获取当前日期</p>
+<p><strong>Return:</strong>日期</p>
+<p class="cu_p">def CurrentTime:</p>
 
-<p>阻塞一个线程</p>
-<p><strong>Parameters:</strong></p>
-<p>$arg1：线程ID</p>
-<p><strong>Return:</strong> 是否成功</p>
-<p class="cu_p">def Lock:</p>
+<p>获取当前日期和时间</p>
+<p><strong>Return:</strong>日期和时间</p>
+<p class="cu_p">def TimeZone:</p>
 
-<p>锁定线程</p>
-<p><strong>Parameters:</strong></p>
-<p><strong>Return:</strong> 是否成功</p>
-<p class="cu_p">def UnLock:</p>
+<p>获取当前时间戳</p>
+<p><strong>Return:</strong>当前时间戳</p>
+<p class="cu_p">def AddDays:</p>
 
-<p>解锁线程</p>
+<p>在某个日期上在加入指定天数</p>
 <p><strong>Parameters:</strong></p>
-<p><strong>Return:</strong> 是否成功</p>
+<p>$datetime:制定的日期</p>
+<p>$v:增加的天数</p>
+<p><strong>Return:</strong>新的时间</p>
+<p class="cu_p">def AddHours:</p>
+
+<p>在某个日期上在加入指定小时</p>
+<p><strong>Parameters:</strong></p>
+<p>$datetime:制定的日期</p>
+<p>$v:增加的小时</p>
+<p><strong>Return:</strong>新的时间</p>
+<p class="cu_p">def AddMinutes:</p>
+
+<p>在某个日期上在加入指定分钟</p>
+<p><strong>Parameters:</strong></p>
+<p>$datetime:制定的日期</p>
+<p>$v:增加的分钟</p>
+<p><strong>Return:</strong>新的时间</p>
+<p class="cu_p">def AddSeconds:</p>
+
+<p>在某个日期上在加入指定秒</p>
+<p><strong>Parameters:</strong></p>
+<p>$datetime:制定的日期</p>
+<p>$v:增加的秒</p>
+<p><strong>Return:</strong>新的时间</p>
+<p class="cu_p">def AddYears:</p>
+
+<p>在某个日期上在加入指年</p>
+<p><strong>Parameters:</strong></p>
+<p>$datetime:制定的日期</p>
+<p>$v:增加的年</p>
+<p><strong>Return:</strong>新的时间</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../env/" class="btn btn-neutral float-left" title="系统环境"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../datatime/" class="btn btn-neutral float-right" title="时间日期">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -159,8 +175,6 @@
     
       <span><a href="../env/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../datatime/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
